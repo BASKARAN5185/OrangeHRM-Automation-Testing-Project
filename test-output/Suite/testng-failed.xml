@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="utility.ExtentReportManager"/>
+  </listeners>
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="testBase.PIMPageTest">
+        <methods>
+          <include name="EmployeeEnterPassword"/>
+          <include name="EmployeeConformPassword"/>
+          <include name="EmployeeNamelastEnter_Save"/>
+          <include name="EmployeeusernameI_Save"/>
+          <include name="EmployeeUserNameIsEmpty"/>
+          <include name="Empty_Employee_Save"/>
+          <include name="openTheBrowser"/>
+          <include name="Add_Employee"/>
+          <include name="SameEmployeeID"/>
+          <include name="Add_Employee_cancel"/>
+          <include name="clickEmployeeListTheAddButton"/>
+          <include name="userlogin"/>
+          <include name="Add_Employee_Disable_Satus"/>
+        </methods>
+      </class> <!-- testBase.PIMPageTest -->
+      <class name="testBase.My_Info_PageTest">
+        <methods>
+          <include name="testEnterLastName"/>
+          <include name="testClickButton"/>
+          <include name="testSetBloodGroup"/>
+          <include name="openTheBrowser"/>
+          <include name="testSubmitForm"/>
+          <include name="testEnterFirstName"/>
+          <include name="testEnterMiddleName"/>
+        </methods>
+      </class> <!-- testBase.My_Info_PageTest -->
+      <class name="testBase.LeavePageTest">
+        <methods>
+          <include name="openTheBrowser"/>
+          <include name="clickTheResetbutton"/>
+          <include name="EnterTheLeaveList"/>
+        </methods>
+      </class> <!-- testBase.LeavePageTest -->
+      <class name="testBase.Admin_pageTest">
+        <methods>
+          <include name="SearchSystemstatus"/>
+          <include name="openTheBrowser"/>
+          <include name="SearchSystemrole"/>
+          <include name="AddNewUser"/>
+        </methods>
+      </class> <!-- testBase.Admin_pageTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
