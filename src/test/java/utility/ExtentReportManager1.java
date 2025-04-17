@@ -19,11 +19,17 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import baseClass.BaseClass;
 
-public class ExtentReportManager implements ITestListener {
+public class ExtentReportManager1 implements ITestListener {
     public ExtentSparkReporter sparkReporter;
     public ExtentReports extent;
     public ExtentTest test;
     String repName;
+
+    // Store counters for total tests
+    private int totalTests = 0;
+    private int passedTests = 0;
+    private int failedTests = 0;
+    private int skippedTests = 0;
 
     @Override
     public void onStart(ITestContext testContext) {
@@ -45,16 +51,13 @@ public class ExtentReportManager implements ITestListener {
 
         // Set system information for the report
         extent.setSystemInfo("Application", "OrangeHRM");
-        extent.setSystemInfo("Module", "Admin");
-        extent.setSystemInfo("Sub Module", "Customers");
+        extent.setSystemInfo("Module", "All Modules");
+       // extent.setSystemInfo("Sub Module", "Customers");
         extent.setSystemInfo("User Name", "Baskaran");
         extent.setSystemInfo("Environment", "QA");
 
         // Retrieve OS and Browser from the TestNG XML
-       // String os = testContext.getCurrentXmlTest().getParameter("os");
         extent.setSystemInfo("Operating System", "windows 10");
-
-        // String browser = testContext.getCurrentXmlTest().getParameter("browser");
         extent.setSystemInfo("Browser", "Chrome");
 
         // Add any included groups to the report
@@ -66,6 +69,8 @@ public class ExtentReportManager implements ITestListener {
 
     @Override
     public void onTestSuccess(ITestResult result) {
+        totalTests++;  // Increment total tests
+        passedTests++; // Increment passed tests
         test = extent.createTest(result.getTestClass().getName());
         test.assignCategory(result.getMethod().getGroups()); // Display groups in the report
         test.log(Status.PASS, result.getName() + " got successfully executed");
@@ -73,16 +78,16 @@ public class ExtentReportManager implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult result) {
+        totalTests++;  // Increment total tests
+        failedTests++; // Increment failed tests
         test = extent.createTest(result.getTestClass().getName());
         test.assignCategory(result.getMethod().getGroups()); // Display groups in the report
-
         test.log(Status.FAIL, result.getName() + " failed");
         test.log(Status.INFO, result.getThrowable().getMessage());
 
         try {
             // Capture screenshot on failure and get the file path
             String imgPath = new BaseClass().captureScreen(result.getName());
-            
             // Attach the screenshot to the report
             test.addScreenCaptureFromPath(imgPath);
         } catch (IOException e1) {
@@ -90,9 +95,10 @@ public class ExtentReportManager implements ITestListener {
         }
     }
 
-
     @Override
     public void onTestSkipped(ITestResult result) {
+        totalTests++;  // Increment total tests
+        skippedTests++; // Increment skipped tests
         test = extent.createTest(result.getTestClass().getName());
         test.assignCategory(result.getMethod().getGroups());
         test.log(Status.SKIP, result.getName() + " got skipped");
@@ -101,6 +107,12 @@ public class ExtentReportManager implements ITestListener {
 
     @Override
     public void onFinish(ITestContext testContext) {
+        // Set summary information for total tests, passed, failed, and skipped
+        extent.setSystemInfo("Total Tests", String.valueOf(totalTests));
+        extent.setSystemInfo("Passed", String.valueOf(passedTests));
+        extent.setSystemInfo("Failed", String.valueOf(failedTests));
+        extent.setSystemInfo("Skipped", String.valueOf(skippedTests));
+
         extent.flush(); // Write the report to file
 
         // Path to open the report after execution

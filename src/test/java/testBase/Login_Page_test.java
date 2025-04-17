@@ -97,7 +97,7 @@ public class Login_Page_test extends BaseClass {
 
 	}
 	
-	@Test(enabled = false, priority = 10,dataProvider = "UserLogin",dataProviderClass = utility.DataProviderClass.class)
+	@Test(enabled = true, priority = 10,dataProvider = "UserLogin",dataProviderClass = utility.DataProviderClass.class)
 	void loginTest010(String user,String pas) {
 		login.login(user, user);
 		String pageurl = login.LoginValidation();

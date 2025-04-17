@@ -29,7 +29,7 @@ public class PIMPageTest extends BaseClass {
 		Assert.assertEquals("https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList", PIMPageurl);
 	}
 
-	@Test(priority = 3)
+	@Test(priority = 3, alwaysRun = true)
 	void clickEmployeeListTheAddButton() {
 		PIMPage.clickAddButton();
 		String Pageurl = getCurrentUrlpage();
@@ -47,7 +47,7 @@ public class PIMPageTest extends BaseClass {
 
 	}
 
-	@Test(priority = 4)
+	@Test(priority = 4, alwaysRun = true)
 	void Add_Employee() {
 		PageRefresh();
 		PIMPage.enterEmployeeFirstName("Sanjay");
@@ -67,18 +67,19 @@ public class PIMPageTest extends BaseClass {
 		Assert.assertEquals("https://opensource-demo.orangehrmlive.com/web/index.php/pim/addEmployee", Pageurl1);
 	}
 
-	@Test(priority = 5)
-	void Add_Employee_Disable_Satus() {
+	@Test(priority = 5, alwaysRun = true, dataProvider = "employeeDataProvider")
+	void Add_Employee_Disable_Satus(String firstName, String middleName, String lastName, String employeeId,
+			String employeeName, String password, String confirmPassword, String status) {
 		PageRefresh();
-		PIMPage.enterEmployeeFirstName("Sanjay");
-		PIMPage.enterEmployeeMiddleName("");
-		PIMPage.enterEmployeeLastName("S");
-		PIMPage.enterEmployeeId("5");
+		PIMPage.enterEmployeeFirstName(firstName);
+		PIMPage.enterEmployeeMiddleName(middleName);
+		PIMPage.enterEmployeeLastName(lastName);
+		PIMPage.enterEmployeeId(employeeId);
 		PIMPage.toggleEmployeeLoginDetailsSwitch();
-		PIMPage.enterEmployeeName("Sanja S");
-		PIMPage.enterEmployeePassword("Sanjay123");
-		PIMPage.enterEmployeeConfirmPassword("Sanjay123");
-		PIMPage.selectEmployeeStatus("Disabled");
+		PIMPage.enterEmployeeName(employeeName);
+		PIMPage.enterEmployeePassword(password);
+		PIMPage.enterEmployeeConfirmPassword(confirmPassword);
+		PIMPage.selectEmployeeStatus(status);
 		PIMPage.clickSaveButton();
 		Boolean Visiblehaedr = myInfoPage.PersonalDetailsHeader();
 		Assert.assertEquals(true, Visiblehaedr);
@@ -87,7 +88,7 @@ public class PIMPageTest extends BaseClass {
 		Assert.assertEquals("https://opensource-demo.orangehrmlive.com/web/index.php/pim/addEmployee", Pageurl1);
 	}
 
-	@Test(priority = 6)
+	@Test(priority = 6, alwaysRun = true)
 	void Add_Employee_cancel() {
 		PageRefresh();
 		PIMPage.enterEmployeeFirstName("Sanjay");
@@ -104,7 +105,7 @@ public class PIMPageTest extends BaseClass {
 		Assert.assertEquals("https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList", PIMPageurl);
 	}
 
-	@Test(priority = 7)
+	@Test(priority = 7, alwaysRun = true)
 	void Empty_Employee_Save() throws InterruptedException {
 		PIMPage.clickAddButton();
 		PIMPage.clickSaveButton();
@@ -114,7 +115,7 @@ public class PIMPageTest extends BaseClass {
 
 	}
 
-	@Test(priority = 8)
+	@Test(priority = 8, alwaysRun = true)
 	void EmployeeNameOnlyEnter_Save() throws InterruptedException {
 		PageRefresh();
 		PIMPage.enterEmployeeFirstName("Lara");
@@ -125,7 +126,7 @@ public class PIMPageTest extends BaseClass {
 
 	}
 
-	@Test(priority = 9)
+	@Test(priority = 9, alwaysRun = true)
 	void EmployeeNamelastEnter_Save() {
 		PageRefresh();
 		PIMPage.enterEmployeeFirstName("Lara");
@@ -135,7 +136,7 @@ public class PIMPageTest extends BaseClass {
 		NavigateBack();
 	}
 
-	@Test(priority = 10)
+	@Test(priority = 10, alwaysRun = true)
 	void EmployeeusernameI_Save() throws InterruptedException {
 		PageRefresh();
 		PIMPage.enterEmployeeFirstName("Lara");
@@ -148,7 +149,7 @@ public class PIMPageTest extends BaseClass {
 		Assert.assertTrue(Visible, "Save button is not visible");
 	}
 
-	@Test(priority = 11)
+	@Test(priority = 11, alwaysRun = true)
 	void EmployeeUserNameIsEmpty() throws InterruptedException {
 		PageRefresh();
 		PIMPage.enterEmployeeFirstName("Lara");
@@ -162,7 +163,7 @@ public class PIMPageTest extends BaseClass {
 
 	}
 
-	@Test(priority = 12)
+	@Test(priority = 12, alwaysRun = true)
 	void EmployeeEnterPassword() throws InterruptedException {
 		PageRefresh();
 		PIMPage.enterEmployeeFirstName("Lara");
@@ -177,7 +178,7 @@ public class PIMPageTest extends BaseClass {
 
 	}
 
-	@Test(priority = 13)
+	@Test(priority = 13, alwaysRun = true)
 	void EmployeeConformPassword() throws InterruptedException {
 		PageRefresh();
 		PIMPage.enterEmployeeFirstName("Lara");
@@ -193,7 +194,7 @@ public class PIMPageTest extends BaseClass {
 
 	}
 
-	@Test(priority = 14)
+	@Test(priority = 14, alwaysRun = true)
 	void SameEmployeeID() throws InterruptedException {
 		PageRefresh();
 		PIMPage.enterEmployeeFirstName("Sanjay");

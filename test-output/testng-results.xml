@@ -1,67 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="62" passed="39" failed="23" skipped="0">
+<testng-results ignored="0" total="113" passed="90" failed="23" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-31T22:54:32 IST" name="Suite" finished-at="2025-03-31T23:01:04 IST" duration-ms="391236">
+  <suite started-at="2025-04-09T16:01:59 IST" name="Suite" finished-at="2025-04-09T16:08:38 IST" duration-ms="398680">
     <groups>
     </groups>
-    <test started-at="2025-03-31T22:54:32 IST" name="Test" finished-at="2025-03-31T23:01:04 IST" duration-ms="391236">
+    <test started-at="2025-04-09T16:01:59 IST" name="Test" finished-at="2025-04-09T16:08:38 IST" duration-ms="398680">
       <class name="testBase.PIMPageTest">
-        <test-method is-config="true" signature="openTheBrowser()[pri:0, instance:testBase.PIMPageTest@1de5f259]" started-at="2025-03-31T22:57:48 IST" name="openTheBrowser" finished-at="2025-03-31T22:57:56 IST" duration-ms="7506" status="PASS">
+        <test-method is-config="true" signature="openTheBrowser()[pri:0, instance:testBase.PIMPageTest@2ea41516]" started-at="2025-04-09T16:02:36 IST" name="openTheBrowser" finished-at="2025-04-09T16:02:47 IST" duration-ms="11129" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openTheBrowser -->
-        <test-method signature="userlogin()[pri:1, instance:testBase.PIMPageTest@1de5f259]" started-at="2025-03-31T22:57:56 IST" name="userlogin" finished-at="2025-03-31T22:57:58 IST" duration-ms="2517" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [https://opensource-demo.orangehrmlive.com/web/index.php/auth/login] but found [https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [https://opensource-demo.orangehrmlive.com/web/index.php/auth/login] but found [https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1578)
-at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-at org.testng.Assert.assertEquals(Assert.java:132)
-at org.testng.Assert.assertEquals(Assert.java:656)
-at org.testng.Assert.assertEquals(Assert.java:666)
-at testBase.PIMPageTest.userlogin(PIMPageTest.java:21)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-at org.testng.TestRunner.privateRun(TestRunner.java:819)
-at org.testng.TestRunner.run(TestRunner.java:619)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
-at org.testng.TestNG.runSuites(TestNG.java:1134)
-at org.testng.TestNG.run(TestNG.java:1101)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method signature="userlogin()[pri:1, instance:testBase.PIMPageTest@2ea41516]" started-at="2025-04-09T16:02:47 IST" name="userlogin" finished-at="2025-04-09T16:02:51 IST" duration-ms="4009" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- userlogin -->
-        <test-method signature="clickThePIMManu()[pri:2, instance:testBase.PIMPageTest@1de5f259]" started-at="2025-03-31T22:58:00 IST" name="clickThePIMManu" finished-at="2025-03-31T22:58:03 IST" duration-ms="2869" status="PASS">
+        <test-method signature="clickThePIMManu()[pri:2, instance:testBase.PIMPageTest@2ea41516]" started-at="2025-04-09T16:02:51 IST" name="clickThePIMManu" finished-at="2025-04-09T16:02:54 IST" duration-ms="3142" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clickThePIMManu -->
-        <test-method signature="clickEmployeeListTheAddButton()[pri:3, instance:testBase.PIMPageTest@1de5f259]" started-at="2025-03-31T22:58:03 IST" name="clickEmployeeListTheAddButton" finished-at="2025-03-31T22:58:07 IST" duration-ms="3602" status="FAIL">
+        <test-method signature="clickEmployeeListTheAddButton()[pri:3, instance:testBase.PIMPageTest@2ea41516]" started-at="2025-04-09T16:02:54 IST" name="clickEmployeeListTheAddButton" finished-at="2025-04-09T16:02:58 IST" duration-ms="3941" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList] but found [https://opensource-demo.orangehrmlive.com/web/index.php/pim/addEmployee]]]>
@@ -107,29 +65,29 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clickEmployeeListTheAddButton -->
-        <test-method signature="Add_Employee()[pri:4, instance:testBase.PIMPageTest@1de5f259]" started-at="2025-03-31T22:58:07 IST" name="Add_Employee" finished-at="2025-03-31T22:58:28 IST" duration-ms="20624" status="FAIL">
+        <test-method signature="Add_Employee()[pri:4, instance:testBase.PIMPageTest@2ea41516]" started-at="2025-04-09T16:02:58 IST" name="Add_Employee" finished-at="2025-04-09T16:03:14 IST" duration-ms="15712" status="FAIL">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
               <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//input[@name='firstName']"}
-  (Session info: chrome=134.0.6998.178)
+  (Session info: chrome=135.0.7049.42)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.22.0', revision: 'c5f3146703*'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [731a97348033fca23f4c4e1bbbe7cf15, findElement {value=//input[@name='firstName'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62224}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62224/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 731a97348033fca23f4c4e1bbbe7cf15]]>
+Command: [591ad6169148716d340c8e2fef4da27c, findElement {value=//input[@name='firstName'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.42, chrome: {chromedriverVersion: 135.0.7049.84 (6c019e560019..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56747}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56747/devtoo..., se:cdpVersion: 135.0.7049.42, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 591ad6169148716d340c8e2fef4da27c]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@name='firstName']"}
-  (Session info: chrome=134.0.6998.178)
+  (Session info: chrome=135.0.7049.42)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.22.0', revision: 'c5f3146703*'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [731a97348033fca23f4c4e1bbbe7cf15, findElement {value=//input[@name='firstName'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62224}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62224/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 731a97348033fca23f4c4e1bbbe7cf15
+Command: [591ad6169148716d340c8e2fef4da27c, findElement {value=//input[@name='firstName'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.42, chrome: {chromedriverVersion: 135.0.7049.84 (6c019e560019..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56747}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56747/devtoo..., se:cdpVersion: 135.0.7049.42, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 591ad6169148716d340c8e2fef4da27c
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
@@ -178,52 +136,21 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Add_Employee -->
-        <test-method signature="Add_Employee_Disable_Satus()[pri:5, instance:testBase.PIMPageTest@1de5f259]" started-at="2025-03-31T22:58:28 IST" name="Add_Employee_Disable_Satus" finished-at="2025-03-31T22:58:54 IST" duration-ms="26030" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method signature="Add_Employee_Disable_Satus(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:5, instance:testBase.PIMPageTest@2ea41516]" started-at="2025-04-09T16:03:14 IST" name="Add_Employee_Disable_Satus" finished-at="2025-04-09T16:03:14 IST" duration-ms="0" status="FAIL">
+          <exception class="org.testng.TestNGException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//input[@placeholder='Type for hints...']"}
-  (Session info: chrome=134.0.6998.178)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.22.0', revision: 'c5f3146703*'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [731a97348033fca23f4c4e1bbbe7cf15, findElement {value=//input[@placeholder='Type for hints...'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62224}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62224/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 731a97348033fca23f4c4e1bbbe7cf15]]>
+              <![CDATA[
+Method void testBase.PIMPageTest.Add_Employee_Disable_Satus(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) requires a @DataProvider named : employeeDataProvider]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@placeholder='Type for hints...']"}
-  (Session info: chrome=134.0.6998.178)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.22.0', revision: 'c5f3146703*'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [731a97348033fca23f4c4e1bbbe7cf15, findElement {value=//input[@placeholder='Type for hints...'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62224}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62224/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 731a97348033fca23f4c4e1bbbe7cf15
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-at pageObjectClass.PIMPage.enterEmployeeName(PIMPage.java:69)
-at testBase.PIMPageTest.Add_Employee_Disable_Satus(PIMPageTest.java:78)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+              <![CDATA[org.testng.TestNGException: 
+Method void testBase.PIMPageTest.Add_Employee_Disable_Satus(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) requires a @DataProvider named : employeeDataProvider
+at org.testng.internal.Parameters.findDataProvider(Parameters.java:535)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:772)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:737)
+at org.testng.internal.invokers.ParameterHandler.handleParameters(ParameterHandler.java:72)
+at org.testng.internal.invokers.ParameterHandler.createParameters(ParameterHandler.java:51)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:915)
 at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
 at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
 at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
@@ -245,33 +172,33 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.testng.TestNGException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Add_Employee_Disable_Satus -->
-        <test-method signature="Add_Employee_cancel()[pri:6, instance:testBase.PIMPageTest@1de5f259]" started-at="2025-03-31T22:58:54 IST" name="Add_Employee_cancel" finished-at="2025-03-31T22:59:18 IST" duration-ms="24026" status="FAIL">
+        <test-method signature="Add_Employee_cancel()[pri:6, instance:testBase.PIMPageTest@2ea41516]" started-at="2025-04-09T16:03:15 IST" name="Add_Employee_cancel" finished-at="2025-04-09T16:03:30 IST" duration-ms="15813" status="FAIL">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//input[@placeholder='Type for hints...']"}
-  (Session info: chrome=134.0.6998.178)
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//input[@name='firstName']"}
+  (Session info: chrome=135.0.7049.42)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.22.0', revision: 'c5f3146703*'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [731a97348033fca23f4c4e1bbbe7cf15, findElement {value=//input[@placeholder='Type for hints...'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62224}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62224/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 731a97348033fca23f4c4e1bbbe7cf15]]>
+Command: [591ad6169148716d340c8e2fef4da27c, findElement {value=//input[@name='firstName'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.42, chrome: {chromedriverVersion: 135.0.7049.84 (6c019e560019..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56747}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56747/devtoo..., se:cdpVersion: 135.0.7049.42, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 591ad6169148716d340c8e2fef4da27c]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@placeholder='Type for hints...']"}
-  (Session info: chrome=134.0.6998.178)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@name='firstName']"}
+  (Session info: chrome=135.0.7049.42)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.22.0', revision: 'c5f3146703*'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [731a97348033fca23f4c4e1bbbe7cf15, findElement {value=//input[@placeholder='Type for hints...'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62224}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62224/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 731a97348033fca23f4c4e1bbbe7cf15
+Command: [591ad6169148716d340c8e2fef4da27c, findElement {value=//input[@name='firstName'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.42, chrome: {chromedriverVersion: 135.0.7049.84 (6c019e560019..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56747}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56747/devtoo..., se:cdpVersion: 135.0.7049.42, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 591ad6169148716d340c8e2fef4da27c
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
@@ -286,8 +213,8 @@ at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(Elemen
 at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-at pageObjectClass.PIMPage.enterEmployeeName(PIMPage.java:69)
-at testBase.PIMPageTest.Add_Employee_cancel(PIMPageTest.java:98)
+at pageObjectClass.PIMPage.enterEmployeeFirstName(PIMPage.java:193)
+at testBase.PIMPageTest.Add_Employee_cancel(PIMPageTest.java:94)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -320,82 +247,15 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Add_Employee_cancel -->
-        <test-method signature="Empty_Employee_Save()[pri:7, instance:testBase.PIMPageTest@1de5f259]" started-at="2025-03-31T22:59:18 IST" name="Empty_Employee_Save" finished-at="2025-03-31T22:59:38 IST" duration-ms="20059" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='orangehrm-header-container']//button[1]"}
-  (Session info: chrome=134.0.6998.178)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.22.0', revision: 'c5f3146703*'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [731a97348033fca23f4c4e1bbbe7cf15, findElement {value=//div[@class='orangehrm-header-container']//button[1], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62224}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62224/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 731a97348033fca23f4c4e1bbbe7cf15]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='orangehrm-header-container']//button[1]"}
-  (Session info: chrome=134.0.6998.178)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.22.0', revision: 'c5f3146703*'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [731a97348033fca23f4c4e1bbbe7cf15, findElement {value=//div[@class='orangehrm-header-container']//button[1], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62224}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62224/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 731a97348033fca23f4c4e1bbbe7cf15
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-at pageObjectClass.PIMPage.clickAddButton(PIMPage.java:63)
-at testBase.PIMPageTest.Empty_Employee_Save(PIMPageTest.java:109)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-at org.testng.TestRunner.privateRun(TestRunner.java:819)
-at org.testng.TestRunner.run(TestRunner.java:619)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
-at org.testng.TestNG.runSuites(TestNG.java:1134)
-at org.testng.TestNG.run(TestNG.java:1101)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+        <test-method signature="Empty_Employee_Save()[pri:7, instance:testBase.PIMPageTest@2ea41516]" started-at="2025-04-09T16:03:31 IST" name="Empty_Employee_Save" finished-at="2025-04-09T16:03:37 IST" duration-ms="5964" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Empty_Employee_Save -->
-        <test-method signature="EmployeeNameOnlyEnter_Save()[pri:8, instance:testBase.PIMPageTest@1de5f259]" started-at="2025-03-31T22:59:39 IST" name="EmployeeNameOnlyEnter_Save" finished-at="2025-03-31T22:59:44 IST" duration-ms="5429" status="PASS">
+        <test-method signature="EmployeeNameOnlyEnter_Save()[pri:8, instance:testBase.PIMPageTest@2ea41516]" started-at="2025-04-09T16:03:37 IST" name="EmployeeNameOnlyEnter_Save" finished-at="2025-04-09T16:03:43 IST" duration-ms="6086" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EmployeeNameOnlyEnter_Save -->
-        <test-method signature="EmployeeNamelastEnter_Save()[pri:9, instance:testBase.PIMPageTest@1de5f259]" started-at="2025-03-31T22:59:44 IST" name="EmployeeNamelastEnter_Save" finished-at="2025-03-31T22:59:46 IST" duration-ms="1915" status="FAIL">
+        <test-method signature="EmployeeNamelastEnter_Save()[pri:9, instance:testBase.PIMPageTest@2ea41516]" started-at="2025-04-09T16:03:43 IST" name="EmployeeNamelastEnter_Save" finished-at="2025-04-09T16:03:45 IST" duration-ms="1880" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [false] but found [true]]]>
@@ -409,7 +269,7 @@ at org.testng.Assert.assertEquals(Assert.java:132)
 at org.testng.Assert.assertEquals(Assert.java:1067)
 at org.testng.Assert.assertEquals(Assert.java:1031)
 at org.testng.Assert.assertEquals(Assert.java:1077)
-at testBase.PIMPageTest.EmployeeNamelastEnter_Save(PIMPageTest.java:134)
+at testBase.PIMPageTest.EmployeeNamelastEnter_Save(PIMPageTest.java:135)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -442,7 +302,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EmployeeNamelastEnter_Save -->
-        <test-method signature="EmployeeusernameI_Save()[pri:10, instance:testBase.PIMPageTest@1de5f259]" started-at="2025-03-31T22:59:46 IST" name="EmployeeusernameI_Save" finished-at="2025-03-31T22:59:48 IST" duration-ms="2129" status="FAIL">
+        <test-method signature="EmployeeusernameI_Save()[pri:10, instance:testBase.PIMPageTest@2ea41516]" started-at="2025-04-09T16:03:45 IST" name="EmployeeusernameI_Save" finished-at="2025-04-09T16:03:47 IST" duration-ms="2326" status="FAIL">
           <exception class="java.lang.IllegalArgumentException">
             <message>
               <![CDATA[Keys to send should be a not null CharSequence]]>
@@ -451,7 +311,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
               <![CDATA[java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
 at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:96)
 at pageObjectClass.PIMPage.enterEmployeeUsername(PIMPage.java:295)
-at testBase.PIMPageTest.EmployeeusernameI_Save(PIMPageTest.java:144)
+at testBase.PIMPageTest.EmployeeusernameI_Save(PIMPageTest.java:145)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -484,29 +344,29 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EmployeeusernameI_Save -->
-        <test-method signature="EmployeeUserNameIsEmpty()[pri:11, instance:testBase.PIMPageTest@1de5f259]" started-at="2025-03-31T22:59:49 IST" name="EmployeeUserNameIsEmpty" finished-at="2025-03-31T23:00:11 IST" duration-ms="21967" status="FAIL">
+        <test-method signature="EmployeeUserNameIsEmpty()[pri:11, instance:testBase.PIMPageTest@2ea41516]" started-at="2025-04-09T16:03:48 IST" name="EmployeeUserNameIsEmpty" finished-at="2025-04-09T16:04:05 IST" duration-ms="17034" status="FAIL">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
               <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//input[@placeholder='Type for hints...']"}
-  (Session info: chrome=134.0.6998.178)
+  (Session info: chrome=135.0.7049.42)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.22.0', revision: 'c5f3146703*'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [731a97348033fca23f4c4e1bbbe7cf15, findElement {value=//input[@placeholder='Type for hints...'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62224}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62224/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 731a97348033fca23f4c4e1bbbe7cf15]]>
+Command: [591ad6169148716d340c8e2fef4da27c, findElement {value=//input[@placeholder='Type for hints...'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.42, chrome: {chromedriverVersion: 135.0.7049.84 (6c019e560019..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56747}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56747/devtoo..., se:cdpVersion: 135.0.7049.42, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 591ad6169148716d340c8e2fef4da27c]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@placeholder='Type for hints...']"}
-  (Session info: chrome=134.0.6998.178)
+  (Session info: chrome=135.0.7049.42)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.22.0', revision: 'c5f3146703*'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [731a97348033fca23f4c4e1bbbe7cf15, findElement {value=//input[@placeholder='Type for hints...'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62224}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62224/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 731a97348033fca23f4c4e1bbbe7cf15
+Command: [591ad6169148716d340c8e2fef4da27c, findElement {value=//input[@placeholder='Type for hints...'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.42, chrome: {chromedriverVersion: 135.0.7049.84 (6c019e560019..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56747}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56747/devtoo..., se:cdpVersion: 135.0.7049.42, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 591ad6169148716d340c8e2fef4da27c
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
@@ -522,7 +382,7 @@ at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:5
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
 at pageObjectClass.PIMPage.enterEmployeeName(PIMPage.java:69)
-at testBase.PIMPageTest.EmployeeUserNameIsEmpty(PIMPageTest.java:157)
+at testBase.PIMPageTest.EmployeeUserNameIsEmpty(PIMPageTest.java:158)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -555,29 +415,29 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EmployeeUserNameIsEmpty -->
-        <test-method signature="EmployeeEnterPassword()[pri:12, instance:testBase.PIMPageTest@1de5f259]" started-at="2025-03-31T23:00:11 IST" name="EmployeeEnterPassword" finished-at="2025-03-31T23:00:33 IST" duration-ms="22655" status="FAIL">
+        <test-method signature="EmployeeEnterPassword()[pri:12, instance:testBase.PIMPageTest@2ea41516]" started-at="2025-04-09T16:04:05 IST" name="EmployeeEnterPassword" finished-at="2025-04-09T16:04:22 IST" duration-ms="17171" status="FAIL">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
               <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//input[@placeholder='Type for hints...']"}
-  (Session info: chrome=134.0.6998.178)
+  (Session info: chrome=135.0.7049.42)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.22.0', revision: 'c5f3146703*'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [731a97348033fca23f4c4e1bbbe7cf15, findElement {value=//input[@placeholder='Type for hints...'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62224}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62224/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 731a97348033fca23f4c4e1bbbe7cf15]]>
+Command: [591ad6169148716d340c8e2fef4da27c, findElement {value=//input[@placeholder='Type for hints...'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.42, chrome: {chromedriverVersion: 135.0.7049.84 (6c019e560019..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56747}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56747/devtoo..., se:cdpVersion: 135.0.7049.42, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 591ad6169148716d340c8e2fef4da27c]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@placeholder='Type for hints...']"}
-  (Session info: chrome=134.0.6998.178)
+  (Session info: chrome=135.0.7049.42)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.22.0', revision: 'c5f3146703*'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [731a97348033fca23f4c4e1bbbe7cf15, findElement {value=//input[@placeholder='Type for hints...'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62224}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62224/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 731a97348033fca23f4c4e1bbbe7cf15
+Command: [591ad6169148716d340c8e2fef4da27c, findElement {value=//input[@placeholder='Type for hints...'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.42, chrome: {chromedriverVersion: 135.0.7049.84 (6c019e560019..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56747}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56747/devtoo..., se:cdpVersion: 135.0.7049.42, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 591ad6169148716d340c8e2fef4da27c
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
@@ -593,7 +453,7 @@ at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:5
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
 at pageObjectClass.PIMPage.enterEmployeeName(PIMPage.java:69)
-at testBase.PIMPageTest.EmployeeEnterPassword(PIMPageTest.java:171)
+at testBase.PIMPageTest.EmployeeEnterPassword(PIMPageTest.java:172)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -626,29 +486,29 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EmployeeEnterPassword -->
-        <test-method signature="EmployeeConformPassword()[pri:13, instance:testBase.PIMPageTest@1de5f259]" started-at="2025-03-31T23:00:34 IST" name="EmployeeConformPassword" finished-at="2025-03-31T23:00:57 IST" duration-ms="22952" status="FAIL">
+        <test-method signature="EmployeeConformPassword()[pri:13, instance:testBase.PIMPageTest@2ea41516]" started-at="2025-04-09T16:04:22 IST" name="EmployeeConformPassword" finished-at="2025-04-09T16:04:40 IST" duration-ms="17375" status="FAIL">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
               <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//input[@placeholder='Type for hints...']"}
-  (Session info: chrome=134.0.6998.178)
+  (Session info: chrome=135.0.7049.42)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.22.0', revision: 'c5f3146703*'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [731a97348033fca23f4c4e1bbbe7cf15, findElement {value=//input[@placeholder='Type for hints...'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62224}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62224/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 731a97348033fca23f4c4e1bbbe7cf15]]>
+Command: [591ad6169148716d340c8e2fef4da27c, findElement {value=//input[@placeholder='Type for hints...'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.42, chrome: {chromedriverVersion: 135.0.7049.84 (6c019e560019..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56747}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56747/devtoo..., se:cdpVersion: 135.0.7049.42, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 591ad6169148716d340c8e2fef4da27c]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@placeholder='Type for hints...']"}
-  (Session info: chrome=134.0.6998.178)
+  (Session info: chrome=135.0.7049.42)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.22.0', revision: 'c5f3146703*'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [731a97348033fca23f4c4e1bbbe7cf15, findElement {value=//input[@placeholder='Type for hints...'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62224}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62224/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 731a97348033fca23f4c4e1bbbe7cf15
+Command: [591ad6169148716d340c8e2fef4da27c, findElement {value=//input[@placeholder='Type for hints...'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.42, chrome: {chromedriverVersion: 135.0.7049.84 (6c019e560019..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56747}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56747/devtoo..., se:cdpVersion: 135.0.7049.42, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 591ad6169148716d340c8e2fef4da27c
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
@@ -664,7 +524,7 @@ at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:5
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
 at pageObjectClass.PIMPage.enterEmployeeName(PIMPage.java:69)
-at testBase.PIMPageTest.EmployeeConformPassword(PIMPageTest.java:186)
+at testBase.PIMPageTest.EmployeeConformPassword(PIMPageTest.java:187)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -697,29 +557,29 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EmployeeConformPassword -->
-        <test-method signature="SameEmployeeID()[pri:14, instance:testBase.PIMPageTest@1de5f259]" started-at="2025-03-31T23:00:57 IST" name="SameEmployeeID" finished-at="2025-03-31T23:01:04 IST" duration-ms="6780" status="FAIL">
+        <test-method signature="SameEmployeeID()[pri:14, instance:testBase.PIMPageTest@2ea41516]" started-at="2025-04-09T16:04:40 IST" name="SameEmployeeID" finished-at="2025-04-09T16:04:47 IST" duration-ms="7375" status="FAIL">
           <exception class="org.openqa.selenium.WebDriverException">
             <message>
               <![CDATA[unknown error: unhandled inspector error: {"code":-32000,"message":"Node with given id does not belong to the document"}
-  (Session info: chrome=134.0.6998.178)
+  (Session info: chrome=135.0.7049.42)
 Build info: version: '4.22.0', revision: 'c5f3146703*'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [731a97348033fca23f4c4e1bbbe7cf15, clickElement {id=f.7CB0ECC7AD7D5A340A888388767D5904.d.29F6D5364FC51B443CDD06487449C243.e.584}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62224}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62224/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (731a97348033fca23f4c4e1bbbe7cf15)] -> xpath: //button[@type='submit']]
-Session ID: 731a97348033fca23f4c4e1bbbe7cf15]]>
+Command: [591ad6169148716d340c8e2fef4da27c, clickElement {id=f.8268D28A179AAA2D7BB490DC5E8CB0BA.d.67167F9EEB0B165D3730064FFE9F5F4F.e.382}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.42, chrome: {chromedriverVersion: 135.0.7049.84 (6c019e560019..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56747}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56747/devtoo..., se:cdpVersion: 135.0.7049.42, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (591ad6169148716d340c8e2fef4da27c)] -> xpath: //button[@type='submit']]
+Session ID: 591ad6169148716d340c8e2fef4da27c]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.WebDriverException: unknown error: unhandled inspector error: {"code":-32000,"message":"Node with given id does not belong to the document"}
-  (Session info: chrome=134.0.6998.178)
+  (Session info: chrome=135.0.7049.42)
 Build info: version: '4.22.0', revision: 'c5f3146703*'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [731a97348033fca23f4c4e1bbbe7cf15, clickElement {id=f.7CB0ECC7AD7D5A340A888388767D5904.d.29F6D5364FC51B443CDD06487449C243.e.584}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62224}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62224/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (731a97348033fca23f4c4e1bbbe7cf15)] -> xpath: //button[@type='submit']]
-Session ID: 731a97348033fca23f4c4e1bbbe7cf15
+Command: [591ad6169148716d340c8e2fef4da27c, clickElement {id=f.8268D28A179AAA2D7BB490DC5E8CB0BA.d.67167F9EEB0B165D3730064FFE9F5F4F.e.382}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.42, chrome: {chromedriverVersion: 135.0.7049.84 (6c019e560019..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56747}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56747/devtoo..., se:cdpVersion: 135.0.7049.42, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (591ad6169148716d340c8e2fef4da27c)] -> xpath: //button[@type='submit']]
+Session ID: 591ad6169148716d340c8e2fef4da27c
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
@@ -733,7 +593,7 @@ at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
 at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
 at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
 at pageObjectClass.PIMPage.clickSaveButton(PIMPage.java:351)
-at testBase.PIMPageTest.SameEmployeeID(PIMPageTest.java:205)
+at testBase.PIMPageTest.SameEmployeeID(PIMPageTest.java:206)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -768,85 +628,152 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
         </test-method> <!-- SameEmployeeID -->
       </class> <!-- testBase.PIMPageTest -->
       <class name="testBase.DashboardPageTest">
-        <test-method is-config="true" signature="openTheBrowser()[pri:0, instance:testBase.DashboardPageTest@3c7f66c4]" started-at="2025-03-31T22:55:15 IST" name="openTheBrowser" finished-at="2025-03-31T22:55:48 IST" duration-ms="32759" status="PASS">
+        <test-method is-config="true" signature="openTheBrowser()[pri:0, instance:testBase.DashboardPageTest@4803b726]" started-at="2025-04-09T16:04:47 IST" name="openTheBrowser" finished-at="2025-04-09T16:05:00 IST" duration-ms="12641" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openTheBrowser -->
-        <test-method signature="loginTest001()[pri:1, instance:testBase.DashboardPageTest@3c7f66c4]" started-at="2025-03-31T22:55:48 IST" name="loginTest001" finished-at="2025-03-31T22:55:55 IST" duration-ms="7042" status="PASS">
+        <test-method signature="loginTest001()[pri:1, instance:testBase.DashboardPageTest@4803b726]" started-at="2025-04-09T16:05:00 IST" name="loginTest001" finished-at="2025-04-09T16:05:04 IST" duration-ms="4134" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest001 -->
-        <test-method signature="PagenameVerify002()[pri:2, instance:testBase.DashboardPageTest@3c7f66c4]" started-at="2025-03-31T22:55:55 IST" name="PagenameVerify002" finished-at="2025-03-31T22:55:55 IST" duration-ms="696" status="PASS">
+        <test-method signature="PagenameVerify002()[pri:2, instance:testBase.DashboardPageTest@4803b726]" started-at="2025-04-09T16:05:04 IST" name="PagenameVerify002" finished-at="2025-04-09T16:05:05 IST" duration-ms="729" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- PagenameVerify002 -->
-        <test-method signature="clockpageVerify003()[pri:3, instance:testBase.DashboardPageTest@3c7f66c4]" started-at="2025-03-31T22:55:55 IST" name="clockpageVerify003" finished-at="2025-03-31T22:55:57 IST" duration-ms="1718" status="PASS">
+        <test-method signature="clockpageVerify003()[pri:3, instance:testBase.DashboardPageTest@4803b726]" started-at="2025-04-09T16:05:05 IST" name="clockpageVerify003" finished-at="2025-04-09T16:05:07 IST" duration-ms="1617" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clockpageVerify003 -->
-        <test-method signature="performancepageVerify004()[pri:4, instance:testBase.DashboardPageTest@3c7f66c4]" started-at="2025-03-31T22:55:57 IST" name="performancepageVerify004" finished-at="2025-03-31T22:55:58 IST" duration-ms="1176" status="PASS">
+        <test-method signature="performancepageVerify004()[pri:4, instance:testBase.DashboardPageTest@4803b726]" started-at="2025-04-09T16:05:07 IST" name="performancepageVerify004" finished-at="2025-04-09T16:05:08 IST" duration-ms="928" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- performancepageVerify004 -->
-        <test-method signature="AssignleavepageVerify005()[pri:5, instance:testBase.DashboardPageTest@3c7f66c4]" started-at="2025-03-31T22:55:58 IST" name="AssignleavepageVerify005" finished-at="2025-03-31T22:55:59 IST" duration-ms="856" status="PASS">
+        <test-method signature="AssignleavepageVerify005()[pri:5, instance:testBase.DashboardPageTest@4803b726]" started-at="2025-04-09T16:05:08 IST" name="AssignleavepageVerify005" finished-at="2025-04-09T16:05:08 IST" duration-ms="811" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AssignleavepageVerify005 -->
-        <test-method signature="leaveListpageVerify006()[pri:6, instance:testBase.DashboardPageTest@3c7f66c4]" started-at="2025-03-31T22:55:59 IST" name="leaveListpageVerify006" finished-at="2025-03-31T22:56:00 IST" duration-ms="913" status="PASS">
+        <test-method signature="leaveListpageVerify006()[pri:6, instance:testBase.DashboardPageTest@4803b726]" started-at="2025-04-09T16:05:08 IST" name="leaveListpageVerify006" finished-at="2025-04-09T16:05:09 IST" duration-ms="903" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- leaveListpageVerify006 -->
-        <test-method signature="timesheetpageVerify007()[pri:7, instance:testBase.DashboardPageTest@3c7f66c4]" started-at="2025-03-31T22:56:00 IST" name="timesheetpageVerify007" finished-at="2025-03-31T22:56:01 IST" duration-ms="796" status="PASS">
+        <test-method signature="timesheetpageVerify007()[pri:7, instance:testBase.DashboardPageTest@4803b726]" started-at="2025-04-09T16:05:09 IST" name="timesheetpageVerify007" finished-at="2025-04-09T16:05:10 IST" duration-ms="832" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- timesheetpageVerify007 -->
-        <test-method signature="ApplyleavepageVerify08()[pri:8, instance:testBase.DashboardPageTest@3c7f66c4]" started-at="2025-03-31T22:56:01 IST" name="ApplyleavepageVerify08" finished-at="2025-03-31T22:56:02 IST" duration-ms="1069" status="PASS">
+        <test-method signature="ApplyleavepageVerify08()[pri:8, instance:testBase.DashboardPageTest@4803b726]" started-at="2025-04-09T16:05:10 IST" name="ApplyleavepageVerify08" finished-at="2025-04-09T16:05:11 IST" duration-ms="808" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ApplyleavepageVerify08 -->
-        <test-method signature="ApplyleavepageVerify009()[pri:9, instance:testBase.DashboardPageTest@3c7f66c4]" started-at="2025-03-31T22:56:02 IST" name="ApplyleavepageVerify009" finished-at="2025-03-31T22:56:03 IST" duration-ms="978" status="PASS">
+        <test-method signature="ApplyleavepageVerify009()[pri:9, instance:testBase.DashboardPageTest@4803b726]" started-at="2025-04-09T16:05:11 IST" name="ApplyleavepageVerify009" finished-at="2025-04-09T16:05:12 IST" duration-ms="808" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ApplyleavepageVerify009 -->
-        <test-method signature="mytimesheetpageVerify0010()[pri:10, instance:testBase.DashboardPageTest@3c7f66c4]" started-at="2025-03-31T22:56:03 IST" name="mytimesheetpageVerify0010" finished-at="2025-03-31T22:56:04 IST" duration-ms="971" status="PASS">
+        <test-method signature="mytimesheetpageVerify0010()[pri:10, instance:testBase.DashboardPageTest@4803b726]" started-at="2025-04-09T16:05:12 IST" name="mytimesheetpageVerify0010" finished-at="2025-04-09T16:05:13 IST" duration-ms="780" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- mytimesheetpageVerify0010 -->
-        <test-method signature="EmplloyeeLeavesettingVerify011()[pri:11, instance:testBase.DashboardPageTest@3c7f66c4]" started-at="2025-03-31T22:56:04 IST" name="EmplloyeeLeavesettingVerify011" finished-at="2025-03-31T22:56:06 IST" duration-ms="2313" status="PASS">
+        <test-method signature="EmplloyeeLeavesettingVerify011()[pri:11, instance:testBase.DashboardPageTest@4803b726]" started-at="2025-04-09T16:05:13 IST" name="EmplloyeeLeavesettingVerify011" finished-at="2025-04-09T16:05:15 IST" duration-ms="2381" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EmplloyeeLeavesettingVerify011 -->
-        <test-method signature="BUZpageVerify012()[pri:12, instance:testBase.DashboardPageTest@3c7f66c4]" started-at="2025-03-31T22:56:06 IST" name="BUZpageVerify012" finished-at="2025-03-31T22:56:07 IST" duration-ms="1193" status="PASS">
+        <test-method signature="BUZpageVerify012()[pri:12, instance:testBase.DashboardPageTest@4803b726]" started-at="2025-04-09T16:05:15 IST" name="BUZpageVerify012" finished-at="2025-04-09T16:05:16 IST" duration-ms="1534" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BUZpageVerify012 -->
-        <test-method signature="elementscreenshot_employeeimg_TWBox_Qlbox_MAbox013()[pri:13, instance:testBase.DashboardPageTest@3c7f66c4]" started-at="2025-03-31T22:56:07 IST" name="elementscreenshot_employeeimg_TWBox_Qlbox_MAbox013" finished-at="2025-03-31T22:56:09 IST" duration-ms="1596" status="PASS">
+        <test-method signature="elementscreenshot_employeeimg_TWBox_Qlbox_MAbox013()[pri:13, instance:testBase.DashboardPageTest@4803b726]" started-at="2025-04-09T16:05:16 IST" name="elementscreenshot_employeeimg_TWBox_Qlbox_MAbox013" finished-at="2025-04-09T16:05:18 IST" duration-ms="1854" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- elementscreenshot_employeeimg_TWBox_Qlbox_MAbox013 -->
-        <test-method signature="EmployeeDistributionbySubUnit14()[pri:14, instance:testBase.DashboardPageTest@3c7f66c4]" started-at="2025-03-31T22:56:09 IST" name="EmployeeDistributionbySubUnit14" finished-at="2025-03-31T22:56:10 IST" duration-ms="989" status="PASS">
+        <test-method signature="EmployeeDistributionbySubUnit14()[pri:14, instance:testBase.DashboardPageTest@4803b726]" started-at="2025-04-09T16:05:18 IST" name="EmployeeDistributionbySubUnit14" finished-at="2025-04-09T16:05:33 IST" duration-ms="15023" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//span[@title = "Engineering"]"}
+  (Session info: chrome=135.0.7049.42)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.22.0', revision: 'c5f3146703*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [cd0292249c16b8d3d9219a86adf99b8d, findElement {value=//span[@title = "Engineering"], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.42, chrome: {chromedriverVersion: 135.0.7049.84 (6c019e560019..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57004}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57004/devtoo..., se:cdpVersion: 135.0.7049.42, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: cd0292249c16b8d3d9219a86adf99b8d]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[@title = "Engineering"]"}
+  (Session info: chrome=135.0.7049.42)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.22.0', revision: 'c5f3146703*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [cd0292249c16b8d3d9219a86adf99b8d, findElement {value=//span[@title = "Engineering"], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.42, chrome: {chromedriverVersion: 135.0.7049.84 (6c019e560019..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57004}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57004/devtoo..., se:cdpVersion: 135.0.7049.42, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: cd0292249c16b8d3d9219a86adf99b8d
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+at pageObjectClass.DashboardPage.Engineeringclicking(DashboardPage.java:241)
+at testBase.DashboardPageTest.EmployeeDistributionbySubUnit14(DashboardPageTest.java:139)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EmployeeDistributionbySubUnit14 -->
-        <test-method signature="Verifyadminmenubuttonworkin()[pri:15, instance:testBase.DashboardPageTest@3c7f66c4]" started-at="2025-03-31T22:56:10 IST" name="Verifyadminmenubuttonworkin" finished-at="2025-03-31T22:56:12 IST" duration-ms="1552" status="PASS">
+        <test-method signature="Verifyadminmenubuttonworkin()[pri:15, instance:testBase.DashboardPageTest@4803b726]" started-at="2025-04-09T16:05:34 IST" name="Verifyadminmenubuttonworkin" finished-at="2025-04-09T16:05:37 IST" duration-ms="3661" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Verifyadminmenubuttonworkin -->
       </class> <!-- testBase.DashboardPageTest -->
       <class name="testBase.LeavePageTest">
-        <test-method is-config="true" signature="openTheBrowser()[pri:0, instance:testBase.LeavePageTest@316bcf94]" started-at="2025-03-31T22:57:27 IST" name="openTheBrowser" finished-at="2025-03-31T22:57:34 IST" duration-ms="7269" status="PASS">
+        <test-method is-config="true" signature="openTheBrowser()[pri:0, instance:testBase.LeavePageTest@1de5f259]" started-at="2025-04-09T16:08:09 IST" name="openTheBrowser" finished-at="2025-04-09T16:08:17 IST" duration-ms="7703" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openTheBrowser -->
-        <test-method signature="login()[pri:1, instance:testBase.LeavePageTest@316bcf94]" started-at="2025-03-31T22:57:34 IST" name="login" finished-at="2025-03-31T22:57:37 IST" duration-ms="2514" status="PASS">
+        <test-method signature="login()[pri:1, instance:testBase.LeavePageTest@1de5f259]" started-at="2025-04-09T16:08:17 IST" name="login" finished-at="2025-04-09T16:08:22 IST" duration-ms="5669" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="ClickTheLeavemenu()[pri:2, instance:testBase.LeavePageTest@316bcf94]" started-at="2025-03-31T22:57:37 IST" name="ClickTheLeavemenu" finished-at="2025-03-31T22:57:39 IST" duration-ms="2092" status="PASS">
+        <test-method signature="ClickTheLeavemenu()[pri:2, instance:testBase.LeavePageTest@1de5f259]" started-at="2025-04-09T16:08:22 IST" name="ClickTheLeavemenu" finished-at="2025-04-09T16:08:28 IST" duration-ms="5609" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ClickTheLeavemenu -->
-        <test-method signature="EnterTheLeaveList()[pri:3, instance:testBase.LeavePageTest@316bcf94]" started-at="2025-03-31T22:57:39 IST" name="EnterTheLeaveList" finished-at="2025-03-31T22:57:42 IST" duration-ms="2933" status="FAIL">
+        <test-method signature="EnterTheLeaveList()[pri:3, instance:testBase.LeavePageTest@1de5f259]" started-at="2025-04-09T16:08:28 IST" name="EnterTheLeaveList" finished-at="2025-04-09T16:08:31 IST" duration-ms="3450" status="FAIL">
           <exception class="org.openqa.selenium.support.ui.UnexpectedTagNameException">
             <message>
               <![CDATA[Element should have been "select" but was "div"
@@ -894,7 +821,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EnterTheLeaveList -->
-        <test-method signature="clickTheResetbutton()[pri:4, instance:testBase.LeavePageTest@316bcf94]" started-at="2025-03-31T22:57:42 IST" name="clickTheResetbutton" finished-at="2025-03-31T22:57:44 IST" duration-ms="1947" status="FAIL">
+        <test-method signature="clickTheResetbutton()[pri:4, instance:testBase.LeavePageTest@1de5f259]" started-at="2025-04-09T16:08:32 IST" name="clickTheResetbutton" finished-at="2025-04-09T16:08:34 IST" duration-ms="1840" status="FAIL">
           <exception class="org.openqa.selenium.support.ui.UnexpectedTagNameException">
             <message>
               <![CDATA[Element should have been "select" but was "div"
@@ -942,79 +869,962 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clickTheResetbutton -->
-        <test-method signature="formDateFieldisEmpty()[pri:5, instance:testBase.LeavePageTest@316bcf94]" started-at="2025-03-31T22:57:44 IST" name="formDateFieldisEmpty" finished-at="2025-03-31T22:57:45 IST" duration-ms="544" status="PASS">
+        <test-method signature="formDateFieldisEmpty()[pri:5, instance:testBase.LeavePageTest@1de5f259]" started-at="2025-04-09T16:08:34 IST" name="formDateFieldisEmpty" finished-at="2025-04-09T16:08:34 IST" duration-ms="570" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- formDateFieldisEmpty -->
-        <test-method signature="ToDateFieldisEmpty()[pri:6, instance:testBase.LeavePageTest@316bcf94]" started-at="2025-03-31T22:57:45 IST" name="ToDateFieldisEmpty" finished-at="2025-03-31T22:57:46 IST" duration-ms="1031" status="PASS">
+        <test-method signature="ToDateFieldisEmpty()[pri:6, instance:testBase.LeavePageTest@1de5f259]" started-at="2025-04-09T16:08:34 IST" name="ToDateFieldisEmpty" finished-at="2025-04-09T16:08:36 IST" duration-ms="1112" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ToDateFieldisEmpty -->
-        <test-method signature="statusFieldisEmpty()[pri:7, instance:testBase.LeavePageTest@316bcf94]" started-at="2025-03-31T22:57:46 IST" name="statusFieldisEmpty" finished-at="2025-03-31T22:57:47 IST" duration-ms="1401" status="PASS">
+        <test-method signature="statusFieldisEmpty()[pri:7, instance:testBase.LeavePageTest@1de5f259]" started-at="2025-04-09T16:08:36 IST" name="statusFieldisEmpty" finished-at="2025-04-09T16:08:37 IST" duration-ms="1392" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- statusFieldisEmpty -->
-        <test-method signature="fieldsAreEmpty()[pri:8, instance:testBase.LeavePageTest@316bcf94]" started-at="2025-03-31T22:57:47 IST" name="fieldsAreEmpty" finished-at="2025-03-31T22:57:48 IST" duration-ms="1255" status="PASS">
+        <test-method signature="fieldsAreEmpty()[pri:8, instance:testBase.LeavePageTest@1de5f259]" started-at="2025-04-09T16:08:37 IST" name="fieldsAreEmpty" finished-at="2025-04-09T16:08:38 IST" duration-ms="1147" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fieldsAreEmpty -->
       </class> <!-- testBase.LeavePageTest -->
       <class name="testBase.Login_Page_test">
-        <test-method is-config="true" signature="openTheBrowser()[pri:0, instance:testBase.Login_Page_test@f0da945]" started-at="2025-03-31T22:57:01 IST" name="openTheBrowser" finished-at="2025-03-31T22:57:12 IST" duration-ms="10919" status="PASS">
+        <test-method is-config="true" signature="openTheBrowser()[pri:0, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:06:15 IST" name="openTheBrowser" finished-at="2025-04-09T16:06:26 IST" duration-ms="10489" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openTheBrowser -->
-        <test-method signature="loginTest001()[pri:1, instance:testBase.Login_Page_test@f0da945]" started-at="2025-03-31T22:57:12 IST" name="loginTest001" finished-at="2025-03-31T22:57:15 IST" duration-ms="3083" status="PASS">
+        <test-method signature="loginTest001()[pri:1, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:06:26 IST" name="loginTest001" finished-at="2025-04-09T16:06:28 IST" duration-ms="1956" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest001 -->
-        <test-method signature="loginTest002()[pri:2, instance:testBase.Login_Page_test@f0da945]" started-at="2025-03-31T22:57:15 IST" name="loginTest002" finished-at="2025-03-31T22:57:16 IST" duration-ms="1710" status="PASS">
+        <test-method signature="loginTest002()[pri:2, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:06:28 IST" name="loginTest002" finished-at="2025-04-09T16:06:32 IST" duration-ms="3695" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest002 -->
-        <test-method signature="loginTest003()[pri:3, instance:testBase.Login_Page_test@f0da945]" started-at="2025-03-31T22:57:16 IST" name="loginTest003" finished-at="2025-03-31T22:57:17 IST" duration-ms="1082" status="PASS">
+        <test-method signature="loginTest003()[pri:3, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:06:32 IST" name="loginTest003" finished-at="2025-04-09T16:06:33 IST" duration-ms="1251" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest003 -->
-        <test-method signature="loginTest1004()[pri:4, instance:testBase.Login_Page_test@f0da945]" started-at="2025-03-31T22:57:18 IST" name="loginTest1004" finished-at="2025-03-31T22:57:20 IST" duration-ms="2254" status="PASS">
+        <test-method signature="loginTest1004()[pri:4, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:06:33 IST" name="loginTest1004" finished-at="2025-04-09T16:06:35 IST" duration-ms="2576" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest1004 -->
-        <test-method signature="logoTest005()[pri:5, instance:testBase.Login_Page_test@f0da945]" started-at="2025-03-31T22:57:20 IST" name="logoTest005" finished-at="2025-03-31T22:57:20 IST" duration-ms="666" status="PASS">
+        <test-method signature="logoTest005()[pri:5, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:06:35 IST" name="logoTest005" finished-at="2025-04-09T16:06:36 IST" duration-ms="663" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logoTest005 -->
-        <test-method signature="forgetpasstest007()[pri:7, instance:testBase.Login_Page_test@f0da945]" started-at="2025-03-31T22:57:20 IST" name="forgetpasstest007" finished-at="2025-03-31T22:57:21 IST" duration-ms="747" status="PASS">
+        <test-method signature="forgetpasstest007()[pri:7, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:06:36 IST" name="forgetpasstest007" finished-at="2025-04-09T16:06:37 IST" duration-ms="850" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- forgetpasstest007 -->
-        <test-method signature="forgetpasscancelTest008()[pri:8, instance:testBase.Login_Page_test@f0da945]" started-at="2025-03-31T22:57:21 IST" name="forgetpasscancelTest008" finished-at="2025-03-31T22:57:22 IST" duration-ms="999" status="PASS">
+        <test-method signature="forgetpasscancelTest008()[pri:8, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:06:37 IST" name="forgetpasscancelTest008" finished-at="2025-04-09T16:06:38 IST" duration-ms="1168" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- forgetpasscancelTest008 -->
-        <test-method signature="forgetpasssentest009()[pri:9, instance:testBase.Login_Page_test@f0da945]" started-at="2025-03-31T22:57:22 IST" name="forgetpasssentest009" finished-at="2025-03-31T22:57:25 IST" duration-ms="2834" status="PASS">
+        <test-method signature="forgetpasssentest009()[pri:9, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:06:38 IST" name="forgetpasssentest009" finished-at="2025-04-09T16:06:41 IST" duration-ms="2821" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- forgetpasssentest009 -->
-        <test-method signature="CredentialUserNameAndPassword()[pri:12, instance:testBase.Login_Page_test@f0da945]" started-at="2025-03-31T22:57:25 IST" name="CredentialUserNameAndPassword" finished-at="2025-03-31T22:57:27 IST" duration-ms="1756" status="PASS">
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:06:41 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:06:43 IST" duration-ms="1547" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[user1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[pass123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:06:43 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:06:45 IST" duration-ms="2533" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[john_doe]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[jd2023]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:06:45 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:06:47 IST" duration-ms="1707" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[alice.smith]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[alice99]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:06:47 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:06:49 IST" duration-ms="1764" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[bob_jones]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[bobby$1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:06:49 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:06:50 IST" duration-ms="1856" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[emma.watson]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[emma#456]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:06:50 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:06:52 IST" duration-ms="1614" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[mike92]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[mikePass!]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:06:52 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:06:54 IST" duration-ms="1649" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[sarah.connor]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[terminator2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:06:54 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:06:55 IST" duration-ms="1588" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[david.lee]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[david$2023]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:06:55 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:06:57 IST" duration-ms="1544" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[linda_k]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[linda789]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:06:57 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:06:58 IST" duration-ms="1610" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[peter.parker]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[spider22]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:06:58 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:00 IST" duration-ms="1589" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[jessica.m]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[jess#123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:00 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:02 IST" duration-ms="1680" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[tom_hardy]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[tommy$99]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:02 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:04 IST" duration-ms="1843" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[kate.brown]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[kate2023!]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:04 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:05 IST" duration-ms="1866" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chris.evans]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[captain$1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:05 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:07 IST" duration-ms="1984" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[laura.miller]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[lauraPass]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:07 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:09 IST" duration-ms="1620" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ryan_g]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[ryan#789]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:09 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:11 IST" duration-ms="1611" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[olivia.p]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[olive2023]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:11 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:12 IST" duration-ms="1711" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[mark.twain]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[mark$123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:12 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:14 IST" duration-ms="1631" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[sophia.l]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[sophia99]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:14 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:16 IST" duration-ms="1593" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[james.bond]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[007pass]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:16 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:17 IST" duration-ms="1659" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[anna.white]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[anna#456]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:17 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:19 IST" duration-ms="1615" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[will.smith]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[will2023$]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:19 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:21 IST" duration-ms="1675" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[emily rose]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[emily!12]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:21 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:22 IST" duration-ms="1597" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[nick_j]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[nickpass3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:22 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:24 IST" duration-ms="1658" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[rachel.k]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[rach2023]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:24 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:26 IST" duration-ms="2156" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[samuel.l]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[sam$456]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:26 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:28 IST" duration-ms="1662" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[grace.hopper]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[grace#99]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:28 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:29 IST" duration-ms="1581" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[tony.stark]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[ironman1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:29 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:31 IST" duration-ms="1635" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[lisa.marie]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[lisa2023!]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:31 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:32 IST" duration-ms="809" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[patrick.s]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[pat$123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:32 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:35 IST" duration-ms="2898" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[julia.roberts]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[julia99#]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:35 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:36 IST" duration-ms="1684" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[kevin.hart]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[kevin$23]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:36 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:38 IST" duration-ms="1744" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[mary.jane]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[maryPass1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:38 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:40 IST" duration-ms="1741" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[leo.dicaprio]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[leo2023]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:40 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:41 IST" duration-ms="834" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[nancy.w]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[nancy#789]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:41 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:43 IST" duration-ms="2482" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[george.c]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[george$12]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:43 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:45 IST" duration-ms="1596" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[hannah.m]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[hannah99]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:45 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:46 IST" duration-ms="1677" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[brad.pitt]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[brad#2023]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:46 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:48 IST" duration-ms="1610" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[clara.b]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[claraPass$]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:48 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:50 IST" duration-ms="1715" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ethan.hunt]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[mission1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:50 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:51 IST" duration-ms="968" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[zoe.saldana]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zoe2023!]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:51 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:52 IST" duration-ms="915" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[victor.k]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[vic$456]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.StaleElementReferenceException">
+            <message>
+              <![CDATA[stale element reference: stale element not found
+  (Session info: chrome=135.0.7049.42)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: '4.22.0', revision: 'c5f3146703*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [3889a3fd565cbed8c1928a0b9dc8214e, sendKeysToElement {value=[Ljava.lang.CharSequence;@71e2c6d8, id=f.E310DC956D3F1579080C6D27155A6063.d.6F2870906D1E435F56573B4537A54D04.e.648}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.42, chrome: {chromedriverVersion: 135.0.7049.84 (6c019e560019..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57220}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57220/devtoo..., se:cdpVersion: 135.0.7049.42, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (3889a3fd565cbed8c1928a0b9dc8214e)] -> name: username]
+Session ID: 3889a3fd565cbed8c1928a0b9dc8214e]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
+  (Session info: chrome=135.0.7049.42)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: '4.22.0', revision: 'c5f3146703*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [3889a3fd565cbed8c1928a0b9dc8214e, sendKeysToElement {value=[Ljava.lang.CharSequence;@71e2c6d8, id=f.E310DC956D3F1579080C6D27155A6063.d.6F2870906D1E435F56573B4537A54D04.e.648}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.42, chrome: {chromedriverVersion: 135.0.7049.84 (6c019e560019..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57220}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57220/devtoo..., se:cdpVersion: 135.0.7049.42, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (3889a3fd565cbed8c1928a0b9dc8214e)] -> name: username]
+Session ID: 3889a3fd565cbed8c1928a0b9dc8214e
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+at pageObjectClass.OrangeHRMLoginPage.login(OrangeHRMLoginPage.java:34)
+at testBase.Login_Page_test.loginTest010(Login_Page_test.java:102)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:52 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:53 IST" duration-ms="1278" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[mia.wallace]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[mia#123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:53 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:55 IST" duration-ms="1634" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[oscar.w]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[oscar99$]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:55 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:57 IST" duration-ms="1814" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[luke.sky]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[force2023]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:57 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:07:58 IST" duration-ms="1655" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ella.fitz]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[ellaPass]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:07:58 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:08:00 IST" duration-ms="1689" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ian.malcolm]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[ian#789]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:08:00 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:08:02 IST" duration-ms="1681" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[tina.fey]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[tina$123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:08:02 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:08:03 IST" duration-ms="1674" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[harry.p]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[potter99]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:08:03 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:08:05 IST" duration-ms="1706" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[diana.prince]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[wonder2023]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="loginTest010(java.lang.String,java.lang.String)[pri:10, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:08:05 IST" name="loginTest010" data-provider="UserLogin" finished-at="2025-04-09T16:08:07 IST" duration-ms="1862" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[admin123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest010 -->
+        <test-method signature="CredentialUserNameAndPassword()[pri:12, instance:testBase.Login_Page_test@53ce1329]" started-at="2025-04-09T16:08:07 IST" name="CredentialUserNameAndPassword" finished-at="2025-04-09T16:08:09 IST" duration-ms="1982" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CredentialUserNameAndPassword -->
       </class> <!-- testBase.Login_Page_test -->
       <class name="testBase.Admin_pageTest">
-        <test-method is-config="true" signature="openTheBrowser()[pri:0, instance:testBase.Admin_pageTest@1de76cc7]" started-at="2025-03-31T22:54:34 IST" name="openTheBrowser" finished-at="2025-03-31T22:54:43 IST" duration-ms="8945" status="PASS">
+        <test-method is-config="true" signature="openTheBrowser()[pri:0, instance:testBase.Admin_pageTest@1de76cc7]" started-at="2025-04-09T16:02:01 IST" name="openTheBrowser" finished-at="2025-04-09T16:02:11 IST" duration-ms="9848" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openTheBrowser -->
-        <test-method signature="loginTest001()[pri:0, instance:testBase.Admin_pageTest@1de76cc7]" started-at="2025-03-31T22:54:43 IST" name="loginTest001" finished-at="2025-03-31T22:54:48 IST" duration-ms="5562" status="PASS">
+        <test-method signature="loginTest001()[pri:0, instance:testBase.Admin_pageTest@1de76cc7]" started-at="2025-04-09T16:02:11 IST" name="loginTest001" finished-at="2025-04-09T16:02:16 IST" duration-ms="4916" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest001 -->
-        <test-method signature="SearchSystemUsers()[pri:1, instance:testBase.Admin_pageTest@1de76cc7]" started-at="2025-03-31T22:54:48 IST" name="SearchSystemUsers" finished-at="2025-03-31T22:54:50 IST" duration-ms="1237" status="PASS">
+        <test-method signature="SearchSystemUsers()[pri:1, instance:testBase.Admin_pageTest@1de76cc7]" started-at="2025-04-09T16:02:16 IST" name="SearchSystemUsers" finished-at="2025-04-09T16:02:17 IST" duration-ms="1178" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SearchSystemUsers -->
-        <test-method signature="SearchSystemrole()[pri:2, instance:testBase.Admin_pageTest@1de76cc7]" started-at="2025-03-31T22:54:50 IST" name="SearchSystemrole" finished-at="2025-03-31T22:54:50 IST" duration-ms="81" status="FAIL">
+        <test-method signature="SearchSystemrole()[pri:2, instance:testBase.Admin_pageTest@1de76cc7]" started-at="2025-04-09T16:02:17 IST" name="SearchSystemrole" finished-at="2025-04-09T16:02:17 IST" duration-ms="68" status="FAIL">
           <exception class="org.openqa.selenium.support.ui.UnexpectedTagNameException">
             <message>
               <![CDATA[Element should have been "select" but was "div"
@@ -1062,7 +1872,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SearchSystemrole -->
-        <test-method signature="SearchSystemstatus()[pri:4, instance:testBase.Admin_pageTest@1de76cc7]" started-at="2025-03-31T22:54:50 IST" name="SearchSystemstatus" finished-at="2025-03-31T22:54:50 IST" duration-ms="213" status="FAIL">
+        <test-method signature="SearchSystemstatus()[pri:4, instance:testBase.Admin_pageTest@1de76cc7]" started-at="2025-04-09T16:02:17 IST" name="SearchSystemstatus" finished-at="2025-04-09T16:02:17 IST" duration-ms="53" status="FAIL">
           <exception class="org.openqa.selenium.support.ui.UnexpectedTagNameException">
             <message>
               <![CDATA[Element should have been "select" but was "div"
@@ -1110,33 +1920,33 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SearchSystemstatus -->
-        <test-method signature="Cicktheadduserbutton()[pri:5, instance:testBase.Admin_pageTest@1de76cc7]" started-at="2025-03-31T22:54:51 IST" name="Cicktheadduserbutton" finished-at="2025-03-31T22:54:52 IST" duration-ms="1146" status="PASS">
+        <test-method signature="Cicktheadduserbutton()[pri:5, instance:testBase.Admin_pageTest@1de76cc7]" started-at="2025-04-09T16:02:18 IST" name="Cicktheadduserbutton" finished-at="2025-04-09T16:02:19 IST" duration-ms="816" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Cicktheadduserbutton -->
-        <test-method signature="AddNewUser()[pri:6, instance:testBase.Admin_pageTest@1de76cc7]" started-at="2025-03-31T22:54:52 IST" name="AddNewUser" finished-at="2025-03-31T22:55:12 IST" duration-ms="20043" status="FAIL">
+        <test-method signature="AddNewUser()[pri:6, instance:testBase.Admin_pageTest@1de76cc7]" started-at="2025-04-09T16:02:19 IST" name="AddNewUser" finished-at="2025-04-09T16:02:34 IST" duration-ms="15081" status="FAIL">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
               <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//label[text()='User Role']/following-sibling::div//div[contains(@class,'oxd-select-text')]"}
-  (Session info: chrome=134.0.6998.178)
+  (Session info: chrome=135.0.7049.42)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.22.0', revision: 'c5f3146703*'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [4f0915657fcd8682b51b22e3c96a77c9, findElement {value=//label[text()='User Role']/following-sibling::div//div[contains(@class,'oxd-select-text')], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61820}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61820/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 4f0915657fcd8682b51b22e3c96a77c9]]>
+Command: [73753a4b6498a7b98561094e25ac5239, findElement {value=//label[text()='User Role']/following-sibling::div//div[contains(@class,'oxd-select-text')], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.42, chrome: {chromedriverVersion: 135.0.7049.84 (6c019e560019..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56672}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56672/devtoo..., se:cdpVersion: 135.0.7049.42, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 73753a4b6498a7b98561094e25ac5239]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//label[text()='User Role']/following-sibling::div//div[contains(@class,'oxd-select-text')]"}
-  (Session info: chrome=134.0.6998.178)
+  (Session info: chrome=135.0.7049.42)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.22.0', revision: 'c5f3146703*'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [4f0915657fcd8682b51b22e3c96a77c9, findElement {value=//label[text()='User Role']/following-sibling::div//div[contains(@class,'oxd-select-text')], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61820}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61820/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 4f0915657fcd8682b51b22e3c96a77c9
+Command: [73753a4b6498a7b98561094e25ac5239, findElement {value=//label[text()='User Role']/following-sibling::div//div[contains(@class,'oxd-select-text')], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.42, chrome: {chromedriverVersion: 135.0.7049.84 (6c019e560019..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56672}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56672/devtoo..., se:cdpVersion: 135.0.7049.42, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 73753a4b6498a7b98561094e25ac5239
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
@@ -1185,72 +1995,31 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddNewUser -->
-        <test-method signature="SearchSystememployeename()[pri:7, instance:testBase.Admin_pageTest@1de76cc7]" started-at="2025-03-31T22:55:12 IST" name="SearchSystememployeename" finished-at="2025-03-31T22:55:15 IST" duration-ms="2333" status="PASS">
+        <test-method signature="SearchSystememployeename()[pri:7, instance:testBase.Admin_pageTest@1de76cc7]" started-at="2025-04-09T16:02:34 IST" name="SearchSystememployeename" finished-at="2025-04-09T16:02:36 IST" duration-ms="1687" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SearchSystememployeename -->
       </class> <!-- testBase.Admin_pageTest -->
       <class name="testBase.My_Info_PageTest">
-        <test-method is-config="true" signature="openTheBrowser()[pri:0, instance:testBase.My_Info_PageTest@17497425]" started-at="2025-03-31T22:56:12 IST" name="openTheBrowser" finished-at="2025-03-31T22:56:28 IST" duration-ms="16679" status="PASS">
+        <test-method is-config="true" signature="openTheBrowser()[pri:0, instance:testBase.My_Info_PageTest@ffaa6af]" started-at="2025-04-09T16:05:37 IST" name="openTheBrowser" finished-at="2025-04-09T16:05:49 IST" duration-ms="11369" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openTheBrowser -->
-        <test-method signature="loginTest001()[pri:0, instance:testBase.My_Info_PageTest@17497425]" started-at="2025-03-31T22:56:28 IST" name="loginTest001" finished-at="2025-03-31T22:56:35 IST" duration-ms="6864" status="PASS">
+        <test-method signature="loginTest001()[pri:0, instance:testBase.My_Info_PageTest@ffaa6af]" started-at="2025-04-09T16:05:49 IST" name="loginTest001" finished-at="2025-04-09T16:05:54 IST" duration-ms="4926" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest001 -->
-        <test-method signature="testEnterFirstName()[pri:1, instance:testBase.My_Info_PageTest@17497425]" started-at="2025-03-31T22:56:35 IST" name="testEnterFirstName" finished-at="2025-03-31T22:56:37 IST" duration-ms="1406" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[First name does not match expected [John] but found [FirstnametestJohn]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: First name does not match expected [John] but found [FirstnametestJohn]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1578)
-at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-at org.testng.Assert.assertEquals(Assert.java:132)
-at org.testng.Assert.assertEquals(Assert.java:656)
-at testBase.My_Info_PageTest.testEnterFirstName(My_Info_PageTest.java:33)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-at org.testng.TestRunner.privateRun(TestRunner.java:819)
-at org.testng.TestRunner.run(TestRunner.java:619)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
-at org.testng.TestNG.runSuites(TestNG.java:1134)
-at org.testng.TestNG.run(TestNG.java:1101)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method signature="testEnterFirstName()[pri:1, instance:testBase.My_Info_PageTest@ffaa6af]" started-at="2025-04-09T16:05:54 IST" name="testEnterFirstName" finished-at="2025-04-09T16:05:55 IST" duration-ms="1392" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testEnterFirstName -->
-        <test-method signature="testEnterMiddleName()[pri:2, instance:testBase.My_Info_PageTest@17497425]" started-at="2025-03-31T22:56:37 IST" name="testEnterMiddleName" finished-at="2025-03-31T22:56:37 IST" duration-ms="284" status="FAIL">
+        <test-method signature="testEnterMiddleName()[pri:2, instance:testBase.My_Info_PageTest@ffaa6af]" started-at="2025-04-09T16:05:55 IST" name="testEnterMiddleName" finished-at="2025-04-09T16:05:56 IST" duration-ms="581" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Middle name does not match expected [Paul] but found [dsPaul]]]>
+              <![CDATA[Middle name does not match expected [Paul] but found [NgocPaulPaul]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Middle name does not match expected [Paul] but found [dsPaul]
+              <![CDATA[java.lang.AssertionError: Middle name does not match expected [Paul] but found [NgocPaulPaul]
 at org.testng.Assert.fail(Assert.java:111)
 at org.testng.Assert.failNotEquals(Assert.java:1578)
 at org.testng.Assert.assertEqualsImpl(Assert.java:150)
@@ -1289,13 +2058,13 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testEnterMiddleName -->
-        <test-method signature="testEnterLastName()[pri:3, instance:testBase.My_Info_PageTest@17497425]" started-at="2025-03-31T22:56:37 IST" name="testEnterLastName" finished-at="2025-03-31T22:56:38 IST" duration-ms="256" status="FAIL">
+        <test-method signature="testEnterLastName()[pri:3, instance:testBase.My_Info_PageTest@ffaa6af]" started-at="2025-04-09T16:05:56 IST" name="testEnterLastName" finished-at="2025-04-09T16:05:56 IST" duration-ms="247" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Last name does not match expected [Doe] but found [LastnameTestDoe]]]>
+              <![CDATA[Last name does not match expected [Doe] but found [DoeDoeDoe]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Last name does not match expected [Doe] but found [LastnameTestDoe]
+              <![CDATA[java.lang.AssertionError: Last name does not match expected [Doe] but found [DoeDoeDoe]
 at org.testng.Assert.fail(Assert.java:111)
 at org.testng.Assert.failNotEquals(Assert.java:1578)
 at org.testng.Assert.assertEqualsImpl(Assert.java:150)
@@ -1334,15 +2103,82 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testEnterLastName -->
-        <test-method signature="testSelectDateOfBirth()[pri:4, instance:testBase.My_Info_PageTest@17497425]" started-at="2025-03-31T22:56:38 IST" name="testSelectDateOfBirth" finished-at="2025-03-31T22:56:39 IST" duration-ms="795" status="PASS">
+        <test-method signature="testSelectDateOfBirth()[pri:4, instance:testBase.My_Info_PageTest@ffaa6af]" started-at="2025-04-09T16:05:56 IST" name="testSelectDateOfBirth" finished-at="2025-04-09T16:05:57 IST" duration-ms="707" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSelectDateOfBirth -->
-        <test-method signature="testSelectDropdownOption()[pri:5, instance:testBase.My_Info_PageTest@17497425]" started-at="2025-03-31T22:56:39 IST" name="testSelectDropdownOption" finished-at="2025-03-31T22:56:39 IST" duration-ms="496" status="PASS">
+        <test-method signature="testSelectDropdownOption()[pri:5, instance:testBase.My_Info_PageTest@ffaa6af]" started-at="2025-04-09T16:05:57 IST" name="testSelectDropdownOption" finished-at="2025-04-09T16:06:12 IST" duration-ms="15076" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//*[text() = '-- Select --']"}
+  (Session info: chrome=135.0.7049.42)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.22.0', revision: 'c5f3146703*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c65eb61f7d99bc0a2085694a13de2e64, findElement {value=//*[text() = '-- Select --'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.42, chrome: {chromedriverVersion: 135.0.7049.84 (6c019e560019..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57139}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57139/devtoo..., se:cdpVersion: 135.0.7049.42, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c65eb61f7d99bc0a2085694a13de2e64]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[text() = '-- Select --']"}
+  (Session info: chrome=135.0.7049.42)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.22.0', revision: 'c5f3146703*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c65eb61f7d99bc0a2085694a13de2e64, findElement {value=//*[text() = '-- Select --'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.42, chrome: {chromedriverVersion: 135.0.7049.84 (6c019e560019..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57139}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57139/devtoo..., se:cdpVersion: 135.0.7049.42, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c65eb61f7d99bc0a2085694a13de2e64
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+at pageObjectClass.My_info_page.selectDropdownOption(My_info_page.java:57)
+at testBase.My_Info_PageTest.testSelectDropdownOption(My_Info_PageTest.java:59)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSelectDropdownOption -->
-        <test-method signature="testClickButton()[pri:6, instance:testBase.My_Info_PageTest@17497425]" started-at="2025-03-31T22:56:39 IST" name="testClickButton" finished-at="2025-03-31T22:56:39 IST" duration-ms="272" status="FAIL">
+        <test-method signature="testClickButton()[pri:6, instance:testBase.My_Info_PageTest@ffaa6af]" started-at="2025-04-09T16:06:13 IST" name="testClickButton" finished-at="2025-04-09T16:06:13 IST" duration-ms="428" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[Button click did not navigate to the expected page expected [true] but found [false]]]>
@@ -1385,45 +2221,19 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testClickButton -->
-        <test-method signature="testSetBloodGroup()[pri:7, instance:testBase.My_Info_PageTest@17497425]" started-at="2025-03-31T22:56:40 IST" name="testSetBloodGroup" finished-at="2025-03-31T22:57:00 IST" duration-ms="20344" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method signature="testSetBloodGroup()[pri:7, instance:testBase.My_Info_PageTest@ffaa6af]" started-at="2025-04-09T16:06:14 IST" name="testSetBloodGroup" finished-at="2025-04-09T16:06:14 IST" duration-ms="787" status="FAIL">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//*[text() = 'A+']"}
-  (Session info: chrome=134.0.6998.178)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.22.0', revision: 'c5f3146703*'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a81bea0cddd3626cdab72f194f405875, findElement {value=//*[text() = 'A+'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62003}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62003/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a81bea0cddd3626cdab72f194f405875]]>
+              <![CDATA[Blood group was not selected correctly expected [A+] but found [445]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[text() = 'A+']"}
-  (Session info: chrome=134.0.6998.178)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.22.0', revision: 'c5f3146703*'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a81bea0cddd3626cdab72f194f405875, findElement {value=//*[text() = 'A+'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62003}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62003/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a81bea0cddd3626cdab72f194f405875
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-at pageObjectClass.My_info_page.setBloodGroup(My_info_page.java:66)
-at testBase.My_Info_PageTest.testSetBloodGroup(My_Info_PageTest.java:73)
+              <![CDATA[java.lang.AssertionError: Blood group was not selected correctly expected [A+] but found [445]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at testBase.My_Info_PageTest.testSetBloodGroup(My_Info_PageTest.java:75)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -1452,11 +2262,11 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSetBloodGroup -->
-        <test-method signature="testSubmitForm()[pri:8, instance:testBase.My_Info_PageTest@17497425]" started-at="2025-03-31T22:57:00 IST" name="testSubmitForm" finished-at="2025-03-31T22:57:00 IST" duration-ms="179" status="FAIL">
+        <test-method signature="testSubmitForm()[pri:8, instance:testBase.My_Info_PageTest@ffaa6af]" started-at="2025-04-09T16:06:15 IST" name="testSubmitForm" finished-at="2025-04-09T16:06:15 IST" duration-ms="334" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[Form was not submitted successfully expected [true] but found [false]]]>

@@ -63,5 +63,34 @@ public class DataProviderClass {
 		};
 		
 	}
+	
+	@DataProvider(name = "employeeDataProvider")
+	public Object[][] getEmployeeData() {
+	    return new Object[][] {
+	        { "Sanjay", "", "S", "5", "Sanja S", "Sanjay123", "Sanjay123", "Disabled" },
+	        { "John", "D", "Doe", "10", "John D", "John12345", "John12345", "Disabled" },
+	        { "", "A", "Smith", "15", "A Smith", "Smith123", "Smith123", "Disabled" },
+	        { "Alice", "Marie", "O'Connor", "20", "Alice M O'Connor", "Alice@123", "Alice@123", "Disabled" },
+	        { "12345", "", "Johnson", "25", "12345 Johnson", "Johnson@456", "Johnson@456", "Disabled" },
+	        { "Mark", "", "Taylor", "30", "Mark T", "Mark123", "", "Disabled" },
+	        { "David", "K", "King", "35", "David K", "King1234", "King1234", "Disabled" },
+	        { "Emma", "Grace", "Watson", "40", "Emma Grace Watson", "Emma@2021", "Emma@2021", "Disabled" },
+	        { "AlexanderTheGreat", "", "Johnson", "45", "AlexanderTheGreat Johnson", "Alex@123", "Alex@123", "Disabled" },
+	        { "TOM", "JACK", "SMITH", "50", "TOM JACK SMITH", "Tom@2021", "Tom@2021", "Disabled" },
+	        { "A", "B", "C", "55", "A B C", "A@123", "A@123", "Disabled" },
+	        { "Sophia", "", "Jones", "60", "Sophia J", "123", "123", "Disabled" },
+	        { "  Michael  ", "  David  ", "  Taylor  ", "65", "  Michael David Taylor  ", "Michael123", "Michael123", "Disabled" },
+	        { "Sophie", "", "O'Reilly", "70", "Sophie O'Reilly", "Sophie@123", "Sophie@123", "Disabled" },
+	        { "Liam", "", "Brown", "ABC123", "Liam Brown", "Liam@2022", "Liam@2022", "Disabled" },
+	        { "Charlotte", "Eve", "Wilson", "75", "Charlotte Eve Wilson", "Charlie@2023", "Charlie@2023", "Disabled" },
+	        { "Z", "X", "Y", "80", "Z X Y", "Zxy@123", "Zxy@123", "Disabled" },
+	        { "Alice   ", "Marie", "O'Connor", "85", "Alice Marie O'Connor", "Alice123", "Alice123", "Disabled" },
+	        { "John", "Paul", "Jackson", "9876543210", "John Paul Jackson", "John12345", "John12345", "Disabled" },
+	        { "José", "Carlos", "Méndez", "90", "José Carlos Méndez", "Jose@123", "Jose@123", "Disabled" }
+	    };
+	}
+
+	
+	
 
 }

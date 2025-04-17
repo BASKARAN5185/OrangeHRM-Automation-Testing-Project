@@ -6,41 +6,25 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="testBase.PIMPageTest">
-        <methods>
-          <include name="EmployeeEnterPassword"/>
-          <include name="EmployeeConformPassword"/>
-          <include name="EmployeeNamelastEnter_Save"/>
-          <include name="EmployeeusernameI_Save"/>
-          <include name="EmployeeUserNameIsEmpty"/>
-          <include name="Empty_Employee_Save"/>
-          <include name="openTheBrowser"/>
-          <include name="Add_Employee"/>
-          <include name="SameEmployeeID"/>
-          <include name="Add_Employee_cancel"/>
-          <include name="clickEmployeeListTheAddButton"/>
-          <include name="userlogin"/>
-          <include name="Add_Employee_Disable_Satus"/>
-        </methods>
-      </class> <!-- testBase.PIMPageTest -->
-      <class name="testBase.My_Info_PageTest">
-        <methods>
-          <include name="testEnterLastName"/>
-          <include name="testClickButton"/>
-          <include name="testSetBloodGroup"/>
-          <include name="openTheBrowser"/>
-          <include name="testSubmitForm"/>
-          <include name="testEnterFirstName"/>
-          <include name="testEnterMiddleName"/>
-        </methods>
-      </class> <!-- testBase.My_Info_PageTest -->
       <class name="testBase.LeavePageTest">
         <methods>
-          <include name="openTheBrowser"/>
           <include name="clickTheResetbutton"/>
+          <include name="openTheBrowser"/>
           <include name="EnterTheLeaveList"/>
         </methods>
       </class> <!-- testBase.LeavePageTest -->
+      <class name="testBase.DashboardPageTest">
+        <methods>
+          <include name="openTheBrowser"/>
+          <include name="EmployeeDistributionbySubUnit14"/>
+        </methods>
+      </class> <!-- testBase.DashboardPageTest -->
+      <class name="testBase.Login_Page_test">
+        <methods>
+          <include name="loginTest010" invocation-numbers="41"/>
+          <include name="openTheBrowser"/>
+        </methods>
+      </class> <!-- testBase.Login_Page_test -->
       <class name="testBase.Admin_pageTest">
         <methods>
           <include name="SearchSystemstatus"/>
@@ -49,6 +33,32 @@
           <include name="AddNewUser"/>
         </methods>
       </class> <!-- testBase.Admin_pageTest -->
+      <class name="testBase.PIMPageTest">
+        <methods>
+          <include name="EmployeeEnterPassword"/>
+          <include name="EmployeeConformPassword"/>
+          <include name="EmployeeNamelastEnter_Save"/>
+          <include name="EmployeeusernameI_Save"/>
+          <include name="EmployeeUserNameIsEmpty"/>
+          <include name="openTheBrowser"/>
+          <include name="Add_Employee"/>
+          <include name="SameEmployeeID"/>
+          <include name="Add_Employee_cancel"/>
+          <include name="clickEmployeeListTheAddButton"/>
+          <include name="Add_Employee_Disable_Satus"/>
+        </methods>
+      </class> <!-- testBase.PIMPageTest -->
+      <class name="testBase.My_Info_PageTest">
+        <methods>
+          <include name="testEnterLastName"/>
+          <include name="testClickButton"/>
+          <include name="testSelectDropdownOption"/>
+          <include name="testSetBloodGroup"/>
+          <include name="openTheBrowser"/>
+          <include name="testSubmitForm"/>
+          <include name="testEnterMiddleName"/>
+        </methods>
+      </class> <!-- testBase.My_Info_PageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
