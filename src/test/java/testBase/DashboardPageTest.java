@@ -14,44 +14,41 @@ public class DashboardPageTest extends BaseClass {
 	OrangeHRMLoginPage login = new OrangeHRMLoginPage(driver);
 	DashboardPage Dashboard = new DashboardPage(driver);
 
-	@Test(priority = 1)
+	@Test(priority = 1, groups = { "Regression", "Sanity", "DashboardTest" })
 	void loginTest001() {
 		login.login("Admin", "admin123");
 		String pageurl = login.LoginValidation();
 		Assert.assertNotEquals("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login", pageurl);
 	}
 
-	@Test(priority = 2)
+	@Test(priority = 2, groups = { "Regression", "Sanity", "DashboardTest" })
 	void PagenameVerify002() {
 		String pagename = Dashboard.NameofthePageGet();
 		Assert.assertEquals("Dashboard", pagename);
-
 	}
 
-	@Test(priority = 3)
+	@Test(priority = 3, groups = { "Regression", "Sanity", "DashboardTest" })
 	void clockpageVerify003() {
-		//String clockpage =
-				Dashboard.clockiconclicking();
-		// Assert.assertEquals("https://opensource-demo.orangehrmlive.com/web/index.php/attendance/punchOut", clockpage);
+		Dashboard.clockiconclicking();
 		Dashboard.Back();
-
 	}
 
-	@Test(priority = 4)
+	@Test(priority = 4, groups = { "Regression", "Sanity", "DashboardTest" })
 	void performancepageVerify004() {
 		String performancepage = Dashboard.Mynotification();
-		Assert.assertEquals("https://opensource-demo.orangehrmlive.com/web/index.php/performance/myPerformanceReview",performancepage);
+		Assert.assertEquals("https://opensource-demo.orangehrmlive.com/web/index.php/performance/myPerformanceReview",
+				performancepage);
 		Dashboard.Back();
 	}
 
-	@Test(priority = 5)
+	@Test(priority = 5, groups = { "Regression", "Sanity", "DashboardTest" })
 	void AssignleavepageVerify005() {
 		String Assignleavepagetitle = Dashboard.Assignleaveclick();
 		Assert.assertEquals("OrangeHRM", Assignleavepagetitle);
 		Dashboard.Back();
 	}
 
-	@Test(priority = 6)
+	@Test(priority = 6, groups = { "Regression", "Sanity", "DashboardTest" })
 	void leaveListpageVerify006() {
 		String leaveListpage = Dashboard.Leavelistclick();
 		Assert.assertEquals("https://opensource-demo.orangehrmlive.com/web/index.php/leave/viewLeaveList",
@@ -59,7 +56,7 @@ public class DashboardPageTest extends BaseClass {
 		Dashboard.Back();
 	}
 
-	@Test(priority = 7)
+	@Test(priority = 7, groups = { "Regression", "Sanity", "DashboardTest" })
 	void timesheetpageVerify007() {
 		String timesheeetpage = Dashboard.Timesheetclicing();
 		Assert.assertEquals("https://opensource-demo.orangehrmlive.com/web/index.php/time/viewEmployeeTimesheet",
@@ -67,14 +64,14 @@ public class DashboardPageTest extends BaseClass {
 		Dashboard.Back();
 	}
 
-	@Test(priority = 8)
+	@Test(priority = 8, groups = { "Regression", "Sanity", "DashboardTest" })
 	void ApplyleavepageVerify08() {
 		String Applyleavepage = Dashboard.ApplyLeaveclicking();
 		Assert.assertEquals("https://opensource-demo.orangehrmlive.com/web/index.php/leave/applyLeave", Applyleavepage);
 		Dashboard.Back();
 	}
 
-	@Test(priority = 9)
+	@Test(priority = 9, groups = { "Regression", "Sanity", "DashboardTest" })
 	void ApplyleavepageVerify009() {
 		String Myleavepage = Dashboard.MyLeave();
 		Assert.assertEquals("https://opensource-demo.orangehrmlive.com/web/index.php/leave/viewMyLeaveList",
@@ -82,14 +79,15 @@ public class DashboardPageTest extends BaseClass {
 		Dashboard.Back();
 	}
 
-	@Test(priority = 10)
+	@Test(priority = 10, groups = { "Regression", "Sanity", "DashboardTest" })
 	void mytimesheetpageVerify0010() {
 		String mytimeSheetpage = Dashboard.MyTimeSheet();
-		Assert.assertEquals("https://opensource-demo.orangehrmlive.com/web/index.php/time/viewMyTimesheet",mytimeSheetpage);
+		Assert.assertEquals("https://opensource-demo.orangehrmlive.com/web/index.php/time/viewMyTimesheet",
+				mytimeSheetpage);
 		Dashboard.Back();
 	}
 
-	@Test(priority = 11)
+	@Test(priority = 11, groups = { "Regression", "Sanity", "DashboardTest" })
 	void EmplloyeeLeavesettingVerify011() throws IOException {
 		Dashboard.employeeleavesettingicon();
 		Dashboard.employeeleaveclose();
@@ -102,18 +100,16 @@ public class DashboardPageTest extends BaseClass {
 		System.out.println("click");
 		DashboardPage.pageScreenshot("employeesettingcheckbox.png");
 		Dashboard.employeeleavesave();
-
 	}
 
-	@Test(priority = 12)
+	@Test(priority = 12, groups = { "Regression", "Sanity", "DashboardTest" })
 	void BUZpageVerify012() {
 		String Buzpagepage = Dashboard.Buzpage1();
-		Assert.assertEquals("https://opensource-demo.orangehrmlive.com/web/index.php/buzz/viewBuzz",Buzpagepage);
+		Assert.assertEquals("https://opensource-demo.orangehrmlive.com/web/index.php/buzz/viewBuzz", Buzpagepage);
 		Dashboard.Back();
 	}
 
-
-	@Test(priority = 13)
+	@Test(priority = 13, groups = { "Regression", "Sanity", "DashboardTest" })
 	void elementscreenshot_employeeimg_TWBox_Qlbox_MAbox013() throws IOException {
 		Dashboard.getemployeeimage();
 		System.out.println("dashimg_1");
@@ -131,25 +127,20 @@ public class DashboardPageTest extends BaseClass {
 		System.out.println("dashimg_7");
 		DashboardPage.pageScreenshot("dash2.png");
 		System.out.println("dashimg_8");
-
 	}
 
-	@Test(priority = 14)
+	@Test(priority = 14, groups = { "Regression", "Sanity", "DashboardTest" })
 	void EmployeeDistributionbySubUnit14() throws IOException {
 		Dashboard.Engineeringclicking();
 		Dashboard.Humanresoureclicking();
 		Dashboard.unassignedclicking();
 		DashboardPage.pageScreenshot("circulechange.png");
 	}
-	
-	
-	@Test(priority = 15)
+
+	@Test(priority = 15, groups = { "Regression", "Sanity", "DashboardTest" })
 	void Verifyadminmenubuttonworkin() throws IOException {
-		String Admin=Dashboard.Adminmenuverify();
-		Assert.assertEquals("https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers",Admin);
+		String Admin = Dashboard.Adminmenuverify();
+		Assert.assertEquals("https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers", Admin);
 		Dashboard.Back();
 	}
-	
-	
-
 }

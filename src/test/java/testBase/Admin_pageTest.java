@@ -12,56 +12,48 @@ public class Admin_pageTest extends BaseClass {
 	OrangeHRMLoginPage login = new OrangeHRMLoginPage(driver);
 	AdminPage adminpage = new AdminPage(driver);
 
-	@Test(priority = 0)
+	@Test(priority = 0, groups = { "Sanity", "Regression", "LoginTest" })
 	void loginTest001() {
 		login.login("Admin", "admin123");
 		String pageurl = login.LoginValidation();
 		Assert.assertEquals("https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index", pageurl);
 		adminpage.clicktheadminmenu();
-
 	}
 
-	@Test(priority = 1)
+	@Test(priority = 1, groups = { "Regression", "AdminTest" })
 	void SearchSystemUsers() {
 		adminpage.enterUsernameForSystemUser("Admin");
 		adminpage.clickSearchButtonForSystemUser();
 		adminpage.clickResetButtonForSystemUser();
-
 	}
 
-	@Test(priority = 2)
+	@Test(priority = 2, groups = { "Regression", "AdminTest" })
 	void SearchSystemrole() {
 		adminpage.selectUserRoleForSystemUser("Admin");
 		adminpage.clickSearchButtonForSystemUser();
 		adminpage.clickResetButtonForSystemUser();
-
 	}
 
-	@Test(priority = 7)
+	@Test(priority = 7, groups = { "Regression", "AdminTest" })
 	void SearchSystememployeename() {
 		adminpage.enterEmployeeNameForSystemUser("John Doe");
 		adminpage.clickSearchButtonForSystemUser();
 		adminpage.clickResetButtonForSystemUser();
-
 	}
 
-	@Test(priority = 4)
+	@Test(priority = 4, groups = { "Regression", "AdminTest" })
 	void SearchSystemstatus() {
 		adminpage.selectStatusForSystemUser("Enabled");
 		adminpage.clickSearchButtonForSystemUser();
 		adminpage.clickResetButtonForSystemUser();
-
 	}
-	
-	
 
-	@Test(priority = 5)
+	@Test(priority = 5, groups = { "Sanity", "AdminTest" })
 	void Cicktheadduserbutton() {
 		adminpage.clickAddButtonForSystemUser();
-
 	}
-	
-	@Test(priority =6)
+
+	@Test(priority = 6, groups = { "Regression", "Sanity", "AdminTest" })
 	void AddNewUser() {
 		adminpage.selectUserRole("Admin");
 		adminpage.enterEmployeeName("John Doe");
@@ -71,5 +63,4 @@ public class Admin_pageTest extends BaseClass {
 		adminpage.enterConfirmPassword("Password123");
 		adminpage.clickSaveButton();
 	}
-
 }

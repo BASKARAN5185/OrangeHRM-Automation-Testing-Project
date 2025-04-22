@@ -3,6 +3,7 @@ package testBase;
 import java.awt.AWTException;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import baseClass.BaseClass;
@@ -12,32 +13,34 @@ import pageObjectClass.OrangeHRMLoginPage;
 
 public class LeavePageTest extends BaseClass {
 
-	HomeMenuPage Menu = new HomeMenuPage(driver);
-	LeavePage Leave = new LeavePage(driver);
-	OrangeHRMLoginPage login = new OrangeHRMLoginPage(driver);
+	HomeMenuPage Menu;
+	LeavePage Leave;
+	OrangeHRMLoginPage login;
 
-	@Test(priority = 1)
-	void login() {
-
-		login.login("Admin", "admin123");
-		String pageurl = login.LoginValidation();
-		Assert.assertEquals("https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index", pageurl);
-
+	@BeforeClass
+	public void setUpPages() {
+		Menu = new HomeMenuPage(driver);
+		Leave = new LeavePage(driver);
+		login = new OrangeHRMLoginPage(driver);
 	}
 
-	@Test(priority = 2)
+	@Test(priority = 1, groups = { "Regression", "Sanity", "LeaveModuleTest" })
+	void login() {
+		login.login("Admin", "admin123");
+		String pageurl = login.LoginValidation();
+		Assert.assertEquals(pageurl, "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index",
+				"Login URL validation failed.");
+	}
+
+	@Test(priority = 2, groups = { "Regression", "Sanity", "LeaveModuleTest" })
 	void ClickTheLeavemenu() {
 		Menu.clickLeaveMenu();
 		String pageUrl = getCurrentUrlpage();
-
-		System.out.println(pageUrl);
-
-		// Verify that the URL contains 'model=hr.job'
+		System.out.println("Leave page URL: " + pageUrl);
 		Assert.assertTrue(pageUrl.contains("leave/viewLeaveList"), "URL does not contain 'leave/viewLeaveList'");
-
 	}
 
-	@Test(priority = 3)
+	@Test(priority = 3, groups = { "Regression", "Sanity", "LeaveModuleTest" })
 	void EnterTheLeaveList() throws AWTException {
 		Leave.enterFromDate("2025-07-01");
 		Leave.enterToDate("2025-07-03");
@@ -45,12 +48,11 @@ public class LeavePageTest extends BaseClass {
 		Leave.selectLeaveStatus("CAN - Personal");
 		Leave.enterEmployeeName("John");
 		Leave.selectSubUnit("Engineering");
-		boolean isclickable = Leave.clickSearchButton();
-		Assert.assertTrue(isclickable, "Searchbutton is not clicabe ");
-
+		boolean isClickable = Leave.clickSearchButton();
+		Assert.assertTrue(isClickable, "Search button is not clickable");
 	}
 
-	@Test(priority = 4)
+	@Test(priority = 4, groups = { "Regression", "LeaveModuleTest" })
 	void clickTheResetbutton() throws AWTException {
 		Leave.enterFromDate("2025-07-01");
 		Leave.enterToDate("2025-07-03");
@@ -58,61 +60,49 @@ public class LeavePageTest extends BaseClass {
 		Leave.selectLeaveStatus("CAN - Personal");
 		Leave.enterEmployeeName("John");
 		Leave.selectSubUnit("Engineering");
-		boolean isclickable = Leave.clickResetButton();
-		Assert.assertTrue(isclickable, "Searchbutton is not clicabe ");
-
+		boolean isClickable = Leave.clickResetButton();
+		Assert.assertTrue(isClickable, "Reset button is not clickable");
 	}
 
-	@Test(priority = 5)
+	@Test(priority = 5, groups = { "Sanity", "LeaveModuleTest" })
 	void formDateFieldisEmpty() throws AWTException {
-
-		// Test case for From Date being empty
-        String fromDateEmpty = Leave.enterFromDate("");
-        Assert.assertEquals(fromDateEmpty,"" ,"To Date field is not null");
-		boolean isclickable1 = Leave.clickResetButton();
-		Assert.assertTrue(isclickable1, "Searchbutton is not clicabe ");
+		String fromDateEmpty = Leave.enterFromDate("");
+		Assert.assertEquals(fromDateEmpty, "", "From Date field is not empty");
+		boolean isClickable = Leave.clickResetButton();
+		Assert.assertTrue(isClickable, "Reset button is not clickable");
 	}
 
-	@Test(priority = 6)
+	@Test(priority = 6, groups = { "Sanity", "LeaveModuleTest" })
 	void ToDateFieldisEmpty() throws AWTException {
 		Leave.enterFromDate("2025-07-01");
-		 // Test case for To Date being empty
-	      
-        String toDateEmpty = Leave.enterToDate("");
-        Assert.assertEquals(toDateEmpty,"" ,"To Date field is not null");
-		boolean isclickable1 = Leave.clickResetButton();
-		Assert.assertTrue(isclickable1, "Searchbutton is not clicabe ");
+		String toDateEmpty = Leave.enterToDate("");
+		Assert.assertEquals(toDateEmpty, "", "To Date field is not empty");
+		boolean isClickable = Leave.clickResetButton();
+		Assert.assertTrue(isClickable, "Reset button is not clickable");
 	}
 
-	@Test(priority = 7)
+	@Test(priority = 7, groups = { "LeaveModuleTest" })
 	void statusFieldisEmpty() throws AWTException {
 		Leave.enterFromDate("2025-07-01");
 		Leave.enterToDate("2025-07-03");
-		// Test case for Leave Status being empty
-        String leaveStatusEmpty = Leave.selectLeaveStatus("");
-        Assert.assertEquals(leaveStatusEmpty,"" ,"To Date field is not null");
-		boolean isclickable1 = Leave.clickResetButton();
-		Assert.assertTrue(isclickable1, "Searchbutton is not clicabe ");
+		String leaveStatusEmpty = Leave.selectLeaveStatus("");
+		Assert.assertEquals(leaveStatusEmpty, "", "Leave Status field is not empty");
+		boolean isClickable = Leave.clickResetButton();
+		Assert.assertTrue(isClickable, "Reset button is not clickable");
 	}
-	
-	  @Test(priority = 8)
-	    void fieldsAreEmpty() throws AWTException {
-	        // Test case for From Date being empty
-	        String fromDateEmpty = Leave.enterFromDate("");
-	        Assert.assertEquals(fromDateEmpty,"" ,"To Date field is not null");
 
-	        // Test case for To Date being empty
-	      
-	        String toDateEmpty = Leave.enterToDate("");
-	        Assert.assertEquals(toDateEmpty,"" ,"To Date field is not null");
+	@Test(priority = 8, groups = { "Regression", "LeaveModuleTest" })
+	void fieldsAreEmpty() throws AWTException {
+		String fromDateEmpty = Leave.enterFromDate("");
+		Assert.assertEquals(fromDateEmpty, "", "From Date field is not empty");
 
-	        // Test case for Leave Status being empty
-	        String leaveStatusEmpty = Leave.selectLeaveStatus("");
-	        Assert.assertEquals(leaveStatusEmpty,"" ,"To Date field is not null");
+		String toDateEmpty = Leave.enterToDate("");
+		Assert.assertEquals(toDateEmpty, "", "To Date field is not empty");
 
-	        // Click the Reset button after all checks
-	        boolean isClickable = Leave.clickResetButton();
-	        Assert.assertTrue(isClickable, "Reset button is not clickable");
-	    }
+		String leaveStatusEmpty = Leave.selectLeaveStatus("");
+		Assert.assertEquals(leaveStatusEmpty, "", "Leave Status field is not empty");
 
+		boolean isClickable = Leave.clickResetButton();
+		Assert.assertTrue(isClickable, "Reset button is not clickable");
+	}
 }
