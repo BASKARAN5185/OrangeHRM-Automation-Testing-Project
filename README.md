@@ -2,42 +2,46 @@
 
 # OrangeHRM Testing Project
 
-This repository contains **automated tests** for the [OrangeHRM](https://www.orangehrm.com/) application. The primary objective is to validate the functionality, performance, and reliability of various modules in the OrangeHRM system through automated testing.
+This repository contains **automated tests** for the [OrangeHRM](https://www.orangehrm.com/) application. The goal of this project is to ensure the **functionality**, **performance**, and **reliability** of key modules in the OrangeHRM system using Selenium and TestNG.
+
+> 📌 Designed for QA engineers and automation testers to validate real-world HR workflows.
 
 ---
 
-## 📌 Features
+## 🚀 Features
 
-- **Automated Functional Tests**: Covers modules like Leave Management, Employee Management (PIM), My Info, Admin, Dashboard, and more.
-- **Selenium WebDriver**: Browser automation for simulating user interactions.
-- **TestNG Framework**: For test management, grouping, and reporting.
-- **Data-Driven Testing**: Using TestNG DataProviders and Excel input for dynamic testing.
-- **Custom Reporting**: Integrated with ExtentReports for rich HTML-based test reports.
-- **CI/CD Ready**: Can be integrated with Jenkins, GitHub Actions, or any CI pipeline.
+| ✅ Feature               | 🔍 Description                                                                 |
+|-------------------------|---------------------------------------------------------------------------------|
+| Automated Functional Tests | Covers Leave, PIM, Admin, My Info, Dashboard, and more.                    |
+| Selenium WebDriver      | Automates real browser interactions across different modules.                  |
+| TestNG Framework        | Manages test cases with annotations, assertions, and custom groups.            |
+| Data-Driven Testing     | Uses Excel and TestNG DataProviders to inject test data dynamically.           |
+| ExtentReports Integration | Provides rich HTML reports with logs, screenshots, and step statuses.       |
+| CI/CD Ready             | Easily integrable with Jenkins, GitHub Actions, or other CI pipelines.         |
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Java 8+**
-- **Maven**
-- **TestNG**
-- **Selenium WebDriver**
-- **ExtentReports**
-- **Apache POI (for Excel utility)**
+| Tool / Library     | Purpose                          |
+|--------------------|----------------------------------|
+| **Java 8+**        | Programming language              |
+| **Maven**          | Project build and dependency management |
+| **TestNG**         | Testing framework for managing test suites |
+| **Selenium WebDriver** | Browser automation               |
+| **ExtentReports**  | Test reporting in HTML format     |
+| **Apache POI**     | Reading test data from Excel files |
 
 ---
 
-## 🧰 Project Structure
+## 📁 Project Structure
 
 ```bash
 OrangeHRM-Testing/
-│
 ├── src/
 │   ├── main/java/MyProject/OrangeHRM/
 │   │   └── App.java
-│   │
-│   ├── test/java/
+│   └── test/java/
 │       ├── baseClass/
 │       │   └── BaseClass.java
 │       ├── pageObjectClass/
@@ -61,7 +65,6 @@ OrangeHRM-Testing/
 │           ├── ExcelUtility.java
 │           ├── ExtentReportManager.java
 │           └── ExtentReportManager1.java
-│
 ├── testng.xml
 ├── pom.xml
 └── README.md
@@ -69,58 +72,82 @@ OrangeHRM-Testing/
 
 ---
 
-## 🚀 Installation & Setup
+## ⚙️ Installation & Setup
 
 ### 📋 Prerequisites
 
 - Java 8 or later
 - Maven
-- ChromeDriver / GeckoDriver (based on the browser you are using)
+- ChromeDriver / GeckoDriver (depending on browser used)
 
-### 🧱 Steps
+---
 
-1. **Clone the Repository**:
+### 🧱 Steps to Set Up
+
+#### 1️⃣ Clone the Repository
 
 ```bash
 git clone https://github.com/BASKARAN5185/OrangeHRM-Testing.git
 cd OrangeHRM-Testing
 ```
 
-2. **Install Dependencies**:
+#### 2️⃣ Install Dependencies
 
 ```bash
 mvn install
 ```
 
-3. **Configure WebDriver**:
+#### 3️⃣ Configure WebDriver
 
-- Download the appropriate driver:
+- Download the appropriate browser driver:
   - [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/)
   - [GeckoDriver](https://github.com/mozilla/geckodriver/releases)
-- Set its path in your system’s environment variables **or** configure it in the `BaseClass.java`.
+- Add the path to your **system environment variables** or configure it directly in `BaseClass.java`.
 
 ---
 
-## 🧪 Running the Tests
+## 🧪 Running Tests
 
-### Using Maven
+Use Maven to run all TestNG test cases:
 
 ```bash
 mvn test
 ```
 
-Tests will execute as defined in `testng.xml`. Reports will be generated under:
+- ✅ Executes test suites defined in `testng.xml`.
+- 📄 Reports will be generated in:
 
 ```bash
 target/test-output/
 ```
 
-You can also view **ExtentReports** (HTML format) in the specified output directory.
+- 🌐 ExtentReports (HTML format) will be available in the specified directory (as configured in `ExtentReportManager.java`).
+
+---
+
+## 📊 Modules Covered
+
+| Module            | Test Class                  |
+|-------------------|-----------------------------|
+| Login             | `Login_Page_test.java`      |
+| Dashboard         | `DashboardPageTest.java`    |
+| Leave Management  | `LeavePageTest.java`        |
+| PIM (Employee Mgmt) | `PIMPageTest.java`        |
+| Admin             | `Admin_pageTest.java`       |
+| My Info           | `My_Info_PageTest.java`     |
 
 ---
 
 ## 📄 License
 
-This project is for educational and testing purposes only. All rights to OrangeHRM belong to their respective owners.
+This project is for **educational and testing purposes only**.  
+All rights related to OrangeHRM belong to their respective owners.
+
+---
+
+## 📬 Feedback & Contributions
+
+Have ideas to improve this project? Found a bug?  
+Feel free to open an issue or submit a pull request.
 
 ---
