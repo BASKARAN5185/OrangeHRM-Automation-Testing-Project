@@ -5,13 +5,9 @@
     <classes>
       <class name="testBase.Admin_pageTest">
         <methods>
-          <include name="loginTest001"/>
           <include name="SearchSystemstatus"/>
-          <include name="SearchSystemUsers"/>
           <include name="openTheBrowser"/>
-          <include name="Cicktheadduserbutton"/>
           <include name="SearchSystemrole"/>
-          <include name="SearchSystememployeename"/>
           <include name="AddNewUser"/>
         </methods>
       </class> <!-- testBase.Admin_pageTest -->
@@ -28,26 +24,33 @@
       </class> <!-- testBase.My_Info_PageTest -->
       <class name="testBase.PIMPageTest">
         <methods>
-          <include name="EmployeeEnterPassword"/>
           <include name="EmployeeConformPassword"/>
+          <include name="EmployeeEnterPassword"/>
           <include name="EmployeeNamelastEnter_Save"/>
           <include name="EmployeeusernameI_Save"/>
           <include name="EmployeeUserNameIsEmpty"/>
           <include name="openTheBrowser"/>
           <include name="Add_Employee"/>
           <include name="SameEmployeeID"/>
-          <include name="clickEmployeeListTheAddButton"/>
           <include name="Add_Employee_cancel"/>
+          <include name="clickEmployeeListTheAddButton"/>
           <include name="Add_Employee_Disable_Satus"/>
         </methods>
       </class> <!-- testBase.PIMPageTest -->
       <class name="testBase.LeavePageTest">
         <methods>
-          <include name="openTheBrowser"/>
+          <include name="setUpPages"/>
           <include name="clickTheResetbutton"/>
+          <include name="openTheBrowser"/>
           <include name="EnterTheLeaveList"/>
         </methods>
       </class> <!-- testBase.LeavePageTest -->
+      <class name="testBase.DashboardPageTest">
+        <methods>
+          <include name="openTheBrowser"/>
+          <include name="EmployeeDistributionbySubUnit14"/>
+        </methods>
+      </class> <!-- testBase.DashboardPageTest -->
     </classes>
   </test> <!-- Surefire test(failed) -->
 </suite> <!-- Failed suite [Surefire suite] -->

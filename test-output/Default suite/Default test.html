@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>4/4/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>57/4/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Mar 31 22:41:26 IST 2025</td>
+<td>Started on:</td><td>Fri May 09 14:01:47 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>21 seconds (21779 ms)</td>
+<tr><td>Total time:</td><td>179 seconds (179864 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,14 +76,32 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='testBase.LeavePageTest.fieldsAreEmpty()'><b>fieldsAreEmpty</b><br>Test class: testBase.LeavePageTest</td>
-<td><div><pre>org.openqa.selenium.support.ui.UnexpectedTagNameException: Element should have been &quot;select&quot; but was &quot;div&quot;
+<td title='testBase.Login_Page_test.CredentialUserNameAndPassword()'><b>CredentialUserNameAndPassword</b><br>Test class: testBase.Login_Page_test</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;*[name=&apos;username&apos;]&quot;}
+  (Session info: chrome=135.0.7049.117)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.22.0&apos;, revision: &apos;c5f3146703*&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
-Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.Select.&lt;init&gt;(Select.java:46)
-	at pageObjectClass.LeavePage.selectLeaveStatus(LeavePage.java:144)
-	at testBase.LeavePageTest.fieldsAreEmpty(LeavePageTest.java:110)
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [be47d5ed5a8d9aebf31bc49f4eb059fd, findElement {using=name, value=username}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.117, chrome: {chromedriverVersion: 135.0.7049.114 (63fd8a7d9d0..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49787}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49787/devtoo..., se:cdpVersion: 135.0.7049.117, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: be47d5ed5a8d9aebf31bc49f4eb059fd
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at pageObjectClass.OrangeHRMLoginPage.login(OrangeHRMLoginPage.java:34)
+	at testBase.Login_Page_test.CredentialUserNameAndPassword(Login_Page_test.java:94)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -110,14 +128,32 @@ Driver info: driver.version: unknown
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div><a href='#' onClick='toggleBox("stack-trace910504711", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace910504711'><pre>org.openqa.selenium.support.ui.UnexpectedTagNameException: Element should have been &quot;select&quot; but was &quot;div&quot;
+</pre></div><a href='#' onClick='toggleBox("stack-trace931482420", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace931482420'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;*[name=&apos;username&apos;]&quot;}
+  (Session info: chrome=135.0.7049.117)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.22.0&apos;, revision: &apos;c5f3146703*&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
-Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.Select.&lt;init&gt;(Select.java:46)
-	at pageObjectClass.LeavePage.selectLeaveStatus(LeavePage.java:144)
-	at testBase.LeavePageTest.fieldsAreEmpty(LeavePageTest.java:110)
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [be47d5ed5a8d9aebf31bc49f4eb059fd, findElement {using=name, value=username}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.117, chrome: {chromedriverVersion: 135.0.7049.114 (63fd8a7d9d0..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49787}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49787/devtoo..., se:cdpVersion: 135.0.7049.117, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: be47d5ed5a8d9aebf31bc49f4eb059fd
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at pageObjectClass.OrangeHRMLoginPage.login(OrangeHRMLoginPage.java:34)
+	at testBase.Login_Page_test.CredentialUserNameAndPassword(Login_Page_test.java:94)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -145,17 +181,35 @@ Driver info: driver.version: unknown
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>0</td>
-<td>testBase.LeavePageTest@bae7dc0</td></tr>
+<td>15</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
 <tr>
-<td title='testBase.LeavePageTest.EnterTheLeaveList()'><b>EnterTheLeaveList</b><br>Test class: testBase.LeavePageTest</td>
-<td><div><pre>org.openqa.selenium.support.ui.UnexpectedTagNameException: Element should have been &quot;select&quot; but was &quot;div&quot;
+<td title='testBase.Login_Page_test.notCredentialUserNameAndPassword()'><b>notCredentialUserNameAndPassword</b><br>Test class: testBase.Login_Page_test<br>Parameters: Karthik, B</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;*[name=&apos;username&apos;]&quot;}
+  (Session info: chrome=135.0.7049.117)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.22.0&apos;, revision: &apos;c5f3146703*&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
-Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.Select.&lt;init&gt;(Select.java:46)
-	at pageObjectClass.LeavePage.selectLeaveStatus(LeavePage.java:144)
-	at testBase.LeavePageTest.EnterTheLeaveList(LeavePageTest.java:44)
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [be47d5ed5a8d9aebf31bc49f4eb059fd, findElement {using=name, value=username}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.117, chrome: {chromedriverVersion: 135.0.7049.114 (63fd8a7d9d0..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49787}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49787/devtoo..., se:cdpVersion: 135.0.7049.117, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: be47d5ed5a8d9aebf31bc49f4eb059fd
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at pageObjectClass.OrangeHRMLoginPage.login(OrangeHRMLoginPage.java:34)
+	at testBase.Login_Page_test.notCredentialUserNameAndPassword(Login_Page_test.java:86)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -182,14 +236,106 @@ Driver info: driver.version: unknown
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1835778392", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1835778392'><pre>org.openqa.selenium.support.ui.UnexpectedTagNameException: Element should have been &quot;select&quot; but was &quot;div&quot;
+</pre></div><a href='#' onClick='toggleBox("stack-trace769342184", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace769342184'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;*[name=&apos;username&apos;]&quot;}
+  (Session info: chrome=135.0.7049.117)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.22.0&apos;, revision: &apos;c5f3146703*&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
-Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.Select.&lt;init&gt;(Select.java:46)
-	at pageObjectClass.LeavePage.selectLeaveStatus(LeavePage.java:144)
-	at testBase.LeavePageTest.EnterTheLeaveList(LeavePageTest.java:44)
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [be47d5ed5a8d9aebf31bc49f4eb059fd, findElement {using=name, value=username}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.117, chrome: {chromedriverVersion: 135.0.7049.114 (63fd8a7d9d0..., userDataDir: C:\Users\xmedia\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49787}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49787/devtoo..., se:cdpVersion: 135.0.7049.117, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: be47d5ed5a8d9aebf31bc49f4eb059fd
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at pageObjectClass.OrangeHRMLoginPage.login(OrangeHRMLoginPage.java:34)
+	at testBase.Login_Page_test.notCredentialUserNameAndPassword(Login_Page_test.java:86)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>15</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: Admin, admin123</td>
+<td><div><pre>java.lang.AssertionError: expected [https://opensource-demo.orangehrmlive.com/web/index.php/auth/login] but found [https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at org.testng.Assert.assertEquals(Assert.java:666)
+	at testBase.Login_Page_test.loginTest010(Login_Page_test.java:80)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div><a href='#' onClick='toggleBox("stack-trace253722034", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace253722034'><pre>java.lang.AssertionError: expected [https://opensource-demo.orangehrmlive.com/web/index.php/auth/login] but found [https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at org.testng.Assert.assertEquals(Assert.java:666)
+	at testBase.Login_Page_test.loginTest010(Login_Page_test.java:80)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -218,16 +364,14 @@ Driver info: driver.version: unknown
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
 <td>2</td>
-<td>testBase.LeavePageTest@bae7dc0</td></tr>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
 <tr>
-<td title='testBase.LeavePageTest.statusFieldisEmpty()'><b>statusFieldisEmpty</b><br>Test class: testBase.LeavePageTest</td>
-<td><div><pre>org.openqa.selenium.support.ui.UnexpectedTagNameException: Element should have been &quot;select&quot; but was &quot;div&quot;
-Build info: version: &apos;4.22.0&apos;, revision: &apos;c5f3146703*&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
-Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.Select.&lt;init&gt;(Select.java:46)
-	at pageObjectClass.LeavePage.selectLeaveStatus(LeavePage.java:144)
-	at testBase.LeavePageTest.statusFieldisEmpty(LeavePageTest.java:92)
+<td title='testBase.Login_Page_test.logoTest005()'><b>logoTest005</b><br>Test class: testBase.Login_Page_test</td>
+<td><div><pre>java.lang.AssertionError: Side logo is not visible expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at testBase.Login_Page_test.logoTest005(Login_Page_test.java:45)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -254,14 +398,12 @@ Driver info: driver.version: unknown
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1164622694", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1164622694'><pre>org.openqa.selenium.support.ui.UnexpectedTagNameException: Element should have been &quot;select&quot; but was &quot;div&quot;
-Build info: version: &apos;4.22.0&apos;, revision: &apos;c5f3146703*&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
-Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.Select.&lt;init&gt;(Select.java:46)
-	at pageObjectClass.LeavePage.selectLeaveStatus(LeavePage.java:144)
-	at testBase.LeavePageTest.statusFieldisEmpty(LeavePageTest.java:92)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1027200", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1027200'><pre>java.lang.AssertionError: Side logo is not visible expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at testBase.Login_Page_test.logoTest005(Login_Page_test.java:45)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -289,80 +431,8 @@ Driver info: driver.version: unknown
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>1</td>
-<td>testBase.LeavePageTest@bae7dc0</td></tr>
-<tr>
-<td title='testBase.LeavePageTest.clickTheResetbutton()'><b>clickTheResetbutton</b><br>Test class: testBase.LeavePageTest</td>
-<td><div><pre>org.openqa.selenium.support.ui.UnexpectedTagNameException: Element should have been &quot;select&quot; but was &quot;div&quot;
-Build info: version: &apos;4.22.0&apos;, revision: &apos;c5f3146703*&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
-Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.Select.&lt;init&gt;(Select.java:46)
-	at pageObjectClass.LeavePage.selectLeaveStatus(LeavePage.java:144)
-	at testBase.LeavePageTest.clickTheResetbutton(LeavePageTest.java:57)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at org.testng.TestRunner.privateRun(TestRunner.java:819)
-	at org.testng.TestRunner.run(TestRunner.java:619)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
-	at org.testng.TestNG.runSuites(TestNG.java:1134)
-	at org.testng.TestNG.run(TestNG.java:1101)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1481751887", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1481751887'><pre>org.openqa.selenium.support.ui.UnexpectedTagNameException: Element should have been &quot;select&quot; but was &quot;div&quot;
-Build info: version: &apos;4.22.0&apos;, revision: &apos;c5f3146703*&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
-Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.Select.&lt;init&gt;(Select.java:46)
-	at pageObjectClass.LeavePage.selectLeaveStatus(LeavePage.java:144)
-	at testBase.LeavePageTest.clickTheResetbutton(LeavePageTest.java:57)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at org.testng.TestRunner.privateRun(TestRunner.java:819)
-	at org.testng.TestRunner.run(TestRunner.java:619)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
-	at org.testng.TestNG.runSuites(TestNG.java:1134)
-	at org.testng.TestNG.run(TestNG.java:1101)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>1</td>
-<td>testBase.LeavePageTest@bae7dc0</td></tr>
+<td>0</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -373,25 +443,290 @@ Driver info: driver.version: unknown
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='testBase.LeavePageTest.login()'><b>login</b><br>Test class: testBase.LeavePageTest</td>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: victor.k, vic$456</td>
 <td></td>
-<td>3</td>
-<td>testBase.LeavePageTest@bae7dc0</td></tr>
+<td>8</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
 <tr>
-<td title='testBase.LeavePageTest.ClickTheLeavemenu()'><b>ClickTheLeavemenu</b><br>Test class: testBase.LeavePageTest</td>
-<td></td>
-<td>1</td>
-<td>testBase.LeavePageTest@bae7dc0</td></tr>
-<tr>
-<td title='testBase.LeavePageTest.ToDateFieldisEmpty()'><b>ToDateFieldisEmpty</b><br>Test class: testBase.LeavePageTest</td>
+<td title='testBase.Login_Page_test.loginTest1004()'><b>loginTest1004</b><br>Test class: testBase.Login_Page_test</td>
 <td></td>
 <td>1</td>
-<td>testBase.LeavePageTest@bae7dc0</td></tr>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
 <tr>
-<td title='testBase.LeavePageTest.formDateFieldisEmpty()'><b>formDateFieldisEmpty</b><br>Test class: testBase.LeavePageTest</td>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: anna.white, anna#456</td>
+<td></td>
+<td>1</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: kate.brown, kate2023!</td>
+<td></td>
+<td>1</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: hannah.m, hannah99</td>
+<td></td>
+<td>1</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: sophia.l, sophia99</td>
+<td></td>
+<td>1</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: rachel.k, rach2023</td>
+<td></td>
+<td>1</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest003()'><b>loginTest003</b><br>Test class: testBase.Login_Page_test</td>
 <td></td>
 <td>0</td>
-<td>testBase.LeavePageTest@bae7dc0</td></tr>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.forgetpasstest007()'><b>forgetpasstest007</b><br>Test class: testBase.Login_Page_test</td>
+<td></td>
+<td>0</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: grace.hopper, grace#99</td>
+<td></td>
+<td>2</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: kevin.hart, kevin$23</td>
+<td></td>
+<td>2</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: bob_jones, bobby$1</td>
+<td></td>
+<td>1</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: patrick.s, pat$123</td>
+<td></td>
+<td>1</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: nancy.w, nancy#789</td>
+<td></td>
+<td>1</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: tina.fey, tina$123</td>
+<td></td>
+<td>1</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: ella.fitz, ellaPass</td>
+<td></td>
+<td>1</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: mia.wallace, mia#123</td>
+<td></td>
+<td>1</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest001()'><b>loginTest001</b><br>Test class: testBase.Login_Page_test</td>
+<td></td>
+<td>2</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: alice.smith, alice99</td>
+<td></td>
+<td>3</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: samuel.l, sam$456</td>
+<td></td>
+<td>2</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: julia.roberts, julia99#</td>
+<td></td>
+<td>0</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: clara.b, claraPass$</td>
+<td></td>
+<td>2</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.forgetpasssentest009()'><b>forgetpasssentest009</b><br>Test class: testBase.Login_Page_test</td>
+<td></td>
+<td>2</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: nick_j, nickpass3</td>
+<td></td>
+<td>1</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: tony.stark, ironman1</td>
+<td></td>
+<td>1</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: sarah.connor, terminator2</td>
+<td></td>
+<td>1</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: zoe.saldana, zoe2023!</td>
+<td></td>
+<td>3</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: user1, pass123</td>
+<td></td>
+<td>1</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: jessica.m, jess#123</td>
+<td></td>
+<td>0</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.forgetpasscancelTest008()'><b>forgetpasscancelTest008</b><br>Test class: testBase.Login_Page_test</td>
+<td></td>
+<td>1</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: luke.sky, force2023</td>
+<td></td>
+<td>7</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: leo.dicaprio, leo2023</td>
+<td></td>
+<td>3</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: david.lee, david$2023</td>
+<td></td>
+<td>1</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: olivia.p, olive2023</td>
+<td></td>
+<td>1</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: harry.p, potter99</td>
+<td></td>
+<td>1</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: emily rose, emily!12</td>
+<td></td>
+<td>1</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest002()'><b>loginTest002</b><br>Test class: testBase.Login_Page_test</td>
+<td></td>
+<td>3</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: diana.prince, wonder2023</td>
+<td></td>
+<td>3</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: peter.parker, spider22</td>
+<td></td>
+<td>1</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: laura.miller, lauraPass</td>
+<td></td>
+<td>1</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: linda_k, linda789</td>
+<td></td>
+<td>1</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: mark.twain, mark$123</td>
+<td></td>
+<td>3</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: ian.malcolm, ian#789</td>
+<td></td>
+<td>1</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: john_doe, jd2023</td>
+<td></td>
+<td>1</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: george.c, george$12</td>
+<td></td>
+<td>1</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: will.smith, will2023$</td>
+<td></td>
+<td>2</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: ryan_g, ryan#789</td>
+<td></td>
+<td>1</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: lisa.marie, lisa2023!</td>
+<td></td>
+<td>1</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: brad.pitt, brad#2023</td>
+<td></td>
+<td>1</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: oscar.w, oscar99$</td>
+<td></td>
+<td>3</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: ethan.hunt, mission1</td>
+<td></td>
+<td>2</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: chris.evans, captain$1</td>
+<td></td>
+<td>2</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: mary.jane, maryPass1</td>
+<td></td>
+<td>2</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: mike92, mikePass!</td>
+<td></td>
+<td>1</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: tom_hardy, tommy$99</td>
+<td></td>
+<td>4</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: emma.watson, emma#456</td>
+<td></td>
+<td>1</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
+<tr>
+<td title='testBase.Login_Page_test.loginTest010()'><b>loginTest010</b><br>Test class: testBase.Login_Page_test<br>Parameters: james.bond, 007pass</td>
+<td></td>
+<td>1</td>
+<td>testBase.Login_Page_test@306e95ec</td></tr>
 </table><p>
 </body>
 </html>

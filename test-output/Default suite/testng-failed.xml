@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testBase.LeavePageTest">
+      <class name="testBase.Login_Page_test">
         <methods>
-          <include name="clickTheResetbutton"/>
+          <include name="CredentialUserNameAndPassword"/>
+          <include name="loginTest010" invocation-numbers="50"/>
           <include name="openTheBrowser"/>
-          <include name="statusFieldisEmpty"/>
-          <include name="EnterTheLeaveList"/>
-          <include name="fieldsAreEmpty"/>
+          <include name="notCredentialUserNameAndPassword" invocation-numbers="0"/>
+          <include name="logoTest005"/>
         </methods>
-      </class> <!-- testBase.LeavePageTest -->
+      </class> <!-- testBase.Login_Page_test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

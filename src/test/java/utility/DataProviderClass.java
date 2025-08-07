@@ -88,9 +88,30 @@ public class DataProviderClass {
 	        { "John", "Paul", "Jackson", "9876543210", "John Paul Jackson", "John12345", "John12345", "Disabled" },
 	        { "José", "Carlos", "Méndez", "90", "José Carlos Méndez", "Jose@123", "Jose@123", "Disabled" }
 	    };
+	    
+	   
+	    }
+	   
+	@DataProvider(name="New Employee")
+	public Object[][] NewEmployeeList(){
+		return new Object[][] {
+			{"Karthik","B" },
+		};
+	}
+	
+	@DataProvider (name ="Excel data")
+	public Object[][] ExcelDataDriven(){
+		return new Object[][] {
+			{
+				
+				
+			}
+		};
+	}
+	
 	}
 
 	
 	
 
-}
+
