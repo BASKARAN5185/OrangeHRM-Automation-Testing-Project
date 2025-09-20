@@ -1,11 +1,20 @@
 package pageObjectClass;
 
+import java.sql.Driver;
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.itextpdf.text.pdf.PdfStructTreeController.returnType;
 
 import baseClass.BaseClass;
 
@@ -35,7 +44,7 @@ public class RecruitmentPage extends BaseClass {
 	private By methodOfApplication = By.xpath(
 			"//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[3]/div/div/div/div[2]/div/div/div[1]");
 	private By resetButton = By.xpath("//button[@type='reset']");
-	private By submitButton = By.xpath("//button[@type='submit']");
+	private By searchButton = By.xpath("//button[@type='submit']");
 	private By addButton = By.xpath("//button[contains(.,'Add')]");
 
 	// Add Candidate Page Locators
@@ -111,7 +120,7 @@ public class RecruitmentPage extends BaseClass {
 		try {
 			WebElement job = driver.findElement(jobTitle);
 			job.click();
-			driver.findElement(By.xpath("//*[text()='" + title + "']"));
+			driver.findElement(By.xpath("//*[text()='" + title + "']")).click();
 			return job.getText();
 		} catch (NoSuchElementException e) {
 			e.printStackTrace();
@@ -210,6 +219,43 @@ public class RecruitmentPage extends BaseClass {
 			return "Calender date pickup there error is occurd";
 		}
 
+	}
+
+	public String methodOfApplicationSelection(String selection) {
+		WebElement applicationtype = driver.findElement(methodOfApplication);
+		By dropdownoption = By.xpath("//*[text()='" + selection + "']");
+		applicationtype.click();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.visibilityOfElementLocated( dropdownoption));
+		driver.findElement(dropdownoption).click();
+		return applicationtype.getText().trim();
+	}
+
+	public String requirmentPageButtons(String buttonname) {
+		String Button = buttonname.trim();
+		try {
+			switch (Button) {
+			case "Reset":
+				driver.findElement(resetButton).click();
+				return Button;
+			case "Search":
+				driver.findElement(searchButton).click();
+				return Button;
+			case "Add":
+				driver.findElement(addButton).click();
+				return Button;
+			default:
+				return "The button name '" + Button + "' is not available on the page";
+			}
+		} catch (NoSuchElementException e) {
+			e.printStackTrace();
+			return "The element for button '" + Button + "' was not find";
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "An error occurad while clicking the '" + Button + "' button";
+
+		}
 	}
 
 }
