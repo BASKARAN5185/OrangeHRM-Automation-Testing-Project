@@ -1,11 +1,11 @@
 package pageObjectClass;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 
 import baseClass.BaseClass;
 
@@ -16,11 +16,13 @@ public class RecruitmentPage extends BaseClass {
 		BaseClass.driver = driver;
 	}
 
+	JavascriptExecutor js = (JavascriptExecutor) driver;
+
 	// Page headers locators
 	private By candidateHeader = By.xpath("(//a[@class='oxd-topbar-body-nav-tab-item'])[1]");
 	private By vacanciesHeader = By.xpath("//a[text()='Vacancies']");
 
-	// Recruitment Page Loactors
+	// Requirement Page Locators
 	private By recruitmentMenu = By.xpath("//span[text()='Recruitment']");
 	private By jobTitle = By.xpath("(//div[@class='oxd-select-text-input'])[1]");
 	private By vacancy = By.xpath("(//div[@class='oxd-select-text-input'])[2]");
@@ -97,14 +99,20 @@ public class RecruitmentPage extends BaseClass {
 
 	}
 
+	// Requirement Menu Option Click
+	public String requirementMenuClick() {
+		driver.findElement(recruitmentMenu).click();
+		return driver.getCurrentUrl();
+	}
+
 	// Requirement Page Action methods
 	public String candidateJobTitleSelection(String title) {
-		
+
 		try {
 			WebElement job = driver.findElement(jobTitle);
-			Select dd = new Select(job);
-			dd.selectByVisibleText(title);
-			return dd.getFirstSelectedOption().getText().trim().toLowerCase();
+			job.click();
+			driver.findElement(By.xpath("//*[text()='" + title + "']"));
+			return job.getText();
 		} catch (NoSuchElementException e) {
 			e.printStackTrace();
 			return "Element is not found in the page ";
@@ -112,6 +120,96 @@ public class RecruitmentPage extends BaseClass {
 			e.printStackTrace();
 			return "Error is occurad job selected ";
 		}
+	}
+
+	public String vacancySelection(String vacancyopt) {
+		try {
+			WebElement vacancy1 = driver.findElement(vacancy);
+			vacancy1.click();
+			driver.findElement(By.xpath("//*[text()='" + vacancyopt + "']")).click();
+			return vacancy1.getText();
+		} catch (NoSuchElementException e) {
+			e.printStackTrace();
+			return "The Dropdown Element is not find there ";
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "Error is occurad Vacancy selected ";
+		}
+
+	}
+
+	public String hiringManagerSelection(String manageropt) {
+		try {
+			WebElement manger = driver.findElement(hiringManager);
+			manger.click();
+			driver.findElement(By.xpath("//*[text()='" + manageropt + "']")).click();
+			return manger.getText();
+		} catch (NoSuchElementException e) {
+			e.printStackTrace();
+			return "The Dropdown Element is not find there ";
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "Error is occurad Vacancy selected ";
+		}
+
+	}
+
+	public String statusSelection(String statusOption) {
+		try {
+			WebElement statuselement = driver.findElement(status);
+			Select dd = new Select(statuselement);
+			dd.selectByVisibleText(statusOption);
+			return dd.getFirstSelectedOption().getText().trim().toLowerCase();
+		} catch (NoSuchElementException e) {
+			e.printStackTrace();
+			return "The Dropdown Element is not find there ";
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "Error is occurad Vacancy selected ";
+		}
+
+	}
+
+	public String candidateNameEnter(String name) {
+		WebElement nameofcandidate = driver.findElement(candidateName);
+		nameofcandidate.sendKeys(name);
+		return nameofcandidate.getText().trim();
+	}
+
+	public String keywordEnter(String key) {
+		WebElement keywordfield = driver.findElement(keywords);
+		keywordfield.sendKeys(key);
+		return keywordfield.getText().trim();
+	}
+
+	public String candidateApplicationFromDatePickup(String from) {
+		try {
+			WebElement fromdate = driver.findElement(dateOfApplicationFrom);
+			js.executeScript("arguments[0].value='" + from + "'", fromdate);
+			return fromdate.getText().trim();
+		} catch (NoSuchElementException e) {
+			e.printStackTrace();
+			return "Calender Element not found in the page";
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "Calender date pickup there error is occurd";
+		}
+
+	}
+
+	public String candidateApplicationToDatePickup(String to) {
+		try {
+			WebElement todate = driver.findElement(dateOfApplicationTo);
+			js.executeScript("arguments[0].value='" + to + "'", todate);
+			return todate.getText().trim();
+		} catch (NoSuchElementException e) {
+			e.printStackTrace();
+			return "Calender Element not found in the page";
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "Calender date pickup there error is occurd";
+		}
+
 	}
 
 }
