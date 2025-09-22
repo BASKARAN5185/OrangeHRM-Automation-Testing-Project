@@ -1,31 +1,25 @@
 package pageObjectClass;
 
-import java.sql.Driver;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import com.itextpdf.text.pdf.PdfStructTreeController.returnType;
 
 import baseClass.BaseClass;
 
 public class RecruitmentPage extends BaseClass {
 
-	private RemoteWebDriver driver;
 	private JavascriptExecutor js;
 
 	public RecruitmentPage(RemoteWebDriver driver) {
 
-		this.driver = driver;
+		BaseClass.driver = driver;
 		this.js = (JavascriptExecutor) driver;
 	}
 
@@ -33,7 +27,7 @@ public class RecruitmentPage extends BaseClass {
 	private By candidateHeader = By.xpath("(//a[@class='oxd-topbar-body-nav-tab-item'])[1]");
 	private By vacanciesHeader = By.xpath("//a[text()='Vacancies']");
 
-	// Requirement Page Locators
+	// Requirement Candidate Page Locators
 	private By recruitmentMenu = By.xpath("//span[text()='Recruitment']");
 	private By jobTitle = By.xpath("(//div[@class='oxd-select-text-input'])[1]");
 	private By vacancy = By.xpath("(//div[@class='oxd-select-text-input'])[2]");
@@ -48,21 +42,6 @@ public class RecruitmentPage extends BaseClass {
 	private By resetButton = By.xpath("//button[@type='reset']");
 	private By searchButton = By.xpath("//button[@type='submit']");
 	private By addButton = By.xpath("//button[contains(.,'Add')]");
-
-	// Add Candidate Page Locators
-	private By firstName = By.name("firstName");
-	private By middleName = By.name("middleName");
-	private By lastname = By.name("lastName");
-	private By addvacancy = By.className("oxd-select-text-input");
-	private By email = By.xpath("(//input[@placeholder='Type here'])[1]");
-	private By contactNumber = By.xpath("(//input[@placeholder='Type here'])[2]");
-	private By resume = By.xpath("//i[@class='oxd-icon bi-upload oxd-file-input-icon']");
-	private By addCandidateKeywords = By.xpath("//input[@placeholder='Enter comma seperated words...']");
-	private By addCandidateDateOfApplication = By.xpath("//input[@placeholder='yyyy-dd-mm']");
-	private By notes = By.tagName("textarea");
-	private By keepData = By.xpath("//i[contains(@class,'oxd-icon bi-check')]");
-	private By cancelButton = By.xpath("//button[contains(.,'Cancel')]");
-	private By saveButton = By.xpath("//button[@type='submit']");
 
 	// Vacancies Page Locators
 	private By vacanciesTitle = By.xpath("(//div[@class='oxd-select-text-input'])[1]");
@@ -116,7 +95,7 @@ public class RecruitmentPage extends BaseClass {
 		return driver.getCurrentUrl();
 	}
 
-	// Requirement Page Action methods
+	// Requirement Candidate Page Action methods
 	public String candidateJobTitleSelection(String title) {
 
 		try {
