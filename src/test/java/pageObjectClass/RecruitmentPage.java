@@ -20,12 +20,14 @@ import baseClass.BaseClass;
 
 public class RecruitmentPage extends BaseClass {
 
+	private RemoteWebDriver driver;
+	private JavascriptExecutor js;
+
 	public RecruitmentPage(RemoteWebDriver driver) {
 
-		BaseClass.driver = driver;
+		this.driver = driver;
+		this.js = (JavascriptExecutor) driver;
 	}
-
-	JavascriptExecutor js = (JavascriptExecutor) driver;
 
 	// Page headers locators
 	private By candidateHeader = By.xpath("(//a[@class='oxd-topbar-body-nav-tab-item'])[1]");
@@ -136,7 +138,7 @@ public class RecruitmentPage extends BaseClass {
 			WebElement vacancy1 = driver.findElement(vacancy);
 			vacancy1.click();
 			driver.findElement(By.xpath("//*[text()='" + vacancyopt + "']")).click();
-			return vacancy1.getText();
+			return vacancy1.getAttribute("value");
 		} catch (NoSuchElementException e) {
 			e.printStackTrace();
 			return "The Dropdown Element is not find there ";
@@ -152,7 +154,7 @@ public class RecruitmentPage extends BaseClass {
 			WebElement manger = driver.findElement(hiringManager);
 			manger.click();
 			driver.findElement(By.xpath("//*[text()='" + manageropt + "']")).click();
-			return manger.getText();
+			return manger.getAttribute("value");
 		} catch (NoSuchElementException e) {
 			e.printStackTrace();
 			return "The Dropdown Element is not find there ";
@@ -168,7 +170,7 @@ public class RecruitmentPage extends BaseClass {
 			WebElement statuselement = driver.findElement(status);
 			Select dd = new Select(statuselement);
 			dd.selectByVisibleText(statusOption);
-			return dd.getFirstSelectedOption().getText().trim().toLowerCase();
+			return dd.getFirstSelectedOption().getAttribute("Value").trim().toLowerCase();
 		} catch (NoSuchElementException e) {
 			e.printStackTrace();
 			return "The Dropdown Element is not find there ";
@@ -182,13 +184,13 @@ public class RecruitmentPage extends BaseClass {
 	public String candidateNameEnter(String name) {
 		WebElement nameofcandidate = driver.findElement(candidateName);
 		nameofcandidate.sendKeys(name);
-		return nameofcandidate.getText().trim();
+		return nameofcandidate.getAttribute("value");
 	}
 
 	public String keywordEnter(String key) {
 		WebElement keywordfield = driver.findElement(keywords);
 		keywordfield.sendKeys(key);
-		return keywordfield.getText().trim();
+		return keywordfield.getAttribute("value");
 	}
 
 	public String candidateApplicationFromDatePickup(String from) {
@@ -226,9 +228,9 @@ public class RecruitmentPage extends BaseClass {
 		By dropdownoption = By.xpath("//*[text()='" + selection + "']");
 		applicationtype.click();
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.visibilityOfElementLocated( dropdownoption));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(dropdownoption));
 		driver.findElement(dropdownoption).click();
-		return applicationtype.getText().trim();
+		return applicationtype.getAttribute("value");
 	}
 
 	public String requirmentPageButtons(String buttonname) {
