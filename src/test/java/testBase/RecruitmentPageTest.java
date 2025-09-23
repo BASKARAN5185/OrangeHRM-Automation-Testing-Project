@@ -41,6 +41,7 @@ public class RecruitmentPageTest extends BaseClass {
 				"The selected in wrong hiring manager name option");
 		soft.assertEquals("Interview Scheduled", rec.statusSelection("Interview Scheduled"),
 				"the selected in wrong status option");
+		soft.assertAll();
 	}
 
 }
