@@ -13,6 +13,11 @@ public class DashboardPageTest extends BaseClass {
 
 	OrangeHRMLoginPage login = new OrangeHRMLoginPage(driver);
 	DashboardPage Dashboard = new DashboardPage(driver);
+	
+	 @Test(dependsOnMethods = "PagenameVerify002")
+	    public void checkBrokenLinks() {
+	        borkenLinkValidation(); // ✅ Will now work
+	    }
 
 	@Test(priority = 1, groups = { "Regression", "Sanity", "DashboardTest" })
 	void loginTest001() {

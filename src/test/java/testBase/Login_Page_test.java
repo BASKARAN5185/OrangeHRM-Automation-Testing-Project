@@ -8,6 +8,11 @@ import pageObjectClass.OrangeHRMLoginPage;
 public class Login_Page_test extends BaseClass {
 
     OrangeHRMLoginPage login = new OrangeHRMLoginPage(driver);
+    
+    @Test(dependsOnMethods = "loginTest001")
+    public void checkBrokenLinks() {
+        borkenLinkValidation(); // ✅ Will now work
+    }
 
 	@Test(priority = 1, groups = { "Smoke", "Regression", "LoginTest" })
 	void loginTest001() {
