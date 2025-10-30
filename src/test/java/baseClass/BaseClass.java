@@ -99,7 +99,11 @@ public class BaseClass {
 		driver.navigate().refresh();
 
 	}
+	
+	public WebElement getElement(By locator) {
+		return driver.findElement(locator);
 
+	}
 	public void borkenLinkValidation() {
 		List<WebElement> links = driver.findElements(By.tagName("a"));
 		for (WebElement link : links) {
