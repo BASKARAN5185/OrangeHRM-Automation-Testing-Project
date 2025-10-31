@@ -1,17 +1,24 @@
 package pageObjectClass;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import baseClass.BaseClass;
 import io.reactivex.rxjava3.functions.Action;
 
 public class AddCandidatePage extends BaseClass {
-    
-	public AddCandidatePage(RemoteWebDriver driver, Action action) {
+    WebDriverWait wait;
+	
+	public AddCandidatePage(RemoteWebDriver driver) {
 		BaseClass.driver = driver;
+		wait=new WebDriverWait(driver, Duration.ofSeconds(10));
 	}
 
 	// Add candidate page locators
@@ -56,10 +63,58 @@ public class AddCandidatePage extends BaseClass {
        	return gettext;
     }
     
-    
-    
-    
-    
-    
+    public void selectVacancy(String vacancyName) {
+        WebElement vacancyDropdown = wait.until(ExpectedConditions.elementToBeClickable(vacancy));
+        vacancyDropdown.click();
+        // select from dropdown by visible text
+        WebElement option = driver.findElement(By.xpath("//div[@role='option']//span[text()='" + vacancyName + "']"));
+        option.click();
+    }
+
+    public void enterEmail(String mail) {
+        WebElement emailField = wait.until(ExpectedConditions.visibilityOfElementLocated(email));
+        emailField.clear();
+        emailField.sendKeys(mail);
+    }
+
+    public void enterContact(String phone) {
+        WebElement contactField = wait.until(ExpectedConditions.visibilityOfElementLocated(contact));
+        contactField.clear();
+        contactField.sendKeys(phone);
+    }
+
+    public void uploadResume(String filePath) {
+        WebElement uploadField = wait.until(ExpectedConditions.presenceOfElementLocated(resumeUpload));
+        uploadField.sendKeys(filePath);  // send absolute file path
+    }
+
+    public void enterKeywords(String keywordText) {
+        WebElement keywordField = wait.until(ExpectedConditions.visibilityOfElementLocated(keywords));
+        keywordField.clear();
+        keywordField.sendKeys(keywordText);
+    }
+
+    public void enterDateOfApplication(String date) {
+        WebElement dateField = wait.until(ExpectedConditions.visibilityOfElementLocated(dataOfApplication));
+        dateField.clear();
+        dateField.sendKeys(date);
+        dateField.sendKeys(Keys.ENTER);
+    }
+
+    public void enterNotes(String noteText) {
+        WebElement notesField = wait.until(ExpectedConditions.visibilityOfElementLocated(notes));
+        notesField.clear();
+        notesField.sendKeys(noteText);
+    }
+
+    public void clickKeepDataCheckbox() {
+        WebElement checkbox = wait.until(ExpectedConditions.elementToBeClickable(keppDataCheckBox));
+        checkbox.click();
+    }
+
+    public void clickCancelButton() {
+        WebElement cancelBtn = wait.until(ExpectedConditions.elementToBeClickable(cancelButton));
+        cancelBtn.click();
+    }
     
 }
