@@ -148,6 +148,84 @@ public class ContactPageTest {
         Assert.assertTrue(true, "Other Email optional field handled correctly.");
     }
 
+        // ---------------- Additional Validation & UI Tests ---------------- //
+
+    @Test(priority = 20, groups = {"Sanity", "ContactPage"})
+    public void TC20_ValidateRequiredFields() {
+        contactPage.clearStreet1();
+        contactPage.clearCity();
+        contactPage.clickSaveButton();
+        Assert.assertTrue(contactPage.isErrorDisplayed("Required"), "Required field validation missing.");
+    }
+
+    @Test(priority = 21, groups = {"Sanity", "ContactPage"})
+    public void TC21_ValidateCityFieldMaxLength() {
+        String longCity = "A".repeat(150);
+        contactPage.City(longCity);
+        contactPage.clickSaveButton();
+        String actualCity = contactPage.getCityValue();
+        Assert.assertTrue(actualCity.length() <= 100, "City field accepts more than 100 characters");
+    }
+
+    @Test(priority = 22, groups = {"Sanity", "ContactPage"})
+    public void TC22_ValidateSpecialCharacterAcceptanceInAddress() {
+        contactPage.Street1("#23-B, O’Connell Street");
+        String value = contactPage.getStreet1Value();
+        Assert.assertTrue(value.contains("#23-B"), "Address did not accept valid special characters.");
+    }
+
+    @Test(priority = 23, groups = {"Sanity", "ContactPage"})
+    public void TC23_ValidateTrimmingOfSpaces() {
+        contactPage.City("   New York   ");
+        String trimmed = contactPage.getCityValue().trim();
+        Assert.assertEquals(trimmed, "New York", "City field did not trim extra spaces.");
+    }
+
+    @Test(priority = 24, groups = {"Sanity", "ContactPage"})
+    public void TC24_ValidateSQLInjectionProtection() {
+        contactPage.Street1("' OR 1=1 --");
+        contactPage.clickSaveButton();
+        Assert.assertFalse(contactPage.isErrorDisplayed("Database error"), "SQL Injection vulnerability detected!");
+    }
+
+    @Test(priority = 25, groups = {"Sanity", "ContactPage"})
+    public void TC25_ValidateHTMLInjectionProtection() {
+        contactPage.City("<script>alert('XSS')</script>");
+        contactPage.clickSaveButton();
+        boolean isSafe = !contactPage.isErrorDisplayed("alert('XSS')");
+        Assert.assertTrue(isSafe, "Page vulnerable to XSS or HTML injection!");
+    }
+
+    @Test(priority = 26, groups = {"Sanity", "ContactPage"})
+    public void TC26_VerifyAllFieldsVisible() {
+        Assert.assertNotNull(contactPage.getStreet1Value(), "Street 1 field not found.");
+        Assert.assertNotNull(contactPage.getCityValue(), "City field not found.");
+        Assert.assertNotNull(contactPage.getWorkEmailValue(), "Work Email field not found.");
+    }
+
+    @Test(priority = 27, groups = {"Sanity", "ContactPage"})
+    public void TC27_VerifySaveButtonIsEnabled() {
+        contactPage.Street1("45 Maple Ave");
+        contactPage.City("Boston");
+        contactPage.clickSaveButton();
+        Assert.assertTrue(true, "Save button clicked and enabled successfully.");
+    }
+
+    @Test(priority = 28, groups = {"Sanity", "ContactPage"})
+    public void TC28_VerifyDataPersistenceAfterSave() {
+        contactPage.City("Chicago");
+        contactPage.clickSaveButton();
+        String cityAfterSave = contactPage.getCityValue();
+        Assert.assertEquals(cityAfterSave, "Chicago", "Saved data not persisted correctly.");
+    }
+
+    @Test(priority = 29, groups = {"Sanity", "ContactPage"})
+    public void TC29_VerifyFormDoesNotAcceptOnlySpaces() {
+        contactPage.Street1("    ");
+        contactPage.clickSaveButton();
+        Assert.assertTrue(contactPage.isErrorDisplayed("Required"), "Form accepted spaces-only input.");
+    }
+
     @AfterClass
     public void tearDown() {
         driver.quit();
