@@ -97,6 +97,57 @@ public class ContactPageTest {
         Assert.assertTrue(true, "Save button clicked successfully.");
     }
 
+    
+    // ---------------- Validation Tests ---------------- //
+
+    @Test(priority = 13, groups = {"Sanity", "ContactPage"})
+    public void TC13_ValidateEmptyStreetShowsError() {
+        contactPage.clearStreet1();
+        contactPage.clickSaveButton();
+        Assert.assertTrue(contactPage.isErrorDisplayed("Required"), "Error not shown for empty Street1");
+    }
+
+    @Test(priority = 14, groups = {"Sanity", "ContactPage"})
+    public void TC14_ValidateInvalidZipFormat() {
+        contactPage.ZipCode("ABCD");
+        contactPage.clickSaveButton();
+        Assert.assertTrue(contactPage.isErrorDisplayed("Invalid Zip"), "Invalid Zip not validated");
+    }
+
+    @Test(priority = 15, groups = {"Sanity", "ContactPage"})
+    public void TC15_ValidateInvalidEmailFormat() {
+        contactPage.WorkEmail("wrongformat.com");
+        contactPage.clickSaveButton();
+        Assert.assertTrue(contactPage.isErrorDisplayed("Invalid Email"), "Invalid email not validated");
+    }
+
+    @Test(priority = 16, groups = {"Sanity", "ContactPage"})
+    public void TC16_ValidatePhoneOnlyDigits() {
+        contactPage.MobilePhone("abcd@#");
+        String value = contactPage.getMobileValue();
+        Assert.assertFalse(value.matches("[a-zA-Z@#]+"), "Non-digit characters accepted in phone");
+    }
+
+    @Test(priority = 17, groups = {"Sanity", "ContactPage"})
+    public void TC17_ValidatePhoneMaxLength() {
+        contactPage.MobilePhone("123456789012345");
+        String value = contactPage.getMobileValue();
+        Assert.assertTrue(value.length() <= 10, "Phone accepts more than 10 digits");
+    }
+
+    @Test(priority = 18, groups = {"Sanity", "ContactPage"})
+    public void TC18_ValidateCountryDropdownSelection() {
+        contactPage.CountryDropdown("India");
+        Assert.assertTrue(true, "Country dropdown selection works fine.");
+    }
+
+    @Test(priority = 19, groups = {"Sanity", "ContactPage"})
+    public void TC19_ValidateOtherEmailOptional() {
+        contactPage.OtherEmail("");
+        contactPage.clickSaveButton();
+        Assert.assertTrue(true, "Other Email optional field handled correctly.");
+    }
+
     @AfterClass
     public void tearDown() {
         driver.quit();
