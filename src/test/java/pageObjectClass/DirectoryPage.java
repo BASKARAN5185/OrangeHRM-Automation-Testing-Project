@@ -39,4 +39,37 @@ public class DirectoryPage extends BaseClass {
     public void clickResetButton() {
         driver.findElement(resetButton).click();
     }
+  
+    public String getNameSearchFieldValue() {
+        return driver.findElement(nameSearchField).getAttribute("value");
+    }
+
+    public String getSelectedJobTitle() {
+        return driver.findElement(jobTitleDropdown).getAttribute("value");
+    }
+
+    public String getSelectedLocation() {
+        return driver.findElement(locationDropdown).getAttribute("value");
+    }
+
+    public boolean isSearchButtonDisplayed() {
+        return driver.findElement(searchButton).isDisplayed();
+    }
+
+    public boolean isResetButtonDisplayed() {
+        return driver.findElement(resetButton).isDisplayed();
+    }
+
+    public void clearNameSearchField() {
+        driver.findElement(nameSearchField).clear();
+    }
+
+    public void selectJobTitleByVisibleText(String jobTitle) {
+        driver.findElement(jobTitleDropdown).sendKeys(jobTitle);
+    }
+
+    public void selectLocationByVisibleText(String location) {
+        driver.findElement(locationDropdown).sendKeys(location);
+    }
+
 }
