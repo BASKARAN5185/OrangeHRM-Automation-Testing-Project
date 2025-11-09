@@ -70,10 +70,44 @@ public class DirectoryPageTest extends BaseClass {
         Assert.assertEquals(directoryPage.getSelectedLocation(), "", "Location should reset");
     }
 
+    
+    @Test(priority = 6, description = "Verify user can clear the name search field manually")
+    public void verifyClearNameSearchField() {
+        directoryPage.enterName("Alex Johnson");
+        directoryPage.clearNameSearchField();
+        Assert.assertEquals(directoryPage.getNameSearchFieldValue(), "", "Name search field should be empty after clearing");
+    }
+
+    @Test(priority = 7, description = "Verify that user can search only by location")
+    public void verifySearchByLocationOnly() {
+        directoryPage.selectLocation("Florida");
+        directoryPage.clickSearchButton();
+    }
+
+    @Test(priority = 8, description = "Verify that user can search only by job title")
+    public void verifySearchByJobTitleOnly() {
+        directoryPage.selectJobTitle("Software Engineer");
+        directoryPage.clickSearchButton();
+    }
+
+    @Test(priority = 9, description = "Verify that search button is clickable and functional")
+    public void verifySearchButtonClickable() {
+        Assert.assertTrue(directoryPage.isSearchButtonDisplayed(), "Search button should be visible");
+        directoryPage.clickSearchButton();
+    }
+
+    @Test(priority = 10, description = "Verify page does not throw any errors with blank search")
+    public void verifyBlankSearchDoesNotThrowError() {
+        directoryPage.clickSearchButton();
+    }
+
+
     @AfterClass
     public void tearDown() {
         driver.quit();
     }
 }
+
+
 
 
