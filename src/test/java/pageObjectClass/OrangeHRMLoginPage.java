@@ -1,6 +1,9 @@
 package pageObjectClass;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import baseClass.BaseClass;
@@ -14,6 +17,7 @@ public class OrangeHRMLoginPage extends BaseClass {
 	}
 
 	// locatirs in the page
+	By loginpageTitle=By.tagName("h5");
 	By username = By.name("username");
 	By Pass = By.name("password");
 	By loginbutton = By.xpath("//button[@type='submit']");
@@ -26,7 +30,17 @@ public class OrangeHRMLoginPage extends BaseClass {
 	By Cancel =By.xpath("//*[text()=' Cancel ']");
 	By Resetpass=By.xpath("//*[text()=' Reset Password ']");
 
+    // Icon Link locators
+	By linkedinicon=By.xpath("//a[@href='https://www.linkedin.com/company/orangehrm/mycompany/']");
+	By faceBokk=By.xpath("//a[@href='https://www.facebook.com/OrangeHRM/']");
+	By twittericon=By.xpath("//a[@href='https://twitter.com/orangehrm?lang=en']");
+	By youtubeicon=By.xpath("//a[@href='https://www.youtube.com/c/OrangeHRMInc']");
 
+    // footer locators
+	By osversion=By.xpath("//p[text()='OrangeHRM OS 5.7']");
+	By copyRight=By.xpath("//p[contains(.,'© 2005 - 2025 OrangeHRM, Inc. All rights reserved.')]");
+
+    
 	// Action method
 
 	public void login(String loginname, String password) {
@@ -77,6 +91,5 @@ public class OrangeHRMLoginPage extends BaseClass {
 	      return LoginUrl;
 	  
 	  }
-	 
-
+ 
 }
