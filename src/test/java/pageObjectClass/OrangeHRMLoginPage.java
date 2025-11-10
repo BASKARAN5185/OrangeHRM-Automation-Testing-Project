@@ -91,5 +91,51 @@ public class OrangeHRMLoginPage extends BaseClass {
 	      return LoginUrl;
 	  
 	  }
+
+	    public String getPageTitle(){
+		return driver.findElement(loginpageTitle).getText();
+	}
+
+	public boolean pageTitleVisible(){
+		return driver.findElement(loginpageTitle).isDisplayed();
+	}
+	
+	public boolean linkediniconVisible(){
+		return driver.findElement(linkedinicon).isDisplayed();
+	}
+
+	public boolean facebookiconVisible(){
+		return driver.findElement(faceBokk).isDisplayed();
+	}
+
+	public boolean twittericonVisible(){
+		return driver.findElement(twittericon).isDisplayed();
+	}
+	
+	public boolean youtubeiconVisible(){
+		return driver.findElement(youtubeicon).isDisplayed();
+	}
+
+	public String linkedinIconClick(){
+		driver.findElement(linkedinicon).click();
+		return driver.getCurrentUrl();
+	}
+
+	public String facebookIconClick(){
+		driver.findElement(faceBokk).click();
+		return driver.getCurrentUrl();
+	}
+
+	public String twitterIconClick(){
+		driver.findElement(twittericon).click();
+		return driver.getCurrentUrl();
+	}
+
+	public String youtubeIconClick(){
+		driver.findElement(youtubeicon).click();
+		return driver.getCurrentUrl();
+	}
+
+	
  
 }
