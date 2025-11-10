@@ -11,7 +11,7 @@ public class Login_Page_test extends BaseClass {
     
     @Test(dependsOnMethods = "loginTest001")
     public void checkBrokenLinks() {
-        borkenLinkValidation(); // ✅ Will now work
+        borkenLinkValidation(); 
     }
 
 	@Test(priority = 1, groups = { "Smoke", "Regression", "LoginTest" })
@@ -100,4 +100,36 @@ public class Login_Page_test extends BaseClass {
 		String pageurl = login.LoginValidation();
 		Assert.assertEquals(pageurl, "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index");
 	}
+
+	@Test(priority = 14, groups = { "Smoke", "Regression", "LoginTest" })
+	void pageTitleValidation(){
+		String title=login.getPageTitle();
+		Assert.assertEquals(title.equalsIgnoreCase("login"), true);
+	}
+
+	@Test(priority = 15, groups = { "Smoke", "Regression", "LoginTest" })
+	void pageTitleVisibleValidation(){
+		Assert.assertTrue(login.pageTitleVisible(),"Page title is not visible");
+	}
+
+	@Test(priority = 16, groups = { "Smoke", "Regression", "LoginTest" })
+	void linkediniconVisibleValidation(){
+		Assert.assertTrue(login.linkediniconVisible(),"Linkedin icon is not visible");
+	}
+
+	@Test(priority = 17, groups = { "Smoke", "Regression", "LoginTest" })
+	void faceBokkIconVisibleValidation(){
+		Assert.assertTrue(login.facebookiconVisible(),"facebook icon is not visible");
+	}
+
+	@Test(priority = 18, groups = { "Smoke", "Regression", "LoginTest" })
+	void twitterIconVisibleValidation(){
+		Assert.assertTrue(login.twittericonVisible(),"twitter icon is not visible");
+	}
+
+	@Test(priority = 19, groups = { "Smoke", "Regression", "LoginTest" })
+	void youtubeIconVisibleValidation(){
+		Assert.assertTrue(login.youtubeiconVisible(),"youtube icon is not visible");
+	}
+
 }
