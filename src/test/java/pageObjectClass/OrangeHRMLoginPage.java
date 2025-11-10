@@ -136,6 +136,23 @@ public class OrangeHRMLoginPage extends BaseClass {
 		return driver.getCurrentUrl();
 	}
 
-	
+	public String getOSversionText(){
+		return driver.findElement(osversion).getText();
+	}
+
+	public String getCopyrightText(){
+		return driver.findElement(copyRight).getText();
+	}
+
+	public List getLoginButtonCssProperties(){
+		WebElement btnLogin=driver.findElement(loginbutton);
+        String color=btnLogin.getCssValue("color");
+		String backGroundColor=btnLogin.getCssValue("background-color");	
+		String font=btnLogin.getCssValue("font-size");
+		String border=btnLogin.getCssValue("border-radius");
+		String padding=btnLogin.getCssValue("padding");	
+	    String margin=btnLogin.getCssValue("margin");
+		return List.of(color,backGroundColor,font,border,padding,margin);
+	}
  
 }
