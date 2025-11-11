@@ -19,7 +19,7 @@ public class RecruitmentPage extends BaseClass {
 
 	public RecruitmentPage(RemoteWebDriver driver) {
 
-		BaseClass.driver = driver;
+		this.driver = driver;
 		this.js = (JavascriptExecutor) driver;
 	}
 
@@ -87,6 +87,11 @@ public class RecruitmentPage extends BaseClass {
 			return "Exception occurred while clicking header.";
 		}
 
+	}
+
+	private String getCurrentUrlpage() {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'getCurrentUrlpage'");
 	}
 
 	// Requirement Menu Option Click

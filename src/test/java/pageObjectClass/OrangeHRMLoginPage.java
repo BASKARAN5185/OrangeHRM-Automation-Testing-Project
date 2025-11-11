@@ -1,158 +1,146 @@
 package pageObjectClass;
 
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
-
 import baseClass.BaseClass;
 
 public class OrangeHRMLoginPage extends BaseClass {
 
-	// driver intialazation
-	public OrangeHRMLoginPage(RemoteWebDriver driver) {
-
-		BaseClass.driver = driver;
-	}
-
-	// locatirs in the page
-	By loginpageTitle=By.tagName("h5");
-	By username = By.name("username");
-	By Pass = By.name("password");
-	By loginbutton = By.xpath("//button[@type='submit']");
-	By logo = By.xpath("//img[@alt='company-branding']");
-	By sidelogo = By.xpath("(//img[@alt='orangehrm-logo'])[2]");
-	By forgetpass = By.xpath("//p[contains(.,'Forgot your password?')]");
-	
-	//forget pass page locators
-	By forgetuser=By.name("username");
-	By Cancel =By.xpath("//*[text()=' Cancel ']");
-	By Resetpass=By.xpath("//*[text()=' Reset Password ']");
-
-    // Icon Link locators
-	By linkedinicon=By.xpath("//a[@href='https://www.linkedin.com/company/orangehrm/mycompany/']");
-	By faceBokk=By.xpath("//a[@href='https://www.facebook.com/OrangeHRM/']");
-	By twittericon=By.xpath("//a[@href='https://twitter.com/orangehrm?lang=en']");
-	By youtubeicon=By.xpath("//a[@href='https://www.youtube.com/c/OrangeHRMInc']");
-
-    // footer locators
-	By osversion=By.xpath("//p[text()='OrangeHRM OS 5.7']");
-	By copyRight=By.xpath("//p[contains(.,'© 2005 - 2025 OrangeHRM, Inc. All rights reserved.')]");
-
-    
-	// Action method
-
-	public void login(String loginname, String password) {
-
-		driver.findElement(username).sendKeys(loginname);
-		driver.findElement(Pass).sendKeys(password);
-		driver.findElement(loginbutton).click();
-	}
-
-	public void forgetpass() {
-
-		driver.findElement(forgetpass).click();
-
-	}
-	
-	public void forgetpasscancel() {
-
-		driver.findElement(Cancel).click();
-
-	}
-	
-	public void forgetpassreset(String forgetusername) {
-        driver.findElement(forgetuser).sendKeys(forgetusername);
-		driver.findElement(Resetpass).click();
-
-	}
-	
-    public void goback() {
-    	driver.navigate().back();
+    // Constructor
+    public OrangeHRMLoginPage(RemoteWebDriver driver) {
+        this.driver = driver;
     }
 
-	public boolean logoVisiblible() {
+    // Locators
+    private By loginPageTitle = By.tagName("h5");
+    private By username = By.name("username");
+    private By password = By.name("password");
+    private By loginButton = By.xpath("//button[@type='submit']");
+    private By logo = By.xpath("//img[@alt='company-branding']");
+    private By sideLogo = By.xpath("(//img[@alt='orangehrm-logo'])[2]");
+    private By forgotPasswordLink = By.xpath("//p[contains(.,'Forgot your password?')]");
 
-		boolean logovisible = driver.findElement(logo).isDisplayed();
-		return logovisible;
+    // Forgot password page
+    private By forgotUser = By.name("username");
+    private By cancelButton = By.xpath("//*[text()=' Cancel ']");
+    private By resetPasswordButton = By.xpath("//*[text()=' Reset Password ']");
 
-	}
+    // Social media icons
+    private By linkedinIcon = By.xpath("//a[@href='https://www.linkedin.com/company/orangehrm/mycompany/']");
+    private By facebookIcon = By.xpath("//a[@href='https://www.facebook.com/OrangeHRM/']");
+    private By twitterIcon = By.xpath("//a[@href='https://twitter.com/orangehrm?lang=en']");
+    private By youtubeIcon = By.xpath("//a[@href='https://www.youtube.com/c/OrangeHRMInc']");
 
-	public boolean sidelogovisible() {
+    // Footer
+    private By osVersion = By.xpath("//p[text()='OrangeHRM OS 5.7']");
+    private By copyright =
+        By.xpath("//p[contains(.,'© 2005 - 2025 OrangeHRM, Inc. All rights reserved.')]");
 
-		boolean sidelogovisible = driver.findElement(sidelogo).isDisplayed();
-		return sidelogovisible;
-	}
+    // Actions
+    public void login(String loginname, String pass) {
+        driver.findElement(username).clear();
+        driver.findElement(username).sendKeys(loginname);
+        driver.findElement(password).clear();
+        driver.findElement(password).sendKeys(pass);
+        driver.findElement(loginButton).click();
+    }
 
-	  
-	  public String LoginValidation() { 
-		  String LoginUrl=driver.getCurrentUrl();
-	      return LoginUrl;
-	  
-	  }
+    public void clickForgotPasswordLink() {
+        driver.findElement(forgotPasswordLink).click();
+    }
 
-	    public String getPageTitle(){
-		return driver.findElement(loginpageTitle).getText();
-	}
+    public void cancelPasswordReset() {
+        driver.findElement(cancelButton).click();
+    }
 
-	public boolean pageTitleVisible(){
-		return driver.findElement(loginpageTitle).isDisplayed();
-	}
-	
-	public boolean linkediniconVisible(){
-		return driver.findElement(linkedinicon).isDisplayed();
-	}
+    public void resetPassword(String username) {
+        driver.findElement(forgotUser).sendKeys(username);
+        driver.findElement(resetPasswordButton).click();
+    }
 
-	public boolean facebookiconVisible(){
-		return driver.findElement(faceBokk).isDisplayed();
-	}
+    public void goBack() {
+        driver.navigate().back();
+    }
 
-	public boolean twittericonVisible(){
-		return driver.findElement(twittericon).isDisplayed();
-	}
-	
-	public boolean youtubeiconVisible(){
-		return driver.findElement(youtubeicon).isDisplayed();
-	}
+    // Validation methods
+    public boolean logoVisible() {
+        return driver.findElement(logo).isDisplayed();
+    }
 
-	public String linkedinIconClick(){
-		driver.findElement(linkedinicon).click();
-		return driver.getCurrentUrl();
-	}
+    public boolean sideLogoVisible() {
+        return driver.findElement(sideLogo).isDisplayed();
+    }
 
-	public String facebookIconClick(){
-		driver.findElement(faceBokk).click();
-		return driver.getCurrentUrl();
-	}
+    public String getCurrentPageUrl() {
+        return driver.getCurrentUrl();
+    }
 
-	public String twitterIconClick(){
-		driver.findElement(twittericon).click();
-		return driver.getCurrentUrl();
-	}
+    public String getPageTitle() {
+        return driver.findElement(loginPageTitle).getText();
+    }
 
-	public String youtubeIconClick(){
-		driver.findElement(youtubeicon).click();
-		return driver.getCurrentUrl();
-	}
+    public boolean pageTitleVisible() {
+        return driver.findElement(loginPageTitle).isDisplayed();
+    }
 
-	public String getOSversionText(){
-		return driver.findElement(osversion).getText();
-	}
+    // Social icon visibility
+    public boolean linkedinIconVisible() {
+        return driver.findElement(linkedinIcon).isDisplayed();
+    }
 
-	public String getCopyrightText(){
-		return driver.findElement(copyRight).getText();
-	}
+    public boolean facebookIconVisible() {
+        return driver.findElement(facebookIcon).isDisplayed();
+    }
 
-	public List getLoginButtonCssProperties(){
-		WebElement btnLogin=driver.findElement(loginbutton);
-        String color=btnLogin.getCssValue("color");
-		String backGroundColor=btnLogin.getCssValue("background-color");	
-		String font=btnLogin.getCssValue("font-size");
-		String border=btnLogin.getCssValue("border-radius");
-		String padding=btnLogin.getCssValue("padding");	
-	    String margin=btnLogin.getCssValue("margin");
-		return List.of(color,backGroundColor,font,border,padding,margin);
-	}
- 
+    public boolean twitterIconVisible() {
+        return driver.findElement(twitterIcon).isDisplayed();
+    }
+
+    public boolean youtubeIconVisible() {
+        return driver.findElement(youtubeIcon).isDisplayed();
+    }
+
+    // Click methods
+    public String clickLinkedinIcon() {
+        driver.findElement(linkedinIcon).click();
+        return driver.getCurrentUrl();
+    }
+
+    public String clickFacebookIcon() {
+        driver.findElement(facebookIcon).click();
+        return driver.getCurrentUrl();
+    }
+
+    public String clickTwitterIcon() {
+        driver.findElement(twitterIcon).click();
+        return driver.getCurrentUrl();
+    }
+
+    public String clickYoutubeIcon() {
+        driver.findElement(youtubeIcon).click();
+        return driver.getCurrentUrl();
+    }
+
+    // Footer text
+    public String getOSVersionText() {
+        return driver.findElement(osVersion).getText();
+    }
+
+    public String getCopyrightText() {
+        return driver.findElement(copyright).getText();
+    }
+
+    // Button styling info
+    public List<String> getLoginButtonCssProperties() {
+        WebElement btnLogin = driver.findElement(loginButton);
+        String color = btnLogin.getCssValue("color");
+        String backgroundColor = btnLogin.getCssValue("background-color");
+        String font = btnLogin.getCssValue("font-size");
+        String border = btnLogin.getCssValue("border-radius");
+        String padding = btnLogin.getCssValue("padding");
+        String margin = btnLogin.getCssValue("margin");
+        return List.of(color, backgroundColor, font, border, padding, margin);
+    }
 }

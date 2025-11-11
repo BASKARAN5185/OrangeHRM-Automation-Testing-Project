@@ -8,7 +8,7 @@ public class Contact_Page extends BaseClass {
 
     //  Proper constructor
     public Contact_Page(RemoteWebDriver driver) {
-        BaseClass.driver = driver;
+        this.driver = driver;
     }
 
     // ---------------- Locators ----------------

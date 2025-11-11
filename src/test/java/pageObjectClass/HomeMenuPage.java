@@ -8,7 +8,7 @@ public class HomeMenuPage extends BaseClass {
 	
 	public HomeMenuPage(RemoteWebDriver driver) {
 		
-		BaseClass.driver=driver;
+		this.driver=driver;
 		
 	}
 

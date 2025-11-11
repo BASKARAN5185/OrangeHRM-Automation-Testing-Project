@@ -8,7 +8,7 @@ import baseClass.BaseClass;
 public class My_info_page extends BaseClass {
 
 	public My_info_page(RemoteWebDriver driver) {
-		BaseClass.driver = driver;
+		this.driver = driver;
 	}
 
 	// My info page menu locators

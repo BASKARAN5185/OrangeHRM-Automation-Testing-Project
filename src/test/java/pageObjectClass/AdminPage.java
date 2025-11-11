@@ -12,7 +12,7 @@ public class AdminPage extends BaseClass {
 	
 	public AdminPage(RemoteWebDriver driver) {
 	
-		BaseClass.driver=driver;
+		this.driver=driver;
 		
 	}
   

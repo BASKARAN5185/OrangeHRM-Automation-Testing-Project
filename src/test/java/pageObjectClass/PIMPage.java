@@ -11,7 +11,7 @@ import baseClass.BaseClass;
 public class PIMPage extends BaseClass {
 
 	public PIMPage(RemoteWebDriver driver) {
-		BaseClass.driver = driver;
+		this.driver = driver;
 	}
 
 	// Menu

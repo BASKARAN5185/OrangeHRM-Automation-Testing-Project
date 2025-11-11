@@ -17,7 +17,7 @@ public class DashboardPage extends BaseClass  {
 	
 	public DashboardPage(RemoteWebDriver driver) {
 		
-		BaseClass.driver=driver;
+		this.driver=driver;
 		
 	}
 	
@@ -248,13 +248,13 @@ public class DashboardPage extends BaseClass  {
 	   	
 	    }
    
-   public static void pageScreenshot(String imagename) throws IOException {
+   /*public static void pageScreenshot(String imagename) throws IOException {
 	   TakesScreenshot ts = (TakesScreenshot) driver;
 	   File screenshot = ts.getScreenshotAs(OutputType.FILE);
 	   File destination = new File("C:\\Users\\xmedia\\eclipse-workspace\\Automation\\screenshots2\\"+imagename);
 	   FileUtils.copyFile(screenshot, destination);
 
-   }
+   } */
    
    public void Scrollpage() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;

@@ -15,7 +15,7 @@ public class LeavePage extends BaseClass {
 
 	public LeavePage(RemoteWebDriver driver) {
 
-		BaseClass.driver = driver;
+		this.driver = driver;
 
 	}
 

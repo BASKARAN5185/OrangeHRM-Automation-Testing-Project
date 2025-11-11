@@ -7,7 +7,7 @@ public class DirectoryPage extends BaseClass {
     
     public DirectoryPage(RemoteWebDriver driver) {
         
-        BaseClass.driver=driver;
+        this.driver=driver;
         
     }
 
