@@ -17,6 +17,7 @@ import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 
@@ -24,8 +25,7 @@ public class BaseClass {
 
     @BeforeClass
     public void setUpBrowser() {
-        System.setProperty("webdriver.chrome.driver",
-            "C:\\Users\\xmedia\\Downloads\\chromedriver-win64\\chromedriver-win64.exe");
+        WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--incognito");
         options.addArguments("--disable-notifications");
