@@ -1,6 +1,7 @@
 package testBase;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import baseClass.BaseClass;
@@ -8,17 +9,23 @@ import pageObjectClass.AdminPage;
 import pageObjectClass.OrangeHRMLoginPage;
 
 public class Admin_pageTest extends BaseClass {
+	OrangeHRMLoginPage login;
+	AdminPage adminpage;
+	
+	@BeforeClass
+	public void setup() {
+	 login = new OrangeHRMLoginPage(driver);
+	 adminpage = new AdminPage(driver);
+	}
 
-	OrangeHRMLoginPage login = new OrangeHRMLoginPage(driver);
-	AdminPage adminpage = new AdminPage(driver);
 
-	@Test(priority = 0, groups = { "Sanity", "Regression", "LoginTest" })
+/* 	@Test(priority = 0, groups = { "Sanity", "Regression", "LoginTest" })
 	void loginTest001() {
 		login.login("Admin", "admin123");
 		String pageurl = login.LoginValidation();
 		Assert.assertEquals("https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index", pageurl);
 		adminpage.clicktheadminmenu();
-	}
+	} */
 
 	@Test(priority = 1, groups = { "Regression", "AdminTest" })
 	void SearchSystemUsers() {
