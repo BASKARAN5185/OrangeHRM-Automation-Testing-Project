@@ -1,17 +1,24 @@
 package testBase;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import baseClass.BaseClass;
-import pageObjectClass.My_info_page;
+import pageObjectClass.MyInfoPage;
 import pageObjectClass.OrangeHRMLoginPage;
 import pageObjectClass.PIMPage;
 
 public class PIMPageTest extends BaseClass {
+    PIMPage PIMPage;
+    OrangeHRMLoginPage login;
+    MyInfoPage myInfoPage;
 
-    PIMPage PIMPage = new PIMPage(driver);
-    OrangeHRMLoginPage login = new OrangeHRMLoginPage(driver);
-    My_info_page myInfoPage = new My_info_page(driver);
+    @BeforeClass
+    public void setup(){
+    PIMPage = new PIMPage(driver);
+    login = new OrangeHRMLoginPage(driver);
+    myInfoPage = new MyInfoPage(driver);
+    }
 
     @Test(priority = 1, groups = { "Sanity", "Regression", "PIMTest" })
     void userlogin() {
@@ -30,7 +37,7 @@ public class PIMPageTest extends BaseClass {
     @Test(priority = 3, alwaysRun = true, groups = { "Sanity", "Regression", "PIMTest" })
     void clickEmployeeListTheAddButton() {
         PIMPage.clickAddButton();
-        String Pageurl = getCurrentUrlpage();
+        String Pageurl = driver.getCurrentUrl();
         Assert.assertEquals("https://opensource-demo.orangehrmlive.com/web/index.php/pim/addEmployee", Pageurl);
 
         PIMPage.enterEmployeeFirstName("d");

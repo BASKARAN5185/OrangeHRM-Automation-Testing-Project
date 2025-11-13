@@ -3,6 +3,7 @@ package testBase;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -11,15 +12,20 @@ import pageObjectClass.OrangeHRMLoginPage;
 import pageObjectClass.RecruitmentPage;
 
 public class RecruitmentPageTest extends BaseClass {
+    RecruitmentPage rec;
+	OrangeHRMLoginPage lg;
+	SoftAssert soft;
 
-	RecruitmentPage rec = new RecruitmentPage(driver);
-	OrangeHRMLoginPage lg = new OrangeHRMLoginPage(driver);
-	SoftAssert soft = new SoftAssert();
-
+	@BeforeClass
+	public void setup() {
+	rec = new RecruitmentPage(driver);
+    lg = new OrangeHRMLoginPage(driver);
+	soft = new SoftAssert();
+	}
 	@Test(groups = { "smoke", "regression" }, priority = 1)
 	void loginWithRecruitmentMenuClick() {
 		lg.login("Admin", "admin123");
-		String url = getCurrentUrlpage();
+		String url = driver.getCurrentUrl();
 		assertTrue(url.contains("/dashboard"), "Login to Application failed");
 		String getUrl = rec.requirementMenuClick();
 		assertTrue(getUrl.contains("/viewCandidates"), "Recruitment Page navigation failed");
