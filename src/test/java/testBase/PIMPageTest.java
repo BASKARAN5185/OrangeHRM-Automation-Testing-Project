@@ -23,14 +23,14 @@ public class PIMPageTest extends BaseClass {
     @Test(priority = 1, groups = { "Sanity", "Regression", "PIMTest" })
     void userlogin() {
         login.login("Admin", "admin123");
-        String pageurl = login.LoginValidation();
+        String pageurl = driver.getCurrentUrl();
         Assert.assertEquals("https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index", pageurl);
     }
 
     @Test(priority = 2, groups = { "Sanity", "Regression", "PIMTest" })
     void clickThePIMManu() {
         PIMPage.MenuClickPIMPage();
-        String PIMPageurl = getCurrentUrlpage();
+        String PIMPageurl = driver.getCurrentUrl();
         Assert.assertEquals("https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList", PIMPageurl);
     }
 
@@ -46,14 +46,14 @@ public class PIMPageTest extends BaseClass {
         PIMPage.clickSaveButton();
         Boolean Visiblehaedr = myInfoPage.PersonalDetailsHeader();
         Assert.assertEquals(true, Visiblehaedr);
-        NavigateBack();
-        String Pageurl1 = getCurrentUrlpage();
+        driver.navigate().back();
+        String Pageurl1 = driver.getCurrentUrl();
         Assert.assertEquals("https://opensource-demo.orangehrmlive.com/web/index.php/pim/addEmployee", Pageurl1);
     }
 
     @Test(priority = 4, alwaysRun = true, groups = { "Sanity", "Regression", "PIMTest" })
     void Add_Employee() {
-        PageRefresh();
+        driver.navigate().refresh();
         PIMPage.enterEmployeeFirstName("Sanjay");
         PIMPage.enterEmployeeMiddleName("");
         PIMPage.enterEmployeeLastName("S");
@@ -66,15 +66,15 @@ public class PIMPageTest extends BaseClass {
         PIMPage.clickSaveButton();
         Boolean Visiblehaedr = myInfoPage.PersonalDetailsHeader();
         Assert.assertEquals(true, Visiblehaedr);
-        NavigateBack();
-        String Pageurl1 = getCurrentUrlpage();
+        driver.navigate().back();
+        String Pageurl1 = driver.getCurrentUrl();
         Assert.assertEquals("https://opensource-demo.orangehrmlive.com/web/index.php/pim/addEmployee", Pageurl1);
     }
 
     @Test(priority = 5, alwaysRun = true, dataProvider = "employeeDataProvider", groups = { "Sanity", "Regression", "PIMTest" })
     void Add_Employee_Disable_Satus(String firstName, String middleName, String lastName, String employeeId,
             String employeeName, String password, String confirmPassword, String status) {
-        PageRefresh();
+        driver.navigate().refresh();
         PIMPage.enterEmployeeFirstName(firstName);
         PIMPage.enterEmployeeMiddleName(middleName);
         PIMPage.enterEmployeeLastName(lastName);
@@ -87,14 +87,14 @@ public class PIMPageTest extends BaseClass {
         PIMPage.clickSaveButton();
         Boolean Visiblehaedr = myInfoPage.PersonalDetailsHeader();
         Assert.assertEquals(true, Visiblehaedr);
-        NavigateBack();
-        String Pageurl1 = getCurrentUrlpage();
+        driver.navigate().back();
+        String Pageurl1 = driver.getCurrentUrl();
         Assert.assertEquals("https://opensource-demo.orangehrmlive.com/web/index.php/pim/addEmployee", Pageurl1);
     }
 
     @Test(priority = 6, alwaysRun = true, groups = { "Sanity", "Regression", "PIMTest" })
     void Add_Employee_cancel() {
-        PageRefresh();
+        driver.navigate().refresh();
         PIMPage.enterEmployeeFirstName("Sanjay");
         PIMPage.enterEmployeeMiddleName("");
         PIMPage.enterEmployeeLastName("S");
@@ -105,7 +105,7 @@ public class PIMPageTest extends BaseClass {
         PIMPage.enterEmployeeConfirmPassword("Sanjay123");
         PIMPage.selectEmployeeStatus("enabled");
         PIMPage.clickCancelButton();
-        String PIMPageurl = getCurrentUrlpage();
+        String PIMPageurl = driver.getCurrentUrl();
         Assert.assertEquals("https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList", PIMPageurl);
     }
 
@@ -120,7 +120,7 @@ public class PIMPageTest extends BaseClass {
 
     @Test(priority = 8, alwaysRun = true, groups = { "Sanity", "Regression", "PIMTest" })
     void EmployeeNameOnlyEnter_Save() throws InterruptedException {
-        PageRefresh();
+        driver.navigate().refresh();
         PIMPage.enterEmployeeFirstName("Lara");
         PIMPage.clickSaveButton();
         Thread.sleep(3000);
@@ -130,17 +130,17 @@ public class PIMPageTest extends BaseClass {
 
     @Test(priority = 9, alwaysRun = true, groups = { "Sanity", "Regression", "PIMTest" })
     void EmployeeNamelastEnter_Save() {
-        PageRefresh();
+        driver.navigate().refresh();
         PIMPage.enterEmployeeFirstName("Lara");
         PIMPage.enterEmployeeLastName("Craft");
         boolean ButtonVis = PIMPage.clickSaveButton();
         Assert.assertEquals(ButtonVis, false);
-        NavigateBack();
+        driver.navigate().back();
     }
 
     @Test(priority = 10, alwaysRun = true, groups = { "Sanity", "Regression", "PIMTest" })
     void EmployeeusernameI_Save() throws InterruptedException {
-        PageRefresh();
+        driver.navigate().refresh();
         PIMPage.enterEmployeeFirstName("Lara");
         PIMPage.enterEmployeeLastName("Craft");
         PIMPage.toggleEmployeeLoginDetailsSwitch();
@@ -153,7 +153,7 @@ public class PIMPageTest extends BaseClass {
 
     @Test(priority = 11, alwaysRun = true, groups = { "Sanity", "Regression", "PIMTest" })
     void EmployeeUserNameIsEmpty() throws InterruptedException {
-        PageRefresh();
+        driver.navigate().refresh();
         PIMPage.enterEmployeeFirstName("Lara");
         PIMPage.enterEmployeeLastName("Craft");
         PIMPage.toggleEmployeeLoginDetailsSwitch();
@@ -166,7 +166,7 @@ public class PIMPageTest extends BaseClass {
 
     @Test(priority = 12, alwaysRun = true, groups = { "Sanity", "Regression", "PIMTest" })
     void EmployeeEnterPassword() throws InterruptedException {
-        PageRefresh();
+        driver.navigate().refresh();
         PIMPage.enterEmployeeFirstName("Lara");
         PIMPage.enterEmployeeLastName("Craft");
         PIMPage.toggleEmployeeLoginDetailsSwitch();
@@ -180,7 +180,7 @@ public class PIMPageTest extends BaseClass {
 
     @Test(priority = 13, alwaysRun = true, groups = { "Sanity", "Regression", "PIMTest" })
     void EmployeeConformPassword() throws InterruptedException {
-        PageRefresh();
+        driver.navigate().refresh();
         PIMPage.enterEmployeeFirstName("Lara");
         PIMPage.enterEmployeeLastName("Craft");
         PIMPage.toggleEmployeeLoginDetailsSwitch();
@@ -195,7 +195,7 @@ public class PIMPageTest extends BaseClass {
 
     @Test(priority = 14, alwaysRun = true, groups = { "Sanity", "Regression", "PIMTest" })
     void SameEmployeeID() throws InterruptedException {
-        PageRefresh();
+        driver.navigate().refresh();
         PIMPage.enterEmployeeFirstName("Sanjay");
         PIMPage.enterEmployeeMiddleName("");
         PIMPage.enterEmployeeLastName("S");
