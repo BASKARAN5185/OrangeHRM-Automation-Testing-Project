@@ -17,9 +17,6 @@ public class LoginPageTest extends BaseClass {
 
     @BeforeClass
     public void setUp() {
-        // Initialize browser from BaseClass
-        super.setUpBrowser();
-
         // Initialize page object
         login = new OrangeHRMLoginPage(driver);
 

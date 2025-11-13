@@ -6,9 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import baseClass.BaseClass;
 
-public class OrangeHRMLoginPage extends BaseClass {
+public class OrangeHRMLoginPage  {
+    private RemoteWebDriver driver;
 
-    // Constructor
     public OrangeHRMLoginPage(RemoteWebDriver driver) {
         this.driver = driver;
     }
@@ -142,5 +142,10 @@ public class OrangeHRMLoginPage extends BaseClass {
         String padding = btnLogin.getCssValue("padding");
         String margin = btnLogin.getCssValue("margin");
         return List.of(color, backgroundColor, font, border, padding, margin);
+    }
+
+    public String LoginValidation() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'LoginValidation'");
     }
 }

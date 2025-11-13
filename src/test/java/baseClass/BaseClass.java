@@ -7,6 +7,7 @@ import java.net.URL;
 import java.time.Duration;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -25,7 +26,7 @@ public class BaseClass {
 
     @BeforeClass
     public void setUpBrowser() {
-        WebDriverManager.chromedriver().setup();
+        //WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--incognito");
         options.addArguments("--disable-notifications");
@@ -46,21 +47,23 @@ public class BaseClass {
     }
 
     public String captureScreenshot(String testName) throws IOException {
-        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+    File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
-        String screenshotDirectory =
-            "C:\\Users\\xmedia\\Desktop\\AutomationTestReport\\Screenshots\\" + testName;
-        File directory = new File(screenshotDirectory);
-        if (!directory.exists()) {
-            directory.mkdirs();
-        }
+    String screenshotDirectory =
+        "C:\\Users\\xmedia\\Desktop\\AutomationTestReport\\Screenshots\\";
 
-        String filePath = screenshotDirectory + "\\screenshot.png";
-        File destination = new File(filePath);
-        FileHandler.copy(screenshot, destination);
-
-        return destination.getAbsolutePath();
+    File directory = new File(screenshotDirectory);
+    if (!directory.exists()) {
+        directory.mkdirs();
     }
+
+    String filePath = screenshotDirectory + testName + "_" + System.currentTimeMillis() + ".png";
+    File destination = new File(filePath);
+    FileUtils.copyFile(screenshot, destination);
+
+    return filePath;
+}
+
 
     public String getCurrentPageUrl() {
         return driver.getCurrentUrl();
