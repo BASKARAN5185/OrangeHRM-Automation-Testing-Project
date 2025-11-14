@@ -11,10 +11,9 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import baseClass.BaseClass;
-
-public class DashboardPage extends BaseClass  {
+public class DashboardPage  {
 	
+	private RemoteWebDriver driver;
 	public DashboardPage(RemoteWebDriver driver) {
 		
 		this.driver=driver;
@@ -248,13 +247,13 @@ public class DashboardPage extends BaseClass  {
 	   	
 	    }
    
-   /*public static void pageScreenshot(String imagename) throws IOException {
+   public static void pageScreenshot(RemoteWebDriver driver,  String imagename) throws IOException {
 	   TakesScreenshot ts = (TakesScreenshot) driver;
 	   File screenshot = ts.getScreenshotAs(OutputType.FILE);
 	   File destination = new File("C:\\Users\\xmedia\\eclipse-workspace\\Automation\\screenshots2\\"+imagename);
 	   FileUtils.copyFile(screenshot, destination);
 
-   } */
+   } 
    
    public void Scrollpage() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;

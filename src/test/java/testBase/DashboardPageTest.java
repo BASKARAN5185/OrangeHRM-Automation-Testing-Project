@@ -23,16 +23,16 @@ public class DashboardPageTest extends BaseClass {
 
 	}
 	
-	 @Test(enabled = false, dependsOnMethods = "PagenameVerify002")
+	 @Test(enabled = true, dependsOnMethods = "PagenameVerify002")
 	    public void checkBrokenLinks() {
-	        // borkenLinkValidation(); // ✅ Will now work
+	         validateBrokenLinks();
 	    }
 
-	@Test(enabled = false,priority = 1, groups = { "Regression", "Sanity", "DashboardTest" })
+	@Test(enabled = true,priority = 1, groups = { "Regression", "Sanity", "DashboardTest" })
 	void loginTest001() {
 		login.login("Admin", "admin123");
-		// String pageurl = login.LoginValidation();
-	//	Assert.assertNotEquals("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login", pageurl);
+		String pageurl = driver.getCurrentUrl();
+		Assert.assertNotEquals("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login", pageurl);
 	}
 
 	@Test(priority = 2, groups = { "Regression", "Sanity", "DashboardTest" })
@@ -101,6 +101,7 @@ public class DashboardPageTest extends BaseClass {
 		Dashboard.Back();
 	}
 
+	@SuppressWarnings("static-access")
 	@Test(priority = 11, groups = { "Regression", "Sanity", "DashboardTest" })
 	void EmplloyeeLeavesettingVerify011() throws IOException {
 		Dashboard.employeeleavesettingicon();
@@ -112,7 +113,7 @@ public class DashboardPageTest extends BaseClass {
 		Dashboard.employeeleavesettingicon();
 		Dashboard.employeeleavecheckbox();
 		System.out.println("click");
-		//DashboardPage.pageScreenshot("employeesettingcheckbox.png");
+		Dashboard.pageScreenshot(driver, "employeesettingcheckbox.png");
 		Dashboard.employeeleavesave();
 	}
 
@@ -133,7 +134,7 @@ public class DashboardPageTest extends BaseClass {
 		System.out.println("dashimg_3");
 		Dashboard.QuicklunchBoximg();
 		System.out.println("dashimg_4");
-	//	DashboardPage.pageScreenshot("dash1.png");
+		Dashboard.pageScreenshot(driver,"dash1.png");
 		System.out.println("dashimg_5");
 		Dashboard.Scrollpage();
 		System.out.println("dashimg_6");
@@ -148,7 +149,7 @@ public class DashboardPageTest extends BaseClass {
 		Dashboard.Engineeringclicking();
 		Dashboard.Humanresoureclicking();
 		Dashboard.unassignedclicking();
-	//	DashboardPage.pageScreenshot("circulechange.png");
+		Dashboard.pageScreenshot(driver,"circulechange.png");
 	}
 
 	@Test(priority = 15, groups = { "Regression", "Sanity", "DashboardTest" })
