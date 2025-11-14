@@ -19,13 +19,13 @@ public class Admin_pageTest extends BaseClass {
 	}
 
 
-/* 	@Test(priority = 0, groups = { "Sanity", "Regression", "LoginTest" })
+ 	@Test(priority = 0, groups = { "Sanity", "Regression", "LoginTest" })
 	void loginTest001() {
 		login.login("Admin", "admin123");
-		String pageurl = login.LoginValidation();
+		String pageurl = driver.getCurrentUrl();
 		Assert.assertEquals("https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index", pageurl);
 		adminpage.clicktheadminmenu();
-	} */
+	} 
 
 	@Test(priority = 1, groups = { "Regression", "AdminTest" })
 	void SearchSystemUsers() {

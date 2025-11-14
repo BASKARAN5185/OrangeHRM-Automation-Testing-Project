@@ -1,16 +1,20 @@
 package pageObjectClass;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import baseClass.BaseClass;
 
-public class AdminPage extends BaseClass {
+public class AdminPage {
 	
+
+	private RemoteWebDriver driver;
 	
-	public AdminPage(RemoteWebDriver driver) {
+    public AdminPage(RemoteWebDriver driver) {
 	
 		this.driver=driver;
 		
@@ -20,9 +24,9 @@ public class AdminPage extends BaseClass {
 	By Adminmenu=By.xpath("//span[text()='Admin']");
 	
 	// AddUserp (Add User Page) Locators
-	By AddUserpUserRoleDropdown = By.xpath("//label[text()='User Role']/following-sibling::div//div[contains(@class,'oxd-select-text')]");
+	By AddUserpUserRoleDropdown = By.xpath("(//div[text()='-- Select --'])[1]");
 	By AddUserpEmployeeNameInput = By.xpath("//label[text()='Employee Name']/following-sibling::div//input");
-	By AddUserpStatusDropdown = By.xpath("//label[text()='Status']/following-sibling::div//div[contains(@class,'oxd-select-text')]");
+	By AddUserpStatusDropdown = By.xpath("(//div[text()='-- Select --'])[2]");
 	By AddUserpUsernameInput = By.xpath("//label[text()='Username']/following-sibling::div//input");
 	By AddUserpPasswordInput = By.xpath("//label[text()='Password']/following-sibling::div//input[@type='password']");
 	By AddUserpConfirmPasswordInput = By.xpath("//label[text()='Confirm Password']/following-sibling::div//input[@type='password']");
@@ -44,8 +48,11 @@ public class AdminPage extends BaseClass {
     
     public void selectUserRole(String userRole) {
         WebElement userRoleDropdown = driver.findElement(AddUserpUserRoleDropdown);
-        Select select = new Select(userRoleDropdown);
-        select.selectByVisibleText(userRole); // Select by visible text
+        userRoleDropdown.click();
+        Actions action=new Actions(driver);
+        action.sendKeys(Keys.PAGE_DOWN).perform();
+        action.sendKeys(Keys.PAGE_DOWN).perform();
+        action.sendKeys(Keys.ENTER); 
     }
 
     public void enterEmployeeName(String employeeName) {
@@ -54,8 +61,11 @@ public class AdminPage extends BaseClass {
 
     public void selectStatus(String status) {
         WebElement statusDropdown = driver.findElement(AddUserpStatusDropdown);
-        Select select = new Select(statusDropdown);
-        select.selectByVisibleText(status); // Select by visible text
+        statusDropdown.click();
+        Actions action=new Actions(driver);
+        action.sendKeys(Keys.PAGE_DOWN).perform();
+        action.sendKeys(Keys.PAGE_DOWN).perform();
+        action.sendKeys(Keys.ENTER);
     }
 
     public void enterUsername(String username) {
