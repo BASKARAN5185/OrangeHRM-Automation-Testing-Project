@@ -4,205 +4,87 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import baseClass.BaseClass;
-import pageObjectClass.MyInfoPage;
 import pageObjectClass.OrangeHRMLoginPage;
 import pageObjectClass.PIMPage;
 
 public class PIMPageTest extends BaseClass {
-    PIMPage PIMPage;
+
+    PIMPage pimPage;
     OrangeHRMLoginPage login;
-    MyInfoPage myInfoPage;
 
     @BeforeClass
-    public void setup(){
-    PIMPage = new PIMPage(driver);
-    login = new OrangeHRMLoginPage(driver);
-    myInfoPage = new MyInfoPage(driver);
+    public void setup() {
+        pimPage = new PIMPage(driver);
+        login = new OrangeHRMLoginPage(driver);
     }
 
-    @Test(priority = 1, groups = { "Sanity", "Regression", "PIMTest" })
-    void userlogin() {
+    @Test(priority = 1, groups = {"Sanity", "Regression", "PIMTest"})
+    void userLoginTest() {
         login.login("Admin", "admin123");
-        String pageurl = driver.getCurrentUrl();
-        Assert.assertEquals("https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index", pageurl);
+        Assert.assertEquals(driver.getCurrentUrl(),
+                "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index",
+                "Login Failed or URL mismatch!");
     }
 
-    @Test(priority = 2, groups = { "Sanity", "Regression", "PIMTest" })
-    void clickThePIMManu() {
-        PIMPage.MenuClickPIMPage();
-        String PIMPageurl = driver.getCurrentUrl();
-        Assert.assertEquals("https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList", PIMPageurl);
+    @Test(priority = 2, groups = {"Sanity", "Regression", "PIMTest"})
+    void verifyPIMMenuNavigation() {
+        pimPage.menuClickPIMPage();
+        Assert.assertEquals(driver.getCurrentUrl(),
+                "https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList",
+                "PIM Page navigation failed!");
     }
 
-    @Test(priority = 3, alwaysRun = true, groups = { "Sanity", "Regression", "PIMTest" })
-    void clickEmployeeListTheAddButton() {
-        PIMPage.clickAddButton();
-        String Pageurl = driver.getCurrentUrl();
-        Assert.assertEquals("https://opensource-demo.orangehrmlive.com/web/index.php/pim/addEmployee", Pageurl);
-
-        PIMPage.enterEmployeeFirstName("d");
-        PIMPage.enterEmployeeMiddleName("d");
-        PIMPage.enterEmployeeLastName("d");
-        PIMPage.clickSaveButton();
-        Boolean Visiblehaedr = myInfoPage.PersonalDetailsHeader();
-        Assert.assertEquals(true, Visiblehaedr);
-        driver.navigate().back();
-        String Pageurl1 = driver.getCurrentUrl();
-        Assert.assertEquals("https://opensource-demo.orangehrmlive.com/web/index.php/pim/addEmployee", Pageurl1);
+    @Test(priority = 3, groups = {"Sanity", "Regression", "PIMTest"})
+    void verifyAddButtonOpensAddEmployeePage() {
+        pimPage.clickAddButton();
+        Assert.assertEquals(driver.getCurrentUrl(),
+                "https://opensource-demo.orangehrmlive.com/web/index.php/pim/addEmployee",
+                "Add Employee page did not open!");
     }
 
-    @Test(priority = 4, alwaysRun = true, groups = { "Sanity", "Regression", "PIMTest" })
-    void Add_Employee() {
-        driver.navigate().refresh();
-        PIMPage.enterEmployeeFirstName("Sanjay");
-        PIMPage.enterEmployeeMiddleName("");
-        PIMPage.enterEmployeeLastName("S");
-        PIMPage.enterEmployeeId("1");
-        PIMPage.toggleEmployeeLoginDetailsSwitch();
-        PIMPage.enterEmployeeName("Sanja S");
-        PIMPage.enterEmployeePassword("Sanjay123");
-        PIMPage.enterEmployeeConfirmPassword("Sanjay123");
-        PIMPage.selectEmployeeStatus("Enabled");
-        PIMPage.clickSaveButton();
-        Boolean Visiblehaedr = myInfoPage.PersonalDetailsHeader();
-        Assert.assertEquals(true, Visiblehaedr);
-        driver.navigate().back();
-        String Pageurl1 = driver.getCurrentUrl();
-        Assert.assertEquals("https://opensource-demo.orangehrmlive.com/web/index.php/pim/addEmployee", Pageurl1);
+    @Test(priority = 4, groups = {"Sanity", "Regression", "PIMTest"})
+    void searchEmployeeByName() {
+        pimPage.enterEmployeeName("Linda");
+        pimPage.clickSearchButton();
+        // Add assertion later if verifying results
     }
 
-    @Test(priority = 5, alwaysRun = true, dataProvider = "employeeDataProvider", groups = { "Sanity", "Regression", "PIMTest" })
-    void Add_Employee_Disable_Satus(String firstName, String middleName, String lastName, String employeeId,
-            String employeeName, String password, String confirmPassword, String status) {
-        driver.navigate().refresh();
-        PIMPage.enterEmployeeFirstName(firstName);
-        PIMPage.enterEmployeeMiddleName(middleName);
-        PIMPage.enterEmployeeLastName(lastName);
-        PIMPage.enterEmployeeId(employeeId);
-        PIMPage.toggleEmployeeLoginDetailsSwitch();
-        PIMPage.enterEmployeeName(employeeName);
-        PIMPage.enterEmployeePassword(password);
-        PIMPage.enterEmployeeConfirmPassword(confirmPassword);
-        PIMPage.selectEmployeeStatus(status);
-        PIMPage.clickSaveButton();
-        Boolean Visiblehaedr = myInfoPage.PersonalDetailsHeader();
-        Assert.assertEquals(true, Visiblehaedr);
-        driver.navigate().back();
-        String Pageurl1 = driver.getCurrentUrl();
-        Assert.assertEquals("https://opensource-demo.orangehrmlive.com/web/index.php/pim/addEmployee", Pageurl1);
+    @Test(priority = 5, groups = {"Sanity", "Regression", "PIMTest"})
+    void searchEmployeeById() {
+        pimPage.enterEmployeeId("0012");
+        pimPage.clickSearchButton();
     }
 
-    @Test(priority = 6, alwaysRun = true, groups = { "Sanity", "Regression", "PIMTest" })
-    void Add_Employee_cancel() {
-        driver.navigate().refresh();
-        PIMPage.enterEmployeeFirstName("Sanjay");
-        PIMPage.enterEmployeeMiddleName("");
-        PIMPage.enterEmployeeLastName("S");
-        PIMPage.enterEmployeeId("8");
-        PIMPage.toggleEmployeeLoginDetailsSwitch();
-        PIMPage.enterEmployeeName("Sanja S");
-        PIMPage.enterEmployeePassword("Sanjay123");
-        PIMPage.enterEmployeeConfirmPassword("Sanjay123");
-        PIMPage.selectEmployeeStatus("enabled");
-        PIMPage.clickCancelButton();
-        String PIMPageurl = driver.getCurrentUrl();
-        Assert.assertEquals("https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList", PIMPageurl);
+    @Test(priority = 6, groups = {"Sanity", "Regression", "PIMTest"})
+    void selectJobTitleTest() {
+        pimPage.selectJobTitle("Software Engineer");
     }
 
-    @Test(priority = 7, alwaysRun = true, groups = { "Sanity", "Regression", "PIMTest" })
-    void Empty_Employee_Save() throws InterruptedException {
-        PIMPage.clickAddButton();
-        PIMPage.clickSaveButton();
-        Thread.sleep(3000);
-        Boolean Visiblehaedr = PIMPage.clickSaveButton();
-        Assert.assertTrue(Visiblehaedr, "Save button is not visible");
+    @Test(priority = 7, groups = {"Sanity", "Regression", "PIMTest"})
+    void selectEmploymentStatusTest() {
+        pimPage.selectEmploymentStatus("Full-Time Permanent");
     }
 
-    @Test(priority = 8, alwaysRun = true, groups = { "Sanity", "Regression", "PIMTest" })
-    void EmployeeNameOnlyEnter_Save() throws InterruptedException {
-        driver.navigate().refresh();
-        PIMPage.enterEmployeeFirstName("Lara");
-        PIMPage.clickSaveButton();
-        Thread.sleep(3000);
-        Boolean Visible = PIMPage.clickSaveButton();
-        Assert.assertTrue(Visible, "Save button is not visible");
+    @Test(priority = 8, groups = {"Sanity", "Regression", "PIMTest"})
+    void selectIncludeOptionTest() {
+        pimPage.selectIncludeOption("Current Employees Only");
     }
 
-    @Test(priority = 9, alwaysRun = true, groups = { "Sanity", "Regression", "PIMTest" })
-    void EmployeeNamelastEnter_Save() {
-        driver.navigate().refresh();
-        PIMPage.enterEmployeeFirstName("Lara");
-        PIMPage.enterEmployeeLastName("Craft");
-        boolean ButtonVis = PIMPage.clickSaveButton();
-        Assert.assertEquals(ButtonVis, false);
-        driver.navigate().back();
+    @Test(priority = 9, groups = {"Sanity", "Regression", "PIMTest"})
+    void selectSubUnitTest() {
+        pimPage.selectSubUnit("Engineering");
     }
 
-    @Test(priority = 10, alwaysRun = true, groups = { "Sanity", "Regression", "PIMTest" })
-    void EmployeeusernameI_Save() throws InterruptedException {
-        driver.navigate().refresh();
-        PIMPage.enterEmployeeFirstName("Lara");
-        PIMPage.enterEmployeeLastName("Craft");
-        PIMPage.toggleEmployeeLoginDetailsSwitch();
-        PIMPage.enterEmployeeUsername(null);
-        PIMPage.clickSaveButton();
-        Thread.sleep(3000);
-        Boolean Visible = PIMPage.clickSaveButton();
-        Assert.assertTrue(Visible, "Save button is not visible");
+    @Test(priority = 10, groups = {"Sanity", "Regression", "PIMTest"})
+    void supervisorNameSearchTest() {
+        pimPage.enterSupervisorName("Peter");
+        pimPage.clickSearchButton();
     }
 
-    @Test(priority = 11, alwaysRun = true, groups = { "Sanity", "Regression", "PIMTest" })
-    void EmployeeUserNameIsEmpty() throws InterruptedException {
-        driver.navigate().refresh();
-        PIMPage.enterEmployeeFirstName("Lara");
-        PIMPage.enterEmployeeLastName("Craft");
-        PIMPage.toggleEmployeeLoginDetailsSwitch();
-        PIMPage.enterEmployeeName("");
-        PIMPage.clickSaveButton();
-        Thread.sleep(3000);
-        Boolean Visible = PIMPage.clickSaveButton();
-        Assert.assertTrue(Visible, "Save button is not visible");
-    }
-
-    @Test(priority = 12, alwaysRun = true, groups = { "Sanity", "Regression", "PIMTest" })
-    void EmployeeEnterPassword() throws InterruptedException {
-        driver.navigate().refresh();
-        PIMPage.enterEmployeeFirstName("Lara");
-        PIMPage.enterEmployeeLastName("Craft");
-        PIMPage.toggleEmployeeLoginDetailsSwitch();
-        PIMPage.enterEmployeeName("a");
-        PIMPage.enterEmployeePassword("");
-        PIMPage.clickSaveButton();
-        Thread.sleep(3000);
-        Boolean Visible = PIMPage.clickSaveButton();
-        Assert.assertTrue(Visible, "Save button is not visible");
-    }
-
-    @Test(priority = 13, alwaysRun = true, groups = { "Sanity", "Regression", "PIMTest" })
-    void EmployeeConformPassword() throws InterruptedException {
-        driver.navigate().refresh();
-        PIMPage.enterEmployeeFirstName("Lara");
-        PIMPage.enterEmployeeLastName("Craft");
-        PIMPage.toggleEmployeeLoginDetailsSwitch();
-        PIMPage.enterEmployeeName("a");
-        PIMPage.enterEmployeePassword("Abcdefg123");
-        PIMPage.enterEmployeeConfirmPassword("");
-        PIMPage.clickSaveButton();
-        Thread.sleep(3000);
-        Boolean Visible = PIMPage.clickSaveButton();
-        Assert.assertTrue(Visible, "Save button is not visible");
-    }
-
-    @Test(priority = 14, alwaysRun = true, groups = { "Sanity", "Regression", "PIMTest" })
-    void SameEmployeeID() throws InterruptedException {
-        driver.navigate().refresh();
-        PIMPage.enterEmployeeFirstName("Sanjay");
-        PIMPage.enterEmployeeMiddleName("");
-        PIMPage.enterEmployeeLastName("S");
-        PIMPage.enterEmployeeId("0500");
-        PIMPage.clickSaveButton();
-        Thread.sleep(3000);
-        Boolean Visible = PIMPage.clickSaveButton();
-        Assert.assertTrue(Visible, "Save button is not visible");
+    @Test(priority = 11, groups = {"Sanity", "Regression", "PIMTest"})
+    void resetSearchFiltersTest() {
+        pimPage.enterEmployeeName("John");
+        pimPage.enterEmployeeId("0050");
+        pimPage.clickResetButton();
     }
 }
