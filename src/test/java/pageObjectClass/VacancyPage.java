@@ -27,7 +27,10 @@ public class VacancyPage {
 	private By vacanciesResetButton = By.xpath("//button[contains(.,'Reset')]");
 	private By vacanciesSearchButton = By.xpath("//button[contains(.,'Search')]");
 	private By vacanciesAddButton = By.xpath("//button[contains(.,'Add')]");
-  
+    private By recruitmentMenuItem = By.xpath("//span[text()='Recruitment ']");
+	private By vacancySubMenuItem = By.xpath("//a[@href='/web/index.php/recruitment/viewJobVacancy']");
+
+
 	// Methods to interact with Vacancy Page elements
 	public void selectVacancyTitle(String title) {
 		WebElement titleDropdown = driver.findElement(vacanciesTitle);
@@ -78,5 +81,24 @@ public class VacancyPage {
 		WebElement addButton=wait.until(ExpectedConditions.elementToBeClickable(button));
 		addButton.click();
 	}
+
+    public void menuClickVacancyPage() {
+		
+		WebElement recruitmentMenu = driver.findElement(recruitmentMenuItem);
+		Actions actions = new Actions(driver);
+		actions.moveToElement(recruitmentMenu).perform();
+
+		WebElement vacancySubMenu = wait.until(ExpectedConditions.elementToBeClickable(vacancySubMenuItem));
+		vacancySubMenu.click();
+	}
+
+	public String getPageTitle() {
+		return driver.getTitle();
+	}
+
+	public String getCurrentURL() {
+		return driver.getCurrentUrl();
+	}
+
 
 }
