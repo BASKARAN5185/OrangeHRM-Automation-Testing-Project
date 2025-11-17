@@ -44,6 +44,29 @@ public class AddVacancyPage {
         saveBtn.click();
     }
 
+    public void enterHiringManager(String manager){
+        WebElement hiringManagerInput=driver.findElement(addVacancyHioringManage);
+        hiringManagerInput.clear();
+        hiringManagerInput.sendKeys(manager);
+    }
+
+    public void enterNumberOfPositions(String number){
+        WebElement numberOfPositionsInput=driver.findElement(numberOfPosition);
+        numberOfPositionsInput.clear();
+        numberOfPositionsInput.sendKeys(number);
+    }
+
+    public void clickActiveCheckbox(){
+        WebElement activeChkBox=driver.findElement(activeCheckbox);
+        activeChkBox.click();
+    }
+
+    public void enterDesscription(String desc){
+        WebElement descriptionsInput=driver.findElement(description);
+        descriptionsInput.clear();
+        descriptionsInput.sendKeys(desc);
+    }
+
     public void selectVacancyTitle(){
 		WebElement statusDropdown=driver.findElement(addVacancyJobTitle);
 		statusDropdown.click();
@@ -53,6 +76,14 @@ public class AddVacancyPage {
 		action.sendKeys(Keys.ENTER).perform();
 	}
 
+     public void clickPublishInRSSCheckbox(){
+        WebElement publishInRSSChkBox=driver.findElement(publishInRSSCheckbox);
+        publishInRSSChkBox.click();
+    }
 
+    public void clickCancelButton(){
+        WebElement cancelBtn=driver.findElement(cancelButton);
+        cancelBtn.click();
+    }
     
 }
