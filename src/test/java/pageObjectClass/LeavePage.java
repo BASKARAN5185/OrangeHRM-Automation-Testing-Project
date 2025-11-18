@@ -1,22 +1,27 @@
 package pageObjectClass;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LeavePage  {
 
     private RemoteWebDriver driver;
-
+    private WebDriverWait wait;
     public LeavePage(RemoteWebDriver driver) {
         this.driver = driver;
+		this.wait=new WebDriverWait(driver,Duration.ofSeconds(10));
     }
-
+    //Menu
+    By LeaveMenu=By.xpath("//*[@class='oxd-main-menu-item active']");
     // Locators
     By leaveListTitle = By.xpath("(//a[@class='oxd-main-menu-item'])[3]");
-    By fromDateInput = By.xpath("(//input[@placeholder='yyyy-dd-mm'])[1]");
+    By fromDateInput = By.xpath("(//input[starts-with(@placeholder,'yyyy')])[1]");
     By toDateInput = By.xpath("(//input[@placeholder='yyyy-dd-mm'])[2]");
     By leaveStatusDropdown = By.xpath("(//div[@class='oxd-select-text-input'])[1]");
     By leaveTypeDropdown = By.xpath("(//div[@class='oxd-select-text-input'])[2]");
@@ -48,6 +53,12 @@ public class LeavePage  {
         fromDateField.sendKeys(date);
         return date;
     }
+
+	// Click the Leave Menu
+    public void clickLeaveMenu() {
+		wait.until(driver -> driver.findElement(LeaveMenu).isDisplayed());
+		driver.findElement(LeaveMenu).click();
+	}
 
     // Method to enter To Date
     public String enterToDate(String date) {
