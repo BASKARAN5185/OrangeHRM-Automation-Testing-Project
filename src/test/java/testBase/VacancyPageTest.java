@@ -2,16 +2,16 @@ package testBase;
 
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import baseClass.BaseClass;
 import pageObjectClass.OrangeHRMLoginPage;
 import pageObjectClass.VacancyPage;
 
-public class VacancyPageTest {
+public class VacancyPageTest extends BaseClass {
 
-    private RemoteWebDriver driver;
     private VacancyPage vacancyPage;
     private OrangeHRMLoginPage login;
 
@@ -23,9 +23,11 @@ public class VacancyPageTest {
         String currentUrl = driver.getCurrentUrl();
         Assert.assertNotEquals(currentUrl,
                 "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-        Thread.sleep(3000);  // wait for login
-        // Navigate to Vacancy page
-        vacancyPage.menuClickVacancyPage();
+    
+    }
+    @BeforeMethod
+    public void navigateVacancyPage(){
+        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/recruitment/viewJobVacancy");
     }
 
     @Test(priority = 1)
@@ -73,10 +75,4 @@ public class VacancyPageTest {
                 "Navigated to Add Vacancy page");
     }
 
-    @AfterClass
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-        }
-    }
 }
