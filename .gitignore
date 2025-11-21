@@ -1,0 +1,56 @@
+# ====================
+# IDE Files
+# ====================
+# Eclipse
+.classpath
+.project
+.settings/
+# VS Code
+.vscode/
+
+# ====================
+# Maven / Java
+# ====================
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+
+# ====================
+# Logs and Reports
+# ====================
+*.log
+logs/
+test-output/
+surefire-reports/
+extent-report/
+*.html
+*.xml
+*.png
+*.jpg
+*.gif
+
+# ====================
+# OS Files
+# ====================
+# Windows
+Thumbs.db
+Desktop.ini
+# macOS
+.DS_Store
+
+# ====================
+# Temporary files
+# ====================
+*.tmp
+*.bak
+*.swp
+
+# ====================
+# Others
+# ====================
+# If you use Excel files or test data, ignore only local temp copies
+*.xlsx
+*.xls

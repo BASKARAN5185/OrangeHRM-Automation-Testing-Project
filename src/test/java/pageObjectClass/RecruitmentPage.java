@@ -13,13 +13,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import baseClass.BaseClass;
 
-public class RecruitmentPage extends BaseClass {
+public class RecruitmentPage {
 
 	private JavascriptExecutor js;
-
+    private RemoteWebDriver driver;
 	public RecruitmentPage(RemoteWebDriver driver) {
 
-		BaseClass.driver = driver;
+		this.driver = driver;
 		this.js = (JavascriptExecutor) driver;
 	}
 
@@ -43,25 +43,6 @@ public class RecruitmentPage extends BaseClass {
 	private By searchButton = By.xpath("//button[@type='submit']");
 	private By addButton = By.xpath("//button[contains(.,'Add')]");
 
-	// Vacancies Page Locators
-	private By vacanciesTitle = By.xpath("(//div[@class='oxd-select-text-input'])[1]");
-	private By vacanciesVacancy = By.xpath("(//div[@class='oxd-select-text-input'])[2]");
-	private By vacanciesHiringManager = By.xpath("(//div[@class='oxd-select-text-input'])[3]");
-	private By vacanciesStatus = By.xpath("(//div[@class='oxd-select-text-input'])[4]");
-	private By vacanciesResetButton = By.xpath("//button[contains(.,'Reset')]");
-	private By vacanciesSearchButton = By.xpath("//button[contains(.,'Search')]");
-	private By vacanciesAddButton = By.xpath("//button[contains(.,'Add')]");
-
-	// Add Vacancy Page locators
-	private By vacancyName = By.xpath("(//span[contains(.,'Albert Hemibgue')]/following::input)[1]");
-	private By addVacancyJobTitle = By.xpath("oxd-select-text-input");
-	private By description = By.tagName("textarea");
-	private By addVacancyHioringManage = By
-			.xpath("(//label[normalize-space(text())='Hiring Manager']/following::input)[1]");
-	private By numberOfPosition = By.xpath("(//input[@class='oxd-input oxd-input--active'])[3]");
-	private By activeCheckbox = By.xpath("(//span[contains(@class,'oxd-switch-input oxd-switch-input--active')])[1]");
-	private By publishInRSSCheckbox = By
-			.xpath("//(span[contains(@class,'oxd-switch-input oxd-switch-input--active --label-right')[2]]");
 
 	// Page Header locators action methods
 	public String headersMenus(String menuname) {
@@ -87,6 +68,11 @@ public class RecruitmentPage extends BaseClass {
 			return "Exception occurred while clicking header.";
 		}
 
+	}
+
+	private String getCurrentUrlpage() {
+		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Unimplemented method 'getCurrentUrlpage'");
 	}
 
 	// Requirement Menu Option Click

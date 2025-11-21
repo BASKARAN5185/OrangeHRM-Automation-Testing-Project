@@ -3,12 +3,11 @@ package pageObjectClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import baseClass.BaseClass;
 
-public class My_info_page extends BaseClass {
-
-	public My_info_page(RemoteWebDriver driver) {
-		BaseClass.driver = driver;
+public class MyInfoPage  {
+	private RemoteWebDriver driver;
+	public MyInfoPage(RemoteWebDriver driver) {
+		this.driver = driver;
 	}
 
 	// My info page menu locators

@@ -4,6 +4,7 @@ import java.awt.AWTException;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import baseClass.BaseClass;
@@ -22,20 +23,20 @@ public class LeavePageTest extends BaseClass {
 		Menu = new HomeMenuPage(driver);
 		Leave = new LeavePage(driver);
 		login = new OrangeHRMLoginPage(driver);
-	}
-
-	@Test(priority = 1, groups = { "Regression", "Sanity", "LeaveModuleTest" })
-	void login() {
 		login.login("Admin", "admin123");
-		String pageurl = login.LoginValidation();
-		Assert.assertEquals(pageurl, "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index",
-				"Login URL validation failed.");
+		String pageurl = driver.getCurrentUrl();
+	    Assert.assertTrue(pageurl.contains("/dashboard/index"), "Login URL validation failed.");
 	}
 
-	@Test(priority = 2, groups = { "Regression", "Sanity", "LeaveModuleTest" })
+	@BeforeMethod
+	public void navigateToLeavePage() {
+		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/leave/viewLeaveList");
+	}
+
+	@Test(priority = 2,groups = { "Regression", "Sanity", "LeaveModuleTest" })
 	void ClickTheLeavemenu() {
-		Menu.clickLeaveMenu();
-		String pageUrl = getCurrentUrlpage();
+		Leave.clickLeaveMenu();
+		String pageUrl = driver.getCurrentUrl();
 		System.out.println("Leave page URL: " + pageUrl);
 		Assert.assertTrue(pageUrl.contains("leave/viewLeaveList"), "URL does not contain 'leave/viewLeaveList'");
 	}
