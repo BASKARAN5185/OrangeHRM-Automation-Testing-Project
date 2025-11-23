@@ -5,9 +5,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 public class HomeMenuPage  {
 	private RemoteWebDriver driver;
 	public HomeMenuPage(RemoteWebDriver driver) {
-		
-		this.driver=driver;
-		
+		this.driver=driver;		
 	}
 
     // Locators for the demo menu items (You can adjust these based on the actual HTML of the page)

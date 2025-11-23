@@ -1,6 +1,7 @@
 package pageObjectClass;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -29,24 +30,42 @@ public class VacancyPage {
 	private By vacanciesAddButton = By.xpath("//button[contains(.,'Add')]");
     private By recruitmentMenuItem = By.xpath("//span[text()='Recruitment ']");
 	private By vacancySubMenuItem = By.xpath("//a[@href='/web/index.php/recruitment/viewJobVacancy']");
-
+    private By dataNotFound=By.xpath("//span[text()='No Records Found']");
 
 	// Methods to interact with Vacancy Page elements
-	public void selectVacancyTitle(String title) {
-		WebElement titleDropdown = driver.findElement(vacanciesTitle);
-		titleDropdown.click();
-		WebElement titleOption = driver.findElement(By.xpath("//div[@role='option']//span[text()='" + title + "']"));
-		titleOption.click();
-	}
+	public boolean selectVacancyTitle(String title) {
+
+    WebElement titleDropdown = wait.until(
+            ExpectedConditions.elementToBeClickable(vacanciesTitle));
+    titleDropdown.click();
+
+    By optionLocator = By.xpath(
+            "//div[contains(@class,'oxd-select-option') and contains(normalize-space(),'" + title + "')]");
+
+    try {
+        WebElement option = wait.until(
+                ExpectedConditions.elementToBeClickable(optionLocator));
+        option.click();
+    } catch (Exception e) {
+        Actions action = new Actions(driver);
+        action.sendKeys(Keys.PAGE_DOWN).perform();
+        action.sendKeys(Keys.PAGE_DOWN).perform();
+        WebElement option = wait.until(
+                ExpectedConditions.elementToBeClickable(optionLocator));
+        option.click();
+    }
+	return false; 
+   }
+
 
 	public void selectVacancy(String vacancy) {
 		WebElement vacancyDropdown = driver.findElement(vacanciesVacancy);
 		vacancyDropdown.click();
-		WebElement vacancyOption = driver.findElement(By.xpath("//div[@role='option']//span[text()='" + vacancy + "']"));
+		WebElement vacancyOption = driver.findElement(By.xpath("//*[contains(text(),'"+vacancy+"')]"));
 		vacancyOption.click();
 	}
 
-	public void selectHiringManager(String manager){
+	public void selectHiringManager(){
 		WebElement managerDropdown=driver.findElement(vacanciesHiringManager);
 		managerDropdown.click();
 		Actions action=new Actions(driver);
@@ -55,7 +74,7 @@ public class VacancyPage {
 		action.sendKeys(Keys.ENTER).perform();
 	}
 
-	public void selectStatus(String status){
+	public void selectStatus(){
 		WebElement statusDropdown=driver.findElement(vacanciesStatus);
 		statusDropdown.click();
 		Actions action=new Actions(driver);
@@ -99,6 +118,28 @@ public class VacancyPage {
 	public String getCurrentURL() {
 		return driver.getCurrentUrl();
 	}
+
+	public void searchVacancy(String title , String vacancy ){
+       selectVacancyTitle(title);
+	   selectVacancy(vacancy);
+	   selectHiringManager();
+	   selectStatus();
+	}
+    
+	public boolean serachFunctionValidation(String data){
+	List<WebElement> searchData = driver.findElements(
+            By.xpath("//div[@class='data' and contains(text(),'" + data + "')]"));
+
+    List<WebElement> notFoundData = driver.findElements(dataNotFound);
+
+    if (!searchData.isEmpty()) {
+        return true;
+    } else if (!notFoundData.isEmpty() && notFoundData.get(0).isDisplayed()) {
+        return true;
+    }
+
+    return false;
+}
 
 
 }
