@@ -23,7 +23,7 @@ public class LeavePageTest extends BaseClass {
 		Menu = new HomeMenuPage(driver);
 		Leave = new LeavePage(driver);
 		login = new OrangeHRMLoginPage(driver);
-		login.login("Admin", "admin123");
+		login.login();
 		String pageurl = driver.getCurrentUrl();
 	    Assert.assertTrue(pageurl.contains("/dashboard/index"), "Login URL validation failed.");
 	}

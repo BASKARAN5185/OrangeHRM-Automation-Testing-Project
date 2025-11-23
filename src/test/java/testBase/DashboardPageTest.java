@@ -5,7 +5,6 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import baseClass.BaseClass;
 import pageObjectClass.DashboardPage;
 import pageObjectClass.OrangeHRMLoginPage;
@@ -19,19 +18,15 @@ public class DashboardPageTest extends BaseClass {
     public void setup() {
         login = new OrangeHRMLoginPage(driver);
         dashboard = new DashboardPage(driver);
+        login.login();
+        String currentUrl = driver.getCurrentUrl();
+        Assert.assertNotEquals(currentUrl,
+                "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
     }
 
     @Test(enabled = true, dependsOnMethods = "verifyPageName")
     public void checkBrokenLinks() {
         validateBrokenLinks();
-    }
-
-    @Test(priority = 1, groups = {"Regression", "Sanity", "DashboardTest"})
-    void loginTest() {
-        login.login("Admin", "admin123");
-        String currentUrl = driver.getCurrentUrl();
-        Assert.assertNotEquals(currentUrl,
-                "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
     }
 
     @Test(priority = 2, groups = {"Regression", "Sanity", "DashboardTest"})
