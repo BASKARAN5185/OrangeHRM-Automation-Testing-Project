@@ -1,8 +1,6 @@
 package pageObjectClass;
 
 import java.time.Duration;
-
-import org.jspecify.annotations.NonNull;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -30,7 +28,7 @@ public class AddCandidatePage {
     By contact = By.xpath("(//input[@placeholder='Type here'])[2]");
     By resumeUpload = By.xpath("//div[text()='Browser']/parent::div");
     By keywords = By.xpath("//div[@data-v-957b4417='']/child::input");
-    By dataOfApplication = By.xpath("//div[@class='oxd-date-input']//descendant::input");
+    By dateOfApplication = By.xpath("//div[@class='oxd-date-input']//descendant::input");
     By notes = By.tagName("textarea");
     By keepDataCheckBox = By.xpath("//span[contains(@class,'oxd-checkbox-input oxd-checkbox-input--active')]//i[1]");
     By cancelButton = By.xpath("(//div[@class='oxd-form-actions']//button)[2]");
@@ -81,4 +79,33 @@ public class AddCandidatePage {
          enterMail.sendKeys(emailadd);
         return enterMail.getText(); 
     }
+
+    public  String enterContact(String contcatnum){
+         WebElement contacWebElement = driver.findElement(contact);
+         wait.until(ExpectedConditions.elementToBeClickable(contacWebElement));
+         contacWebElement.sendKeys(contcatnum);
+         return contacWebElement.getText();
+    }
+
+    public String uploadResumeFile(String resumepath){
+        WebElement uplodElement =driver.findElement(resumeUpload);
+        wait.until(ExpectedConditions.elementToBeClickable(uplodElement));
+        uplodElement.sendKeys(resumepath);
+        return uplodElement.getAttribute("value");
+    }
+
+    public String enterKeywords(String inputKeywords){
+      WebElement keywordElement=driver.findElement(keywords);
+      wait.until(ExpectedConditions.elementToBeClickable(keywordElement));
+      keywordElement.sendKeys(inputKeywords);
+      return keywordElement.getText();
+    }
+
+    public String enterNotes(String inputNotes){
+       WebElement notesweWebElement = driver.findElement(notes);
+       wait.until(ExpectedConditions.elementToBeClickable(notesweWebElement));
+       notesweWebElement.sendKeys(inputNotes);
+       return notesweWebElement.getText();
+    }
+
 }
