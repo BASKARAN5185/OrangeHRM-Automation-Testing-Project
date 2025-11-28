@@ -108,4 +108,40 @@ public class AddCandidatePage {
        return notesweWebElement.getText();
     }
 
+    public boolean clickKeepDataCheckBox(){
+          boolean dataWebElement=wait.until(ExpectedConditions.elementToBeSelected(keepDataCheckBox));
+         return dataWebElement;
+    }
+
+    public void clickCancelButton(){
+        WebElement cancelButtoWebElement=wait.until(ExpectedConditions.elementToBeClickable(cancelButton));
+        cancelButtoWebElement.click();
+    }
+
+    public String verifyPageTitle(){
+         return driver.getTitle();
+    }
+
+    public String getUrl(){
+        return driver.getCurrentUrl();
+    }
+
+    public void fillFromAddCandidatePage(String titleString,String firstnameString,
+        String middleString,String lastnameString,String mailString,String contacString,
+        String filePathString,String noteString,String keywordString )
+        {
+        enterTitle(titleString);
+        enterFirstName(firstnameString);
+        enterMiddlename(middleString);
+        enterLastName(lastnameString);
+        selectVacancyType();
+        enterEmail(mailString);
+        enterContact(contacString);
+        uploadResumeFile(filePathString);
+        enterNotes(noteString);
+        enterKeywords(keywordString);
+        clickKeepDataCheckBox();
+        clickCancelButton();
+    }
+
 }
