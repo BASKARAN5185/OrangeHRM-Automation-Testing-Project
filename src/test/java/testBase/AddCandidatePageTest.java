@@ -1,4 +1,5 @@
 package testBase;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -19,7 +20,7 @@ public class AddCandidatePageTest extends BaseClass {
 
     @BeforeMethod 
     public void navigateAddcandidatepage(){
-      driver.get("");
+      driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/recruitment/addCandidate");
     }
 
     @Test(groups = "Regression" , dataProviderClass = utility.AddCandidateFromDataSet.class ,dataProvider = "validCandidateData")
@@ -30,6 +31,8 @@ public class AddCandidatePageTest extends BaseClass {
          addCandidate.fillFromAddCandidatePage(titleString , firstnameString,
          middleString, lastnameString, mailString, contacString,
          filePathString, noteString, keywordString );
+
+        Assert.assertTrue(addCandidate.rejectButtonVisibleValidattion(), "New candidate add is Failed");         
         
       }
      
@@ -42,6 +45,7 @@ public class AddCandidatePageTest extends BaseClass {
          middleString, lastnameString, mailString, contacString,
          filePathString, noteString, keywordString );
         
+         Assert.assertFalse(addCandidate.rejectButtonVisibleValidattion(), "The Candidate successfully added in the resouce,Invalid test is failed");
       }
 
 
@@ -53,6 +57,8 @@ public class AddCandidatePageTest extends BaseClass {
          addCandidate.fillFromAddCandidatePage(titleString , firstnameString,
          middleString, lastnameString, mailString, contacString,
          filePathString, noteString, keywordString );
+
+        Assert.assertTrue(addCandidate.rejectButtonVisibleValidattion(), "New candidate add is Failed");
         
       }
 
@@ -65,8 +71,9 @@ public class AddCandidatePageTest extends BaseClass {
          middleString, lastnameString, mailString, contacString,
          filePathString, noteString, keywordString );
         
-      }
+         Assert.assertFalse(addCandidate.rejectButtonVisibleValidattion(), "The Candidate successfully added in the resouce,Security test is failed");
 
+      }
       
 
     }

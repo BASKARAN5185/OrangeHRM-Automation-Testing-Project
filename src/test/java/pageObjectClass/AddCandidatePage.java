@@ -32,6 +32,7 @@ public class AddCandidatePage {
     By notes = By.tagName("textarea");
     By keepDataCheckBox = By.xpath("//span[contains(@class,'oxd-checkbox-input oxd-checkbox-input--active')]//i[1]");
     By cancelButton = By.xpath("(//div[@class='oxd-form-actions']//button)[2]");
+    By rejectButton = By.xpath("//button[text()=' Reject ']");
 
     // Actions
     public void enterFirstName(String fname) {
@@ -113,9 +114,16 @@ public class AddCandidatePage {
          return dataWebElement;
     }
 
+    @SuppressWarnings("null")
     public void clickCancelButton(){
         WebElement cancelButtoWebElement=wait.until(ExpectedConditions.elementToBeClickable(cancelButton));
         cancelButtoWebElement.click();
+    }
+
+    @SuppressWarnings("null")
+    public boolean rejectButtonVisibleValidattion(){
+        WebElement rejectButton= wait.until(ExpectedConditions.visibilityOfElementLocated(this.rejectButton)); 
+        return rejectButton.isDisplayed();
     }
 
     public String verifyPageTitle(){
