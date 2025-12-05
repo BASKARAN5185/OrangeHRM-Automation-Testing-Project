@@ -16,6 +16,9 @@ public class AddCandidatePageTest extends BaseClass {
     public void setup(){
       login = new OrangeHRMLoginPage(driver);
       addCandidate=new AddCandidatePage(driver);
+      login.login();
+      String url=driver.getCurrentUrl();
+      Assert.assertTrue(url.contains("auth/login"));
     }
 
     @BeforeMethod 
