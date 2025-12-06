@@ -18,22 +18,36 @@ public class AddCandidatePage {
         this.wait=new WebDriverWait(driver,Duration.ofSeconds(10)); 
     }
 
-    // Locators
-    By fromTitle = By.xpath("//h6[contains(text(),'Add Candidate')]");
-    By firstName = By.xpath("//input[@name='firstName' and @placeholder='First Name']");
-    By middleName = By.xpath("//input[@name='middleName' or @placeholder='Middle Name']");
-    By lastName = By.xpath("//*[contains(@name,'lastName')]");
-    By vacancy = By.xpath("//div[starts-with(@class , 'oxd-select-text ')]");
-    By email = By.xpath("(//input[@placeholder='Type here'])[1]");
-    By contact = By.xpath("(//input[@placeholder='Type here'])[2]");
-    By resumeUpload = By.xpath("//div[text()='Browser']/parent::div");
-    By keywords = By.xpath("//div[@data-v-957b4417='']/child::input");
-    By dateOfApplication = By.xpath("//div[@class='oxd-date-input']//descendant::input");
-    By notes = By.tagName("textarea");
-    By keepDataCheckBox = By.xpath("//span[contains(@class,'oxd-checkbox-input oxd-checkbox-input--active')]//i[1]");
-    By cancelButton = By.xpath("(//div[@class='oxd-form-actions']//button)[2]");
-    By rejectButton = By.xpath("//button[text()=' Reject ']");
+//Page Locators
+// Page Title
+By fromTitle = By.cssSelector("h6.orangehrm-main-title");
 
+// Full Name Fields
+By firstName = By.name("firstName");
+By middleName = By.name("middleName");
+By lastName = By.name("lastName");
+
+// Dropdown
+By vacancy = By.xpath("//label[text()='Vacancy']/../following-sibling::div//div[@tabindex='0']");
+
+// Contact Information
+By email = By.xpath("//label[text()='Email']/../following-sibling::div//input");
+By contact = By.xpath("//label[text()='Contact Number']/../following-sibling::div//input");
+
+// Resume Upload (For sending file path)
+By resumeUpload = By.cssSelector("input[type='file']");
+
+// Other Fields
+By keywords = By.xpath("//label[text()='Keywords']/../following-sibling::div//input");
+By dateOfApplication = By.cssSelector("input[placeholder='yyyy-dd-mm']");
+By notes = By.tagName("textarea");
+
+// Checkbox and Buttons
+By keepDataCheckBox = By.xpath("//label[text()='Consent to keep data']/preceding-sibling::div//input");
+By cancelButton = By.xpath("//button[text()=' Cancel ']");
+By saveButton = By.xpath("//button[text()=' Save ']"); // Added Save button
+By rejectButton = By.xpath("//button[text()=' Reject ']");
+    
     // Actions
     public void enterFirstName(String fname) {
         WebElement element = driver.findElement(firstName);

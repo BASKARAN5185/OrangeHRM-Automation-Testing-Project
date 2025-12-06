@@ -1,4 +1,5 @@
 package testBase;
+
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -12,71 +13,83 @@ public class AddCandidatePageTest extends BaseClass {
     
     OrangeHRMLoginPage login;
     AddCandidatePage addCandidate;
+    
     @BeforeClass
     public void setup(){
-      login = new OrangeHRMLoginPage(driver);
-      addCandidate=new AddCandidatePage(driver);
-      login.login();
-      String url=driver.getCurrentUrl();
-      Assert.assertTrue(url.contains("auth/login"));
+        // Initialize page objects
+        login = new OrangeHRMLoginPage(driver);
+        addCandidate = new AddCandidatePage(driver);
+        
+        // Perform login
+        login.login();
+        
+        // FIX 1: Assert successful login by checking for the Dashboard URL
+        String url = driver.getCurrentUrl();
+        Assert.assertTrue(url.contains("dashboard/index"), "Login was unsuccessful. Driver is not on the Dashboard page.");
     }
 
     @BeforeMethod 
     public void navigateAddcandidatepage(){
-      driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/recruitment/addCandidate");
+        // Navigate directly to the Add Candidate page before each test execution
+        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/recruitment/addCandidate");
     }
 
+    // --- Valid Data Test ---
     @Test(groups = "Regression" , dataProviderClass = utility.AddCandidateFromDataSet.class ,dataProvider = "validCandidateData")
     public void testValidCandidateDataFromFilling(String titleString,String firstnameString,
         String middleString,String lastnameString,String mailString,String contacString,
         String filePathString,String noteString,String keywordString){
 
-         addCandidate.fillFromAddCandidatePage(titleString , firstnameString,
-         middleString, lastnameString, mailString, contacString,
-         filePathString, noteString, keywordString );
+        addCandidate.fillFromAddCandidatePage(titleString , firstnameString,
+        middleString, lastnameString, mailString, contacString,
+        filePathString, noteString, keywordString );
 
-        Assert.assertTrue(addCandidate.rejectButtonVisibleValidattion(), "New candidate add is Failed");         
-        
-      }
-     
+        // Validation for successful candidate addition
+        // Assuming rejectButtonVisibleValidattion() returns TRUE if the candidate was added successfully
+        Assert.assertTrue(addCandidate.rejectButtonVisibleValidattion(), "New candidate addition failed with valid data.");     
+    }
+    
+    // --- Invalid Data Test ---
     @Test(groups = "Regression" , dataProviderClass = utility.AddCandidateFromDataSet.class ,dataProvider = "invalidCandidateData")
     public void testInvalidCandidateDataFromFilling(String titleString,String firstnameString,
         String middleString,String lastnameString,String mailString,String contacString,
         String filePathString,String noteString,String keywordString){
 
-         addCandidate.fillFromAddCandidatePage(titleString , firstnameString,
-         middleString, lastnameString, mailString, contacString,
-         filePathString, noteString, keywordString );
+        addCandidate.fillFromAddCandidatePage(titleString , firstnameString,
+        middleString, lastnameString, mailString, contacString,
+        filePathString, noteString, keywordString );
         
-         Assert.assertFalse(addCandidate.rejectButtonVisibleValidattion(), "The Candidate successfully added in the resouce,Invalid test is failed");
-      }
+        // Validation for unsuccessful candidate addition (expected failure)
+        // Assert that the page's success indicator (e.g., the reject button) is NOT visible.
+        Assert.assertFalse(addCandidate.rejectButtonVisibleValidattion(), "Candidate was unexpectedly added with invalid data. Test failed.");
+    }
 
-
-      @Test(groups = "Regression" , dataProviderClass = utility.AddCandidateFromDataSet.class ,dataProvider = "edgeCandidateData")
+    // --- Edge Case Data Test ---
+    @Test(groups = "Regression" , dataProviderClass = utility.AddCandidateFromDataSet.class ,dataProvider = "edgeCandidateData")
     public void testEdgeCaseCandidateDataFromFilling(String titleString,String firstnameString,
         String middleString,String lastnameString,String mailString,String contacString,
         String filePathString,String noteString,String keywordString){
 
-         addCandidate.fillFromAddCandidatePage(titleString , firstnameString,
-         middleString, lastnameString, mailString, contacString,
-         filePathString, noteString, keywordString );
+        addCandidate.fillFromAddCandidatePage(titleString , firstnameString,
+        middleString, lastnameString, mailString, contacString,
+        filePathString, noteString, keywordString );
 
-        Assert.assertTrue(addCandidate.rejectButtonVisibleValidattion(), "New candidate add is Failed");
+        // Validation for successful candidate addition (assuming edge cases are valid inputs)
+        Assert.assertTrue(addCandidate.rejectButtonVisibleValidattion(), "Edge case data failed to add candidate.");
         
-      }
+    }
 
-      @Test(groups = "Regression" , dataProviderClass = utility.AddCandidateFromDataSet.class ,dataProvider = "securityCandidateData")
+    // --- Security Data Test (e.g., XSS, SQLi) ---
+    @Test(groups = "Regression" , dataProviderClass = utility.AddCandidateFromDataSet.class ,dataProvider = "securityCandidateData")
     public void testSecurityCandidateDataFromFilling(String titleString,String firstnameString,
         String middleString,String lastnameString,String mailString,String contacString,
         String filePathString,String noteString,String keywordString){
 
-         addCandidate.fillFromAddCandidatePage(titleString , firstnameString,
-         middleString, lastnameString, mailString, contacString,
-         filePathString, noteString, keywordString );
+        addCandidate.fillFromAddCandidatePage(titleString , firstnameString,
+        middleString, lastnameString, mailString, contacString,
+        filePathString, noteString, keywordString );
         
-         Assert.assertFalse(addCandidate.rejectButtonVisibleValidattion(), "The Candidate successfully added in the resouce,Security test is failed");
-
-      }
-      
-
+        // Validation for unsuccessful candidate addition (expected failure due to security restrictions)
+        Assert.assertFalse(addCandidate.rejectButtonVisibleValidattion(), "Security data (e.g., XSS payload) successfully added candidate. Test failed.");
     }
+}
