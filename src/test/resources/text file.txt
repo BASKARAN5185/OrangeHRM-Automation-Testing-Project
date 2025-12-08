@@ -1,0 +1,3 @@
+Testcase No | Test case Scenario | Test Case Descrription | Test Steps 
+1   ball point pen any daamge check|   chech the edge in the page any damge in the pen  1. take the pen 2.rotate the each side 3.any damge are in the pen  | No dange is not in the pen | No damgaes is not find | pass 
+2.  Check the pen Color | check the color layer in the outer visible any damge in the pe| 1.take the pen 2. see each side of the outer layer . see any paint mising color | No issue find in patucalar layer | Result as 
