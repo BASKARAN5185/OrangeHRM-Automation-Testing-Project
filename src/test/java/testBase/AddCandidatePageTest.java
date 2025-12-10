@@ -47,22 +47,23 @@ public class AddCandidatePageTest extends BaseClass {
         // Assuming rejectButtonVisibleValidattion() returns TRUE if the candidate was added successfully
         Assert.assertTrue(addCandidate.applicationStageVisibleValidattion(), errormessageString);     
     }
-  /*   
+     
     // --- Invalid Data Test ---
     @Test(groups = "Regression" , dataProviderClass = utility.AddCandidateFromDataSet.class ,dataProvider = "invalidCandidateData")
     public void testInvalidCandidateDataFromFilling(String firstnameString,
         String middleString,String lastnameString,String mailString,String contacString,
-        String filePathString,String noteString,String keywordString){
+        String filePathString,String noteString,String keywordString, String errormessagString){
 
         addCandidate.fillFromAddCandidatePage( firstnameString,
         middleString, lastnameString, mailString, contacString,
-        filePathString, noteString, keywordString );
+        filePathString, noteString, keywordString,errormessagString );
         
         // Validation for unsuccessful candidate addition (expected failure)
-        // Assert that the page's success indicator (e.g., the reject button) is NOT visible.
-        Assert.assertFalse(addCandidate.rejectButtonVisibleValidattion(), "Candidate was unexpectedly added with invalid data. Test failed.");
+        // Assert that the page's success indicator (e.g., the Stage headline) is NOT visible.
+        Assert.assertFalse(addCandidate.applicationStageVisibleValidattion(), errormessagString);
     }
 
+    /* 
     // --- Edge Case Data Test ---
     @Test(groups = "Regression" , dataProviderClass = utility.AddCandidateFromDataSet.class ,dataProvider = "edgeCandidateData")
     public void testEdgeCaseCandidateDataFromFilling(String firstnameString,

@@ -1,6 +1,7 @@
 package pageObjectClass;
 
 import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -170,8 +171,10 @@ public boolean uploadResumeFile(String resumePath) {
 
     @SuppressWarnings("null")
     public boolean applicationStageVisibleValidattion(){
-        WebElement appStage= wait.until(ExpectedConditions.visibilityOfElementLocated(this.applicationStage)); 
-        return appStage.isDisplayed();
+        if (driver.findElements(applicationStage).size() > 0) {
+        return driver.findElement(applicationStage).isDisplayed();
+        }
+        return false; 
     }
 
     public String verifyPageTitle(){

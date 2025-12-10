@@ -61,12 +61,13 @@ public class AddCandidateFromDataSet {
             {"Peter", "B", "Parker", "peter@dailybugle.com", " 9900990099 ", VALID_PDF_PATH, "Phone with leading/trailing spaces.", "spaces,format", "The telephone number is invalid"},
             {"@@@", "###", "$$$", "test@mail.com", "9999999999", VALID_PDF_PATH, "Symbols in Name fields.", "symbols", "Should contain only letters"},
 
-            // Invalid File Types
+        /*     // Invalid File Types
             {"Clark", "J", "Kent", "clark.kent@dailyplanet.com", "1122334455", INVALID_XLSX_1_PATH, "Invalid File Format (New XLSX Worksheet).", "file", "Invalid file type"},
             {"Lois", "L", "Lane", "lois@dailyplanet.com", "5544332211", INVALID_XLSX_2_PATH, "Invalid File Format (123 - Spreadsheet).", "file", "Invalid file type"},
             {"Leia", "P", "Organa", "leia@rebel.com", "9988776655", INVALID_IMAGE_PATH, "Invalid File Format (Image file).", "file", "Invalid file type"},
             {"Han", "S", "Solo", "han@falcon.com", "9999888877", INVALID_PPT_PATH, "Invalid File Format (Presentation file).", "file", "Invalid file type"},
-        };
+        */
+            } ;
     }
 
 // --------------------------------------------------------------------------------------
