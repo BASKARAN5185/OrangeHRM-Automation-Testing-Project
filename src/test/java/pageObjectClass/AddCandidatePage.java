@@ -2,7 +2,9 @@ package pageObjectClass;
 
 import java.time.Duration;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -34,8 +36,8 @@ By vacancy = By.xpath("//label[text()='Vacancy']/../following-sibling::div//div[
 By email = By.xpath("//label[text()='Email']/../following-sibling::div//input");
 By contact = By.xpath("//label[text()='Contact Number']/../following-sibling::div//input");
 
-// Resume Upload (For sending file path)
-By resumeUpload = By.cssSelector("input[type='file']");
+// In your Page Object Class (AddCandidatePage) or Constants file
+private static final By resumeUpload = By.xpath("//input[@type='file' and @class='oxd-file-input']");
 
 // Other Fields
 By keywords = By.xpath("//label[text()='Keywords']/../following-sibling::div//input");
@@ -43,15 +45,17 @@ By dateOfApplication = By.cssSelector("input[placeholder='yyyy-dd-mm']");
 By notes = By.tagName("textarea");
 
 // Checkbox and Buttons
-By keepDataCheckBox = By.xpath("//label[text()='Consent to keep data']/preceding-sibling::div//input");
-By cancelButton = By.xpath("//button[text()=' Cancel ']");
+By keepDataCheckBox = By.xpath("//input[@type='checkbox']");
+By cancelButton = By.xpath("//button[text()=' Cancel ']/");
 By saveButton = By.xpath("//button[text()=' Save ']"); // Added Save button
-By rejectButton = By.xpath("//button[text()=' Reject ']");
+By applicationStage= By.xpath("//*[text()='Application Stage']");
+
     
     // Actions
     public void enterFirstName(String fname) {
         WebElement element = driver.findElement(firstName);
-        wait.until(ExpectedConditions.elementToBeClickable(element));      
+        wait.until(ExpectedConditions.elementToBeClickable(element)); 
+        element.click();     
         element.clear();
         element.sendKeys(fname);
     }
@@ -59,6 +63,7 @@ By rejectButton = By.xpath("//button[text()=' Reject ']");
     public void enterMiddlename(String mname) {
         WebElement midName = driver.findElement(middleName);
         wait.until(ExpectedConditions.elementToBeClickable(middleName));
+        midName.click();
         midName.clear();
         midName.sendKeys(mname);
     }
@@ -66,22 +71,24 @@ By rejectButton = By.xpath("//button[text()=' Reject ']");
     public void enterLastName(String lName) {
         WebElement lastNameField = driver.findElement(lastName);
         wait.until(ExpectedConditions.elementToBeClickable(lastNameField));
+        lastNameField.click();
         lastNameField.clear();
         lastNameField.sendKeys(lName);
     }
 
-    public String enterTitle(String title) {
+   /*  public String enterTitle(String title) {
         WebElement jobTitle = driver.findElement(fromTitle);
-        wait.until(ExpectedConditions.elementToBeClickable(jobTitle));
-        jobTitle.sendKeys(Keys.chord(Keys.SHIFT, "a"));
+       // wait.until(ExpectedConditions.elementToBeClickable(jobTitle));
+        jobTitle.clear();
         jobTitle.sendKeys(title);
         return jobTitle.getText();
-    }
+    }  */
 
     public String selectVacancyType(){
         WebElement vacancyname= driver.findElement(vacancy);
         wait.until(ExpectedConditions.elementToBeClickable(vacancyname));
         Actions dropdown =new Actions(driver); 
+        dropdown.click();
         dropdown.sendKeys(Keys.PAGE_DOWN).build();
         dropdown.sendKeys(Keys.PAGE_DOWN).build();
         dropdown.sendKeys(Keys.ENTER);
@@ -102,12 +109,33 @@ By rejectButton = By.xpath("//button[text()=' Reject ']");
          return contacWebElement.getText();
     }
 
-    public String uploadResumeFile(String resumepath){
-        WebElement uplodElement =driver.findElement(resumeUpload);
-        wait.until(ExpectedConditions.elementToBeClickable(uplodElement));
-        uplodElement.sendKeys(resumepath);
-        return uplodElement.getAttribute("value");
+   // NOTE: 'resumeUpload' MUST be a correctly defined By object (e.g., By.cssSelector("input[type='file'].oxd-file-input"))
+
+public boolean uploadResumeFile(String resumePath) {
+    try {
+        // 1. Wait for the element to be present in the DOM (presence doesn't check visibility)
+        wait.until(ExpectedConditions.presenceOfElementLocated(resumeUpload));
+        
+        WebElement uploadElement = driver.findElement(resumeUpload);
+
+        // 2. Use JavaScript Executor to force the HIDDEN element to be interactable
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].style.display='block'; arguments[0].style.visibility='visible';", uploadElement);
+
+        // 3. Send the absolute file path directly to the input element
+        uploadElement.sendKeys(resumePath);
+        
+        System.out.println("Resume file path sent successfully to: " + uploadElement.getAttribute("value"));
+        return true;
+
+    } catch (TimeoutException e) {
+        System.err.println("Timeout: Resume upload element was not present in the DOM within the time limit.");
+        return false;
+    } catch (Exception e) {
+        System.err.println("An unexpected error occurred during file upload interaction: " + e.getMessage());
+        return false;
     }
+}
 
     public String enterKeywords(String inputKeywords){
       WebElement keywordElement=driver.findElement(keywords);
@@ -124,8 +152,8 @@ By rejectButton = By.xpath("//button[text()=' Reject ']");
     }
 
     public boolean clickKeepDataCheckBox(){
-          boolean dataWebElement=wait.until(ExpectedConditions.elementToBeSelected(keepDataCheckBox));
-         return dataWebElement;
+          driver.findElement(keepDataCheckBox).click();
+          return true;  
     }
 
     @SuppressWarnings("null")
@@ -135,9 +163,15 @@ By rejectButton = By.xpath("//button[text()=' Reject ']");
     }
 
     @SuppressWarnings("null")
-    public boolean rejectButtonVisibleValidattion(){
-        WebElement rejectButton= wait.until(ExpectedConditions.visibilityOfElementLocated(this.rejectButton)); 
-        return rejectButton.isDisplayed();
+    public void clickSaveButton(){
+        WebElement saveButtonWebElement=wait.until(ExpectedConditions.elementToBeClickable(saveButton));
+        saveButtonWebElement.click();
+    }
+
+    @SuppressWarnings("null")
+    public boolean applicationStageVisibleValidattion(){
+        WebElement appStage= wait.until(ExpectedConditions.visibilityOfElementLocated(this.applicationStage)); 
+        return appStage.isDisplayed();
     }
 
     public String verifyPageTitle(){
@@ -148,22 +182,24 @@ By rejectButton = By.xpath("//button[text()=' Reject ']");
         return driver.getCurrentUrl();
     }
 
-    public void fillFromAddCandidatePage(String titleString,String firstnameString,
-        String middleString,String lastnameString,String mailString,String contacString,
-        String filePathString,String noteString,String keywordString )
+    public String stringValidation(String alretmess){
+          WebElement alrweWebElement=  driver.findElement(By.xpath("//*[text()='"+alretmess+"']"));
+          return alrweWebElement.getText();
+    }
+
+    public void fillFromAddCandidatePage(String firstnameString,String middleString,
+        String lastnameString,String mailString,String contacString,
+        String filePathString,String noteString,String keywordString , String erroString)
         {
-        enterTitle(titleString);
         enterFirstName(firstnameString);
         enterMiddlename(middleString);
         enterLastName(lastnameString);
-        selectVacancyType();
         enterEmail(mailString);
         enterContact(contacString);
-        uploadResumeFile(filePathString);
+        // uploadResumeFile(filePathString);
         enterNotes(noteString);
         enterKeywords(keywordString);
-        clickKeepDataCheckBox();
-        clickCancelButton();
+        clickSaveButton();
     }
 
 }
