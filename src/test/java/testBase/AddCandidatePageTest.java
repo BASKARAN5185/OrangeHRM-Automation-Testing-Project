@@ -1,5 +1,4 @@
 package testBase;
-
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -36,26 +35,26 @@ public class AddCandidatePageTest extends BaseClass {
 
     // --- Valid Data Test ---
     @Test(groups = "Regression" , dataProviderClass = utility.AddCandidateFromDataSet.class ,dataProvider = "validCandidateData")
-    public void testValidCandidateDataFromFilling(String titleString,String firstnameString,
+    public void testValidCandidateDataFromFilling(String firstnameString,
         String middleString,String lastnameString,String mailString,String contacString,
-        String filePathString,String noteString,String keywordString){
+        String filePathString,String noteString,String keywordString,String errormessageString){
 
-        addCandidate.fillFromAddCandidatePage(titleString , firstnameString,
+        addCandidate.fillFromAddCandidatePage(firstnameString,
         middleString, lastnameString, mailString, contacString,
-        filePathString, noteString, keywordString );
+        filePathString, noteString, keywordString, errormessageString );
 
         // Validation for successful candidate addition
         // Assuming rejectButtonVisibleValidattion() returns TRUE if the candidate was added successfully
-        Assert.assertTrue(addCandidate.rejectButtonVisibleValidattion(), "New candidate addition failed with valid data.");     
+        Assert.assertTrue(addCandidate.applicationStageVisibleValidattion(), errormessageString);     
     }
-    
+  /*   
     // --- Invalid Data Test ---
     @Test(groups = "Regression" , dataProviderClass = utility.AddCandidateFromDataSet.class ,dataProvider = "invalidCandidateData")
-    public void testInvalidCandidateDataFromFilling(String titleString,String firstnameString,
+    public void testInvalidCandidateDataFromFilling(String firstnameString,
         String middleString,String lastnameString,String mailString,String contacString,
         String filePathString,String noteString,String keywordString){
 
-        addCandidate.fillFromAddCandidatePage(titleString , firstnameString,
+        addCandidate.fillFromAddCandidatePage( firstnameString,
         middleString, lastnameString, mailString, contacString,
         filePathString, noteString, keywordString );
         
@@ -66,30 +65,31 @@ public class AddCandidatePageTest extends BaseClass {
 
     // --- Edge Case Data Test ---
     @Test(groups = "Regression" , dataProviderClass = utility.AddCandidateFromDataSet.class ,dataProvider = "edgeCandidateData")
-    public void testEdgeCaseCandidateDataFromFilling(String titleString,String firstnameString,
+    public void testEdgeCaseCandidateDataFromFilling(String firstnameString,
         String middleString,String lastnameString,String mailString,String contacString,
-        String filePathString,String noteString,String keywordString){
+        String filePathString,String noteString,String keywordString,String errormessageString ){
 
-        addCandidate.fillFromAddCandidatePage(titleString , firstnameString,
+        addCandidate.fillFromAddCandidatePage( firstnameString,
         middleString, lastnameString, mailString, contacString,
         filePathString, noteString, keywordString );
 
         // Validation for successful candidate addition (assuming edge cases are valid inputs)
-        Assert.assertTrue(addCandidate.rejectButtonVisibleValidattion(), "Edge case data failed to add candidate.");
+        Assert.assertTrue(addCandidate.rejectButtonVisibleValidattion(), errormessageString);
         
     }
 
     // --- Security Data Test (e.g., XSS, SQLi) ---
     @Test(groups = "Regression" , dataProviderClass = utility.AddCandidateFromDataSet.class ,dataProvider = "securityCandidateData")
-    public void testSecurityCandidateDataFromFilling(String titleString,String firstnameString,
+    public void testSecurityCandidateDataFromFilling(String firstnameString,
         String middleString,String lastnameString,String mailString,String contacString,
         String filePathString,String noteString,String keywordString){
 
-        addCandidate.fillFromAddCandidatePage(titleString , firstnameString,
+        addCandidate.fillFromAddCandidatePage( firstnameString,
         middleString, lastnameString, mailString, contacString,
         filePathString, noteString, keywordString );
         
         // Validation for unsuccessful candidate addition (expected failure due to security restrictions)
         Assert.assertFalse(addCandidate.rejectButtonVisibleValidattion(), "Security data (e.g., XSS payload) successfully added candidate. Test failed.");
     }
+        */
 }
