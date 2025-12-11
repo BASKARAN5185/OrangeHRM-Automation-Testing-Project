@@ -63,7 +63,7 @@ public class AddCandidatePageTest extends BaseClass {
         Assert.assertFalse(addCandidate.applicationStageVisibleValidattion(), errormessagString);
     }
 
-    /* 
+    
     // --- Edge Case Data Test ---
     @Test(groups = "Regression" , dataProviderClass = utility.AddCandidateFromDataSet.class ,dataProvider = "edgeCandidateData")
     public void testEdgeCaseCandidateDataFromFilling(String firstnameString,
@@ -72,13 +72,13 @@ public class AddCandidatePageTest extends BaseClass {
 
         addCandidate.fillFromAddCandidatePage( firstnameString,
         middleString, lastnameString, mailString, contacString,
-        filePathString, noteString, keywordString );
+        filePathString, noteString, keywordString, errormessageString );
 
         // Validation for successful candidate addition (assuming edge cases are valid inputs)
-        Assert.assertTrue(addCandidate.rejectButtonVisibleValidattion(), errormessageString);
+        Assert.assertTrue(addCandidate.applicationStageVisibleValidattion(), errormessageString);  
         
     }
-
+    /* 
     // --- Security Data Test (e.g., XSS, SQLi) ---
     @Test(groups = "Regression" , dataProviderClass = utility.AddCandidateFromDataSet.class ,dataProvider = "securityCandidateData")
     public void testSecurityCandidateDataFromFilling(String firstnameString,
