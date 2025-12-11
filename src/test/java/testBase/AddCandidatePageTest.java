@@ -78,19 +78,19 @@ public class AddCandidatePageTest extends BaseClass {
         Assert.assertTrue(addCandidate.applicationStageVisibleValidattion(), errormessageString);  
         
     }
-    /* 
+    
     // --- Security Data Test (e.g., XSS, SQLi) ---
     @Test(groups = "Regression" , dataProviderClass = utility.AddCandidateFromDataSet.class ,dataProvider = "securityCandidateData")
     public void testSecurityCandidateDataFromFilling(String firstnameString,
         String middleString,String lastnameString,String mailString,String contacString,
-        String filePathString,String noteString,String keywordString){
+        String filePathString,String noteString,String keywordString, String errormessageString ){
 
         addCandidate.fillFromAddCandidatePage( firstnameString,
         middleString, lastnameString, mailString, contacString,
-        filePathString, noteString, keywordString );
+        filePathString, noteString, keywordString, errormessageString );
         
         // Validation for unsuccessful candidate addition (expected failure due to security restrictions)
-        Assert.assertFalse(addCandidate.rejectButtonVisibleValidattion(), "Security data (e.g., XSS payload) successfully added candidate. Test failed.");
+        Assert.assertFalse(addCandidate.applicationStageVisibleValidattion(), errormessageString);
     }
-        */
+        
 }
