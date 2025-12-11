@@ -1,7 +1,6 @@
 package pageObjectClass;
 
 import java.time.Duration;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -39,6 +38,7 @@ public class AddVacancyPage {
         vacancyNameInput.sendKeys(name);
     }
 
+    @SuppressWarnings("null")
     public void clickSaveButton() {
         WebElement saveBtn = wait.until(ExpectedConditions.elementToBeClickable(saveButton));
         saveBtn.click();
@@ -56,9 +56,26 @@ public class AddVacancyPage {
         numberOfPositionsInput.sendKeys(number);
     }
 
-    public void clickActiveCheckbox(){
+    public boolean clickActiveCheckbox(String conditionString){
+        if (conditionString.isEmpty()|| conditionString==null) {
+          return false;  
+        } 
+        
+        String checkCondtion= conditionString.toLowerCase().trim();
         WebElement activeChkBox=driver.findElement(activeCheckbox);
-        activeChkBox.click();
+        if(checkCondtion.equalsIgnoreCase("check")){
+             if (!activeChkBox.isSelected()) {
+                activeChkBox.click();
+             }
+             return true;
+        }else if (checkCondtion.equalsIgnoreCase("uncheck")) {
+            if (activeChkBox.isSelected()) {
+                activeChkBox.click();
+            }
+            return false;
+        } else {
+            return false;
+        }
     }
 
     public void enterDesscription(String desc){
@@ -76,9 +93,27 @@ public class AddVacancyPage {
 		action.sendKeys(Keys.ENTER).perform();
 	}
 
-     public void clickPublishInRSSCheckbox(){
+     public boolean clickPublishInRSSCheckbox(String conditionString){
+
+         if (conditionString.isEmpty()|| conditionString==null) {
+          return false;  
+        } 
+        
+        String checkCondtion= conditionString.toLowerCase().trim();
         WebElement publishInRSSChkBox=driver.findElement(publishInRSSCheckbox);
-        publishInRSSChkBox.click();
+        if(checkCondtion.equalsIgnoreCase("check")){
+             if (!publishInRSSChkBox.isSelected()) {
+                publishInRSSChkBox.click();
+             }
+             return true;
+        }else if (checkCondtion.equalsIgnoreCase("uncheck")) {
+            if (publishInRSSChkBox.isSelected()) {
+                publishInRSSChkBox.click();
+            }
+            return false;
+        } else {
+            return false;
+        }
     }
 
     public void clickCancelButton(){
