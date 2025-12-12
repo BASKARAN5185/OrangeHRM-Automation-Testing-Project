@@ -91,38 +91,62 @@ public class AddVacancyPage {
         descriptionsInput.sendKeys(desc);
     }
 
-    public void selectVacancyTitle(int num){
-		WebElement statusDropdown=driver.findElement(addVacancyJobTitle);
-		statusDropdown.click();
-		Actions action=new Actions(driver);
-        for(int i=0;i==num;i++){
-		action.sendKeys(Keys.PAGE_DOWN).perform();
-        }
-		action.sendKeys(Keys.ENTER).perform();
-	}
+    @SuppressWarnings("null")
+    public void selectVacancyTitleReliable(String vacancyTitle) {
+    WebElement dropdownInput = driver.findElement(addVacancyJobTitle);
+    dropdownInput.click();
+    // Use WebDriverWait for better synchronization
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    // 2. Construct a reliable locator (XPath) for the option based on its text
+    // This XPath assumes the options are in a standard format like:
+    // <div class="oxd-select-option"><span>vacancyTitle</span></div>
+    String optionXpath = String.format("//div[@role='listbox']//span[text()='%s']", vacancyTitle);
+    // 3. Wait for the specific option to be clickable
+    By optionLocator = By.xpath(optionXpath);
+    WebElement desiredOption = wait.until(ExpectedConditions.elementToBeClickable(optionLocator));
+    desiredOption.click();
+   }
 
-     public boolean clickPublishInRSSCheckbox(String conditionString){
+public boolean clickPublishInRSSCheckbox(String conditionString) {
 
-         if (conditionString.isEmpty()|| conditionString==null) {
-          return false;  
-        } 
-        
-        String checkCondtion= conditionString.toLowerCase().trim();
-        WebElement publishInRSSChkBox=driver.findElement(publishInRSSCheckbox);
-        if(checkCondtion.equalsIgnoreCase("check")){
-             if (!publishInRSSChkBox.isSelected()) {
-                publishInRSSChkBox.click();
-             }
-             return true;
-        }else if (checkCondtion.equalsIgnoreCase("uncheck")) {
-            if (publishInRSSChkBox.isSelected()) {
-                publishInRSSChkBox.click();
-            }
-            return true;
-        } else {
-            return false;
-        }
+    // 1. Safety Check: Handle null or empty input immediately and safely
+    if (conditionString == null || conditionString.trim().isEmpty()) {
+        System.out.println("Condition string is null or empty. Action aborted.");
+        return false;
     }
+
+    // 2. Normalize Input
+    String checkCondition = conditionString.trim().toLowerCase();
+    
+    // 3. Locate the element
+    WebElement publishInRSSChkBox = driver.findElement(publishInRSSCheckbox);
+    
+    // 4. Implement Logic based on the normalized condition
+    if (checkCondition.equals("check")) {
+        
+        if (!publishInRSSChkBox.isSelected()) {
+            System.out.println("Checking the 'Publish In RSS' checkbox.");
+            publishInRSSChkBox.click();
+        } else {
+            System.out.println("'Publish In RSS' checkbox is already checked.");
+        }
+        return true;
+        
+    } else if (checkCondition.equals("uncheck")) {
+        
+        if (publishInRSSChkBox.isSelected()) {
+            System.out.println("Unchecking the 'Publish In RSS' checkbox.");
+            publishInRSSChkBox.click();
+        } else {
+            System.out.println("'Publish In RSS' checkbox is already unchecked.");
+        }
+        return true;
+        
+    } else {
+        // 5. Handle Invalid Input
+        System.err.println("Invalid condition provided: '" + conditionString + "'. Must be 'check' or 'uncheck'.");
+        return false;
+    }}
 
     public void clickCancelButton(){
         WebElement cancelBtn=driver.findElement(cancelButton);
