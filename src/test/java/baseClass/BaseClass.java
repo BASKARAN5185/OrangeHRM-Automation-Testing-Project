@@ -89,6 +89,10 @@ public class BaseClass {
         return driver.findElement(locator);
     }
 
+    public WebElement stringsWebElement(String name){
+        return driver.findElement(By.xpath("//*[text()='"+name+"']"));
+    }
+
     public void validateBrokenLinks() {
         List<WebElement> links = driver.findElements(By.tagName("a"));
         for (WebElement link : links) {
