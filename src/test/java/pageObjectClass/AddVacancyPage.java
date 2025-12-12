@@ -19,15 +19,15 @@ public class AddVacancyPage {
     }
 
     // Add Vacancy Page locators
-	private By vacancyName = By.xpath("(//span[contains(.,'Albert Hemibgue')]/following::input)[1]");
-	private By addVacancyJobTitle = By.xpath("oxd-select-text-input");
+	private By vacancyName = By.xpath("(//input[@class='oxd-input oxd-input--active'])[2]");
+	private By addVacancyJobTitle = By.className("oxd-select-text-input");
 	private By description = By.tagName("textarea");
 	private By addVacancyHioringManage = By
 			.xpath("(//label[normalize-space(text())='Hiring Manager']/following::input)[1]");
 	private By numberOfPosition = By.xpath("(//input[@class='oxd-input oxd-input--active'])[3]");
 	private By activeCheckbox = By.xpath("(//span[contains(@class,'oxd-switch-input oxd-switch-input--active')])[1]");
 	private By publishInRSSCheckbox = By
-			.xpath("//(span[contains(@class,'oxd-switch-input oxd-switch-input--active --label-right')[2]]");
+			.xpath("(//*[@class='oxd-switch-input oxd-switch-input--active --label-right'])[2]");
     private By cancelButton = By.xpath("//button[contains(.,'Cancel')]");
     private By saveButton = By.xpath("//button[text()=' Save ']");  
     
@@ -44,10 +44,17 @@ public class AddVacancyPage {
         saveBtn.click();
     }
 
-    public void enterHiringManager(String manager){
+    @SuppressWarnings("unused")
+    public void enterHiringManager(String name){
         WebElement hiringManagerInput=driver.findElement(addVacancyHioringManage);
+        if(name != null && !name.trim().isEmpty()){
+           hiringManagerInput.clear();
+           hiringManagerInput.sendKeys(name);
+        }else{
+        String mangerName=driver.findElement(By.xpath("//p[@class='oxd-userdropdown-name']")).getText();
         hiringManagerInput.clear();
-        hiringManagerInput.sendKeys(manager);
+        hiringManagerInput.sendKeys(mangerName);
+        }
     }
 
     public void enterNumberOfPositions(String number){
@@ -66,13 +73,13 @@ public class AddVacancyPage {
         if(checkCondtion.equalsIgnoreCase("check")){
              if (!activeChkBox.isSelected()) {
                 activeChkBox.click();
-             }
+            }
              return true;
         }else if (checkCondtion.equalsIgnoreCase("uncheck")) {
             if (activeChkBox.isSelected()) {
                 activeChkBox.click();
             }
-            return false;
+            return true;
         } else {
             return false;
         }
@@ -84,12 +91,13 @@ public class AddVacancyPage {
         descriptionsInput.sendKeys(desc);
     }
 
-    public void selectVacancyTitle(){
+    public void selectVacancyTitle(int num){
 		WebElement statusDropdown=driver.findElement(addVacancyJobTitle);
 		statusDropdown.click();
 		Actions action=new Actions(driver);
+        for(int i=0;i==num;i++){
 		action.sendKeys(Keys.PAGE_DOWN).perform();
-		action.sendKeys(Keys.PAGE_DOWN).perform();
+        }
 		action.sendKeys(Keys.ENTER).perform();
 	}
 
@@ -110,7 +118,7 @@ public class AddVacancyPage {
             if (publishInRSSChkBox.isSelected()) {
                 publishInRSSChkBox.click();
             }
-            return false;
+            return true;
         } else {
             return false;
         }
