@@ -2,9 +2,7 @@ package pageObjectClass;
 
 import java.time.Duration;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -25,9 +23,10 @@ public class AddVacancyPage {
 	private By addVacancyHioringManage = By
 			.xpath("(//label[normalize-space(text())='Hiring Manager']/following::input)[1]");
 	private By numberOfPosition = By.xpath("(//input[@class='oxd-input oxd-input--active'])[3]");
-	private By activeCheckbox = By.xpath("(//span[contains(@class,'oxd-switch-input oxd-switch-input--active')])[1]");
+	private  By clickableLabelLocator = By.xpath("//div[contains(@class, 'orangerhrm-switch-wrapper') and .//p[text()='Active']]//label");
+    private  By switchInputSpanLocator = By.xpath("//div[contains(@class, 'orangerhrm-switch-wrapper') and .//p[text()='Active']]//span[contains(@class, 'oxd-switch-input')]");
 	private By publishInRSSCheckbox = By
-			.xpath("(//*[@class='oxd-switch-input oxd-switch-input--active --label-right'])[2]");
+			.xpath("(//*[@class='oxd-switch-input oxd-switch-input--active'])[2]");
     private By cancelButton = By.xpath("//button[contains(.,'Cancel')]");
     private By saveButton = By.xpath("//button[text()=' Save ']");  
     
@@ -63,27 +62,55 @@ public class AddVacancyPage {
         numberOfPositionsInput.sendKeys(number);
     }
 
-    public boolean clickActiveCheckbox(String conditionString){
-        if (conditionString.isEmpty()|| conditionString==null) {
-          return false;  
-        } 
+    @SuppressWarnings("null")
+    public boolean clickActiveCheckbox(String conditionString) {
+    
+    if (conditionString == null || conditionString.trim().isEmpty()) {
+        System.err.println("Error: conditionString cannot be null or empty.");
+        return false;
+    } 
+
+    try {
+        // Find elements based on the robust XPath
+        WebElement clickableLabel = driver.findElement(clickableLabelLocator);
+        WebElement switchInputSpan = driver.findElement(switchInputSpanLocator);
         
-        String checkCondtion= conditionString.toLowerCase().trim();
-        WebElement activeChkBox=driver.findElement(activeCheckbox);
-        if(checkCondtion.equalsIgnoreCase("check")){
-             if (!activeChkBox.isSelected()) {
-                activeChkBox.click();
-            }
-             return true;
-        }else if (checkCondtion.equalsIgnoreCase("uncheck")) {
-            if (activeChkBox.isSelected()) {
-                activeChkBox.click();
+        String checkCondition = conditionString.trim().toLowerCase();
+        
+        // CUSTOM STATE CHECK: Check for the '--active' class on the span
+        boolean isCurrentlyActive = switchInputSpan.getAttribute("class").contains("--active");
+        
+        if (checkCondition.equals("check")) {
+            if (!isCurrentlyActive) {
+                clickableLabel.click();
+                System.out.println("Switch was inactive; clicked to set to active.");
+            } else {
+                System.out.println("Switch is already checked (active).");
             }
             return true;
+            
+        } else if (checkCondition.equals("uncheck")) {
+            if (isCurrentlyActive) {
+                clickableLabel.click();
+                System.out.println("Switch was active; clicked to set to inactive.");
+            } else {
+                System.out.println("Switch is already unchecked (inactive).");
+            }
+            return true;
+            
         } else {
+            System.err.println("Invalid condition string: " + conditionString + ". Must be 'check' or 'uncheck'.");
             return false;
         }
+
+    } catch (org.openqa.selenium.NoSuchElementException e) {
+        System.err.println("Error: The 'Active' switch element was not found. " + e.getMessage());
+        return false;
+    } catch (Exception e) {
+        System.err.println("An unexpected error occurred: " + e.getMessage());
+        return false;
     }
+}
 
     public void enterDesscription(String desc){
         WebElement descriptionsInput=driver.findElement(description);
@@ -107,46 +134,55 @@ public class AddVacancyPage {
     desiredOption.click();
    }
 
-public boolean clickPublishInRSSCheckbox(String conditionString) {
-
-    // 1. Safety Check: Handle null or empty input immediately and safely
+    public boolean clickPublishInRSSCheckbox(String conditionString) {
+    
+    // 1. IMPROVEMENT: Check for null BEFORE calling methods on the string.
     if (conditionString == null || conditionString.trim().isEmpty()) {
-        System.out.println("Condition string is null or empty. Action aborted.");
+        System.out.println("Error: conditionString cannot be null or empty.");
+        return false;
+    } 
+
+    try {
+        // 2. Element Retrieval (Best practice is to handle WebDriver exceptions)
+        WebElement publishInRSSChkBox = driver.findElement(publishInRSSCheckbox);
+        String checkCondition = conditionString.trim().toLowerCase();
+        
+        boolean isSelected = publishInRSSChkBox.isSelected();
+        
+        // 3. Conditional Logic
+        if (checkCondition.equals("check")) {
+            if (!isSelected) {
+                publishInRSSChkBox.click();
+                System.out.println("Checkbox was unchecked and has been clicked to check it.");
+            } else {
+                System.out.println("Checkbox is already checked.");
+            }
+            return true;
+            
+        } else if (checkCondition.equals("uncheck")) {
+            if (isSelected) {
+                publishInRSSChkBox.click();
+                System.out.println("Checkbox was checked and has been clicked to uncheck it.");
+            } else {
+                System.out.println("Checkbox is already unchecked.");
+            }
+            return true;
+            
+        } else {
+            // 4. Invalid Input
+            System.out.println("Invalid condition string: " + conditionString + ". Must be 'check' or 'uncheck'.");
+            return false;
+        }
+
+    // Handle case where the element could not be found
+    } catch (org.openqa.selenium.NoSuchElementException e) {
+        System.err.println("Error: Element not found using locator: " + publishInRSSCheckbox + ". " + e.getMessage());
+        return false;
+    } catch (Exception e) {
+        System.err.println("An unexpected error occurred: " + e.getMessage());
         return false;
     }
-
-    // 2. Normalize Input
-    String checkCondition = conditionString.trim().toLowerCase();
-    
-    // 3. Locate the element
-    WebElement publishInRSSChkBox = driver.findElement(publishInRSSCheckbox);
-    
-    // 4. Implement Logic based on the normalized condition
-    if (checkCondition.equals("check")) {
-        
-        if (!publishInRSSChkBox.isSelected()) {
-            System.out.println("Checking the 'Publish In RSS' checkbox.");
-            publishInRSSChkBox.click();
-        } else {
-            System.out.println("'Publish In RSS' checkbox is already checked.");
-        }
-        return true;
-        
-    } else if (checkCondition.equals("uncheck")) {
-        
-        if (publishInRSSChkBox.isSelected()) {
-            System.out.println("Unchecking the 'Publish In RSS' checkbox.");
-            publishInRSSChkBox.click();
-        } else {
-            System.out.println("'Publish In RSS' checkbox is already unchecked.");
-        }
-        return true;
-        
-    } else {
-        // 5. Handle Invalid Input
-        System.err.println("Invalid condition provided: '" + conditionString + "'. Must be 'check' or 'uncheck'.");
-        return false;
-    }}
+}
 
     public void clickCancelButton(){
         WebElement cancelBtn=driver.findElement(cancelButton);
