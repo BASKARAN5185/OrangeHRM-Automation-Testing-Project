@@ -68,9 +68,6 @@ public class AddVacancyDataSet {
     @DataProvider(name = "invalidVacancyCreationData")
     public Object[][] getInvalidVacancyData() {
         return new Object[][] {
-            // -------------------------------------------------------------
-            // SCENARIOS FROM PREVIOUS RESPONSE
-            // -------------------------------------------------------------
             
             // Test Case 1: Required Field Missing (Vacancy Name is "")
             {
@@ -80,8 +77,7 @@ public class AddVacancyDataSet {
                 "Paul Collings", 
                 "1",
                 "check", 	
-                "check",
-                "Expected error: Vacancy Name is required." 
+                "check" 
             },
 
             // Test Case 2: Required Field Missing (Job Title is missing/null)
@@ -92,8 +88,7 @@ public class AddVacancyDataSet {
                 "Paul Collings", 
                 "1",
                 "check", 	
-                "check",
-                "Expected error: Job Title is required."
+                "check"
             },
 
             // Test Case 3: Boundary Condition (Non-numeric input for Positions)
@@ -104,8 +99,7 @@ public class AddVacancyDataSet {
                 "Paul Collings", 
                 "NonNumeric", // Positions: Invalid data type
                 "check", 	
-                "uncheck",
-                "Expected error: Number of Positions must be numeric."
+                "uncheck"
             },
             
             // Test Case 4: Boundary Condition (Max Length Name)
@@ -116,8 +110,7 @@ public class AddVacancyDataSet {
                 "Paul Collings", 
                 "1",
                 "uncheck", 	
-                "uncheck",
-                "Expected error: Vacancy Name exceeds maximum character limit or contains invalid characters."
+                "uncheck"
             },
             
             // Test Case 5: Negative Number of Positions
@@ -128,13 +121,8 @@ public class AddVacancyDataSet {
                 "Paul Collings", 
                 "-1", // Positions: Negative number
                 "check", 	
-                "check",
-                "Expected error: Number of Positions cannot be negative/less than 1."
+                "check"
             },
-            
-            // -------------------------------------------------------------
-            // NEW SCENARIOS
-            // -------------------------------------------------------------
             
             // Test Case 6: Zero Positions (Boundary Check)
             {
@@ -144,8 +132,7 @@ public class AddVacancyDataSet {
                 "Paul Collings", 
                 "0", // Positions: Zero
                 "check", 	
-                "check",
-                "Expected error: Number of Positions must be greater than zero." 
+                "check" 
             },
             
             // Test Case 7: High Boundary Positions (Max Value Check)
@@ -156,8 +143,7 @@ public class AddVacancyDataSet {
                 "Paul Collings", 
                 "9999999999", // Positions: Extremely large number
                 "check", 	
-                "uncheck",
-                "Expected error: Value exceeds maximum acceptable limit."
+                "uncheck"
             },
             
             // Test Case 8: Invalid Manager Name (Lookup failure)
@@ -168,8 +154,7 @@ public class AddVacancyDataSet {
                 "NonExistentUser", // Manager: A user that does not exist in the system
                 "1",
                 "uncheck", 	
-                "check",
-                "Expected error: Invalid or non-matching Hiring Manager name."
+                "check"
             }
         };
     }

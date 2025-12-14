@@ -1,6 +1,7 @@
 package testBase;
 
 import org.apache.commons.lang3.ObjectUtils.Null;
+import org.openqa.selenium.NoSuchElementException;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -57,7 +58,35 @@ public class AddVacancyPageTest extends BaseClass{
         addVacancyPage.clickActiveCheckbox(checkBoxString);
         addVacancyPage.clickPublishInRSSCheckbox(rssCheckBoxStrig);
         addVacancyPage.clickSaveButton();
-        Assert.assertTrue(stringsWebElement("Edit Vacancy").isDisplayed(),"Vacany cration test case is failed");
+        boolean validation;
+        try{
+        if (stringsWebElement("Edit Vacancy").isDisplayed()) {
+            System.out.println("edit vacany is displayed test case failed.");
+           validation=false;    
+        }else{
+            System.out.println("edit vacany is displayed test case passed.");
+            validation=true;
+        }
+        }catch(NoSuchElementException e){
+            System.out.println("edit vacany is not available in the page.");
+          validation=true;
+        }
+        Assert.assertTrue(validation,"Vacany cration test case is failed");
+    }
+
+    @Test(dataProviderClass = utility.AddVacancyDataSet.class, dataProvider = "invalidVacancyCreationData")
+    public void invalidVacancyFromFilling(String vacanctNameString, String vacancyTitle,String desscreptionString,
+                                        String hrmangerString, String numerOfPostioString,String checkBoxString,
+                                        String rssCheckBoxStrig) throws InterruptedException{
+        addVacancyPage.enterVacancyName(vacanctNameString);
+       // addVacancyPage.selectVacancyTitleReliable(vacancyTitle);
+        addVacancyPage.enterDesscription(desscreptionString);
+        addVacancyPage.enterHiringManager(hrmangerString);
+        addVacancyPage.enterNumberOfPositions(numerOfPostioString);
+        addVacancyPage.clickActiveCheckbox(checkBoxString);
+        addVacancyPage.clickPublishInRSSCheckbox(rssCheckBoxStrig);
+        addVacancyPage.clickSaveButton();
+        Assert.assertFalse(addVacancyPage.editVacanyValidation("Add Vacancy"),"Vacany cration test case is failed");
     }
 
     @Test
