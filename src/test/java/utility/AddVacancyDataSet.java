@@ -6,59 +6,61 @@ public class AddVacancyDataSet {
     @DataProvider(name = "validVacancyCreationData")
     public Object[][] getValidVacancyData() {
         return new Object[][] {
-            // Data Row 1: Fully Active, Specific Manager (High Priority)
-            {
-                "Automation Architect Role",
-                4, // Job Title: 4th item in dropdown
-                "Design and oversee the automated testing framework.",
-                "Paul Collings", 
-                "1",
-                "check",        // Active: Yes
-                "check"         // RSS: Yes
-            },
+            // { VacancyName, JobTitle (TEXT), Description, HiringManagerName (null/"" for default), Positions, ActiveSwitch, RSSSwitch }
             
-            // Data Row 2: Inactive, Default Manager (Testing the 'else' block)
+            // Data Row 1: Using text from the screenshot
             {
                 "Junior Software Tester",
-                1, // Job Title: 1st item in dropdown
+                "Automation Test Engineer", 
+                "Design and oversee the automated testing framework.",
+                 null, 
+                "1",
+                "check", 	
+                "check" 	
+            },
+            
+            // Data Row 2: Using text from the screenshot
+            {
+                "Automation Test Engineer",
+                "Automation Test Engineer", 
                 "Manual and basic automated testing tasks.",
-                "",             // Triggers the default (logged-in user) logic
+                "", 	 	
                 "5",
-                "uncheck",      // Active: No
-                "uncheck"       // RSS: No
+                "uncheck", 	
+                "uncheck" 	
             },
 
-            // Data Row 3: Active, Another Specific Manager
+            // Data Row 3: Using text from the screenshot
             {
                 "Mid-level Java Developer",
-                2,
+                "Automaton Tester", 
                 "Backend development and system maintenance.",
-                "Kiran Sharma", 
+                null, 
                 "3",
-                "check",        // Active: Yes
-                "uncheck"       // RSS: No
+                "check", 	
+                "uncheck" 	
             },
 
-            // Data Row 4: Inactive, Testing 'null' for Manager
+            // Data Row 4: 
             {
                 "Senior Product Owner",
-                5,
+                "Chief Executive Officer", // Example text usage
                 "Defining features and prioritizing backlogs.",
-                null,           // Also triggers the default (logged-in user) logic
-                "10",
-                "uncheck",      // Active: No
-                "check"         // RSS: Yes
+                null, 	 	
+                "4",
+                "uncheck", 	
+                "check" 	
             },
 
-            // Data Row 5: Active, High Positions Count
+            // Data Row 5: 
             {
                 "UI/UX Designer",
-                3,
+                "Chief Financial Officer", // Example text usage
                 "Design prototypes, user flows, and wireframes.",
-                "Fiona Grace",
-                "25",
-                "check",        // Active: Yes
-                "uncheck"       // RSS: No
+                null,
+                "2",
+                "check", 	
+                "uncheck" 	
             }
         };
     }

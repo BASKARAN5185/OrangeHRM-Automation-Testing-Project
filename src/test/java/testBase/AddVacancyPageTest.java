@@ -1,5 +1,6 @@
 package testBase;
 
+import org.apache.commons.lang3.ObjectUtils.Null;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -24,17 +25,39 @@ public class AddVacancyPageTest extends BaseClass{
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/recruitment/addJobVacancy");
     }
 
-    @Test(groups = {"smoke" ,"regression"})
-    public void validVacancyFromFilling(){
-        addVacancyPage.enterVacancyName("Junior Software Tester");
-        addVacancyPage.selectVacancyTitle(3);
-        addVacancyPage.enterDesscription("dssd");
-        addVacancyPage.enterHiringManager();
+    @Test
+    public void testImplemented() throws InterruptedException{
+        Assert.assertTrue(addVacancyPage.clickPublishInRSSCheckbox("uncheck"));
+        Thread.sleep(5000);
+    }
+
+    @Test
+    public void validVacancyFromFillingcheck() {
+        addVacancyPage.enterVacancyName("Tester");
+        addVacancyPage.selectVacancyTitleReliable("Automation Test Engineer");
+        addVacancyPage.enterDesscription("test");
+        addVacancyPage.enterHiringManager(null);
         addVacancyPage.enterNumberOfPositions("5");
         addVacancyPage.clickActiveCheckbox("uncheck");
         addVacancyPage.clickPublishInRSSCheckbox("uncheck");
         addVacancyPage.clickSaveButton();
-        Assert.assertTrue(stringEWebElement("Edit Vacancy").isDisplayed(),"Vacany cration test case is failed");
+        Assert.assertTrue(stringsWebElement("Edit Vacancy").isDisplayed(),"Vacany cration test case is failed");
+    }
+
+    @Test(alwaysRun = true, groups = {"smoke" ,"regression"},dataProviderClass = utility.AddVacancyDataSet.class,
+    dataProvider = "validVacancyCreationData")
+    public void validVacancyFromFilling(String vacanctNameString, String vacancyTitle,String desscreptionString,
+                                        String hrmangerString, String numerOfPostioString,String checkBoxString,
+                                        String rssCheckBoxStrig) throws InterruptedException{
+        addVacancyPage.enterVacancyName(vacanctNameString);
+        addVacancyPage.selectVacancyTitleReliable(vacancyTitle);
+        addVacancyPage.enterDesscription(desscreptionString);
+        addVacancyPage.enterHiringManager(hrmangerString);
+        addVacancyPage.enterNumberOfPositions(numerOfPostioString);
+        addVacancyPage.clickActiveCheckbox(checkBoxString);
+        addVacancyPage.clickPublishInRSSCheckbox(rssCheckBoxStrig);
+        addVacancyPage.clickSaveButton();
+        Assert.assertTrue(stringsWebElement("Edit Vacancy").isDisplayed(),"Vacany cration test case is failed");
     }
 
     @Test
@@ -47,7 +70,7 @@ public class AddVacancyPageTest extends BaseClass{
     public void saveButtonValidation(){
         addVacancyPage.clickSaveButton();
         boolean conditionString = false;
-        if (stringEWebElement("Required").isDisplayed()){
+        if (stringsWebElement("Required").isDisplayed()){
              conditionString=true;
         } 
         // rquired fileld are empty show the error message
