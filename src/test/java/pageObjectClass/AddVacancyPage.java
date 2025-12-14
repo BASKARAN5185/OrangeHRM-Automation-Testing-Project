@@ -26,7 +26,8 @@ public class AddVacancyPage {
 	private  By clickableLabelLocator = By.xpath("//div[contains(@class, 'orangerhrm-switch-wrapper') and .//p[text()='Active']]//label");
     private  By switchInputSpanLocator = By.xpath("//div[contains(@class, 'orangerhrm-switch-wrapper') and .//p[text()='Active']]//span[contains(@class, 'oxd-switch-input')]");
 	private By publishInRSSCheckbox = By
-			.xpath("(//*[@class='oxd-switch-input oxd-switch-input--active'])[2]");
+			.xpath("(//div[@class='oxd-switch-wrapper']//label)[2]");
+    private By rssCheckBoxSwitchLocator=By.xpath("//div[contains(@class, 'orangerhrm-switch-wrapper') and .//p[text()='Publish in RSS Feed and Web Page']]//span[contains(@class, 'oxd-switch-input')]");        
     private By cancelButton = By.xpath("//button[contains(.,'Cancel')]");
     private By saveButton = By.xpath("//button[text()=' Save ']");  
     
@@ -134,6 +135,7 @@ public class AddVacancyPage {
     desiredOption.click();
    }
 
+    @SuppressWarnings("null")
     public boolean clickPublishInRSSCheckbox(String conditionString) {
     
     // 1. IMPROVEMENT: Check for null BEFORE calling methods on the string.
@@ -145,13 +147,13 @@ public class AddVacancyPage {
     try {
         // 2. Element Retrieval (Best practice is to handle WebDriver exceptions)
         WebElement publishInRSSChkBox = driver.findElement(publishInRSSCheckbox);
+        WebElement swapElement=driver.findElement(rssCheckBoxSwitchLocator);
         String checkCondition = conditionString.trim().toLowerCase();
-        
-        boolean isSelected = publishInRSSChkBox.isSelected();
-        
+        boolean isCurrentlyActive=swapElement.getAttribute("class").contains("--active");;
+         
         // 3. Conditional Logic
         if (checkCondition.equals("check")) {
-            if (!isSelected) {
+            if (!isCurrentlyActive) {
                 publishInRSSChkBox.click();
                 System.out.println("Checkbox was unchecked and has been clicked to check it.");
             } else {
@@ -160,7 +162,7 @@ public class AddVacancyPage {
             return true;
             
         } else if (checkCondition.equals("uncheck")) {
-            if (isSelected) {
+            if (isCurrentlyActive) {
                 publishInRSSChkBox.click();
                 System.out.println("Checkbox was checked and has been clicked to uncheck it.");
             } else {
