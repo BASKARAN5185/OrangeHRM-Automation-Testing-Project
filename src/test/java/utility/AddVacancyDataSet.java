@@ -158,4 +158,93 @@ public class AddVacancyDataSet {
             }
         };
     }
+
+    /**
+     * Data provider specifically for high-priority edge case and boundary condition testing.
+     * Contains cases like extreme values, invalid data types, security risks, and unique system failures.
+     * * Column Order: 
+     * { VacancyName, JobTitle (TEXT), Description, HiringManagerName, Positions, ActiveSwitch, RSSSwitch }
+     */
+    @DataProvider(name = "vacancyEdgeCases")
+    public Object[][] getVacancyEdgeCases() {
+        return new Object[][] {
+            
+            // --- EDGE CASE 1: Positions - Upper Boundary Test (Above 32-bit max) ---
+            {
+                "High Positions Overflow Check", 
+                "Chief Executive Officer", 
+                "Testing boundary overflow for number of positions.",
+                "Paul Collings", 
+                "2147483648", // Positions: One above 32-bit max (2,147,483,647)
+                "check",
+                "uncheck"
+            },
+            
+            // --- EDGE CASE 2: Positions - Decimal/Float Input ---
+            {
+                "Decimal Positions Check", 
+                "Automaton Tester", 
+                "Invalid data type for position count.",
+                null, 
+                "2.5", // Positions: Decimal input instead of integer
+                "check",
+                "check"
+            },
+            
+            // --- EDGE CASE 3: Positions - Non-numeric Input ---
+            {
+                "Invalid Positions DataType",
+                "Automation Test Engineer", 
+                "Testing non-numeric characters in a numeric field.",
+                "Paul Collings", 
+                "NonNumeric", // Positions: Invalid data type
+                "uncheck",
+                "uncheck"
+            },
+
+            // --- EDGE CASE 4: String Length / Special Characters ---
+            {
+                "A very long Vacancy Name exceeding typical limits and containing special characters #%^&*()", 
+                "Automaton Tester", 
+                "Test description for max length name.",
+                "Paul Collings", 
+                "1",
+                "check", 
+                "check"
+            },
+            
+            // --- EDGE CASE 5: Security (SQL/XSS) ---
+            {
+                "' OR 1=1;--", // Vacancy Name: SQL Injection Attempt
+                "Automation Test Engineer", 
+                "<script>alert('XSS')</script>", // Description: XSS Script Attempt
+                null, 
+                "1",
+                "check",  
+                "uncheck" 
+            },
+
+            // --- EDGE CASE 6: Whitespace Only Input ---
+            {
+                "     ", // Vacancy Name: Only Spaces
+                "Account Assistant", 
+                "A description is present.",
+                null, 
+                "1",
+                "check",
+                "check"
+            },
+            
+            // --- EDGE CASE 7: Invalid/Non-Existent Reference Data ---
+            {
+                "Vacancy with Non-existent Manager",
+                "Automaton Tester", 
+                "Testing for failure when reference data (Hiring Manager) is not found.",
+                "NonExistentUser", // Manager: A user that does not exist in the system
+                "1",
+                "uncheck",
+                "check"
+            }
+        };
+    }
 }
