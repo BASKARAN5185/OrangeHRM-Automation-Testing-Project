@@ -247,4 +247,69 @@ public class AddVacancyDataSet {
             }
         };
     }
+
+    /**
+     * Data provider for Advanced Security and Injection testing.
+     * Focuses on NoSQL injection, Path Traversal, Command Injection, 
+     * and specialized character encoding.
+     */
+    @DataProvider(name = "securityInjectionData")
+    public Object[][] getSecurityInjectionData() {
+        return new Object[][] {
+            
+            // 1. NoSQL Injection (useful if the backend uses MongoDB/etc.)
+            {
+                "{ $ne: null }", // Vacancy Name: Logic bypass attempt
+                "Automation Test Engineer", 
+                "Attempting NoSQL logic bypass in name field.",
+                null, 
+                "1", "check", "uncheck"
+            },
+
+            // 2. OS Command Injection
+            {
+                "SecurityTest; ls -la /etc/passwd", // Vacancy Name: Command chaining
+                "Account Assistant", 
+                "Checking if input is passed directly to system shell.",
+                "Paul Collings", 
+                "1", "uncheck", "check"
+            },
+
+            // 3. Path Traversal / LFI
+            {
+                "../../../etc/passwd", // Vacancy Name: File system navigation
+                "Chief Executive Officer", 
+                "Testing if the application attempts to resolve file paths from input.",
+                null, 
+                "1", "check", "check"
+            },
+
+            // 4. Broken Encoding / Null Byte Injection
+            {
+                "Job\0Title.exe", // Vacancy Name: Null byte termination
+                "Automaton Tester", 
+                "Testing how the system handles null bytes in strings.",
+                "Paul Collings", 
+                "1", "check", "uncheck"
+            },
+
+            // 5. Large Payload (Buffer Overflow / ReDoS attempt)
+            {
+                "A".repeat(5000), // Vacancy Name: Extremely long string
+                "Account Assistant", 
+                "Testing for application hang or crash on massive string input.",
+                null, 
+                "1", "uncheck", "uncheck"
+            },
+
+            // 6. Template Injection (SSTI)
+            {
+                "{{7*7}}", // Vacancy Name: Server-Side Template Injection
+                "Automation Test Engineer", 
+                "Checking if the server evaluates expressions (Result 49?).",
+                null, 
+                "1", "check", "check"
+            }
+        };
+    }
 }

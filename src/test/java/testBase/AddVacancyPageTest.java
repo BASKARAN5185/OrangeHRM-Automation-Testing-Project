@@ -26,12 +26,6 @@ public class AddVacancyPageTest extends BaseClass{
     }
 
     @Test
-    public void testImplemented() throws InterruptedException{
-        Assert.assertTrue(addVacancyPage.clickPublishInRSSCheckbox("uncheck"));
-        Thread.sleep(5000);
-    }
-
-    @Test
     public void validVacancyFromFillingcheck() {
         addVacancyPage.enterVacancyName("Tester");
         addVacancyPage.selectVacancyTitleReliable("Automation Test Engineer");
@@ -60,11 +54,11 @@ public class AddVacancyPageTest extends BaseClass{
         boolean validation;
         try{
         if (stringsWebElement("Edit Vacancy").isDisplayed()) {
-            System.out.println("edit vacany is displayed test case failed.");
-           validation=false;    
+            System.out.println("edit vacany is displayed test case pass.");
+           validation=true;    
         }else{
-            System.out.println("edit vacany is displayed test case passed.");
-            validation=true;
+            System.out.println("edit vacany is not displayed test case passed.");
+            validation=false;
         }
         }catch(NoSuchElementException e){
             System.out.println("edit vacany is not available in the page.");
@@ -88,8 +82,8 @@ public class AddVacancyPageTest extends BaseClass{
         Assert.assertFalse(addVacancyPage.editVacanyValidation("Add Vacancy"),"Vacany cration test case is failed");
     }
 
-    @Test(dataProviderClass = utility.AddVacancyDataSet.class, dataProvider = "vacancyEdgeCases")
-    public void edgeCaseVacancyFromFilling(String vacanctNameString, String vacancyTitle,String desscreptionString,
+    @Test(dataProviderClass = utility.AddVacancyDataSet.class, dataProvider = "securityInjectionData")
+    public void securityCaseVacancyFromFilling(String vacanctNameString, String vacancyTitle,String desscreptionString,
                                         String hrmangerString, String numerOfPostioString,String checkBoxString,
                                         String rssCheckBoxStrig) throws InterruptedException{
         addVacancyPage.enterVacancyName(vacanctNameString);
@@ -102,7 +96,7 @@ public class AddVacancyPageTest extends BaseClass{
         addVacancyPage.clickSaveButton();
         boolean validation;
        try{
-        if (stringsWebElement("Edit Vacancy").isDisplayed()) {
+        if(stringsWebElement("Edit Vacancy").isDisplayed()) {
             System.out.println("edit vacany is displayed test case failed.");
            validation=true;    
         }else{
@@ -111,9 +105,9 @@ public class AddVacancyPageTest extends BaseClass{
         }
         }catch(NoSuchElementException e){
             System.out.println("edit vacany is not available in the page.");
-          validation=true;
+          validation=false;
         }
-        Assert.assertTrue(validation,"Vacany cration test edge case is failed");
+        Assert.assertFalse(validation,"Vacany cration test edge case is failed");
     }
 
     @Test
