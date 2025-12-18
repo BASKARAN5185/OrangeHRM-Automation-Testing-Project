@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import baseClass.BaseClass;
-import pageObjectClass.AdminPage;
+import pageObjectClass.admin.AdminPage;
 import pageObjectClass.DashboardPage;
 import pageObjectClass.MyInfoPage;
 import pageObjectClass.OrangeHRMLoginPage;
@@ -87,3 +87,27 @@ public class MyInfoPageTest extends BaseClass {
         Assert.assertTrue(currentUrl.contains("confirmation-page"), "Form was not submitted successfully");
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

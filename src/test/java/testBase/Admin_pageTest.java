@@ -5,7 +5,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import baseClass.BaseClass;
-import pageObjectClass.AdminPage;
+import pageObjectClass.admin.AdminPage;
 import pageObjectClass.OrangeHRMLoginPage;
 
 public class Admin_pageTest extends BaseClass {

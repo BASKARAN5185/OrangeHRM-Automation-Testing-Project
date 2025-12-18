@@ -1,4 +1,4 @@
-package pageObjectClass;
+package pageObjectClass.recuritment;
 
 import java.time.Duration;
 import org.openqa.selenium.By;

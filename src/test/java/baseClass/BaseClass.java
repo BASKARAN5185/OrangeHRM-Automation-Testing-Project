@@ -17,6 +17,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 
@@ -24,8 +25,10 @@ public class BaseClass {
 
     @BeforeClass
     public void setUpBrowser() {
+        WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        // options.addArguments("--headless=new");    
+        options.setBinary("C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe");
+       // options.addArguments("--headless=new");    
         options.addArguments("--incognito");
         options.addArguments("--disable-notifications");
         options.addArguments("window-size=1200x600");
