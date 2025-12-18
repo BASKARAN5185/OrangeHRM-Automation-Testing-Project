@@ -5,8 +5,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import baseClass.BaseClass;
-import pageObjectClass.AddCandidatePage;
 import pageObjectClass.OrangeHRMLoginPage;
+import pageObjectClass.recruitment.AddCandidatePage;
 
 public class AddCandidatePageTest extends BaseClass {
     

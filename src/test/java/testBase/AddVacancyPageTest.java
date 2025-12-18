@@ -6,8 +6,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import baseClass.BaseClass;
-import pageObjectClass.AddVacancyPage;
 import pageObjectClass.OrangeHRMLoginPage;
+import pageObjectClass.recuritment.AddVacancyPage;
 
 public class AddVacancyPageTest extends BaseClass{
     
@@ -79,7 +79,21 @@ public class AddVacancyPageTest extends BaseClass{
         addVacancyPage.clickActiveCheckbox(checkBoxString);
         addVacancyPage.clickPublishInRSSCheckbox(rssCheckBoxStrig);
         addVacancyPage.clickSaveButton();
-        Assert.assertFalse(addVacancyPage.editVacanyValidation("Add Vacancy"),"Vacany cration test case is failed");
+        boolean validation;
+       try{
+        if(stringsWebElement("Edit Vacancy").isDisplayed()) {
+            System.out.println("edit vacany is displayed test case failed.");
+           validation=true;    
+        }else{
+            System.out.println("edit vacany is displayed test case passed.");
+            validation=false;
+        }
+        }catch(NoSuchElementException e){
+            System.out.println("edit vacany is not available in the page.");
+          validation=false;
+        }
+        Assert.assertFalse(validation,"Vacany cration test edge case is failed");
+
     }
 
     @Test(dataProviderClass = utility.AddVacancyDataSet.class, dataProvider = "securityInjectionData")
@@ -127,5 +141,4 @@ public class AddVacancyPageTest extends BaseClass{
         Assert.assertEquals(driver.getCurrentUrl().contains("/recruitment/addJobVacancy"),
         conditionString,"Save Button condition is faild vacancy created and required is not displayed");
     }
-
 }

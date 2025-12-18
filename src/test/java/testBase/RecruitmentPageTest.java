@@ -9,7 +9,8 @@ import org.testng.asserts.SoftAssert;
 
 import baseClass.BaseClass;
 import pageObjectClass.OrangeHRMLoginPage;
-import pageObjectClass.RecruitmentPage;
+import pageObjectClass.recuritment.RecruitmentPage;
+
 
 public class RecruitmentPageTest extends BaseClass {
     RecruitmentPage rec;
