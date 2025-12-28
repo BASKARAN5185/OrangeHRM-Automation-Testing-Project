@@ -55,4 +55,20 @@ public void verifyTheJobTilteFileldCharactersLimitation(){
     Assert.assertEquals(stringsWebElement("Should not exceed 100 characters").getText(),"Should not exceed 100 characters", "The Jobtile character limitation error message is not displayed");
 }
 
+@Test
+public void verifyTheJobDescriptionCharacterLimitation(){
+    addJobTitlePage.enterDescription("gcjagcjhjgacakgcakjchhcacajhcgjacjacjjaacj".repeat(17));
+    addJobTitlePage.saveButtonClick();
+    Assert.assertEquals(stringsWebElement("Should not exceed 400 characters").getText()
+    , "Should not exceed 400 characters", "The job decription charcters limitation error message was dosen't displayed");
+}
+
+@Test
+public void verifyTheNotesCharacterLimitation(){
+    addJobTitlePage.enterNote("gcjagcjhjgacakgcakjchhcacajhcgjacjacjjaacj".repeat(17));
+    addJobTitlePage.saveButtonClick();
+    Assert.assertEquals(stringsWebElement("Should not exceed 400 characters").getText()
+    , "Should not exceed 400 characters", "The job decription charcters limitation error message was dosen't displayed");
+}
+
 }
