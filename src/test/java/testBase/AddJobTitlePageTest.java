@@ -1,5 +1,9 @@
 package testBase;
 
+import java.time.Duration;
+
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -29,9 +33,20 @@ public void navigatePage(){
 
 @Test
 public void enterValidJobTitle(){
-        addJobTitlePage.enterJobTitle("QA the Engineer");
+        addJobTitlePage.enterJobTitle("QA the2 Engineer");
         addJobTitlePage.saveButtonClick();
-        Assert.assertTrue(getCurrentPageUrl().equals(AddJobTitlePageUrl),"The Valid type Add Job Title test case is failed.");
+        boolean condtion=false;
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            wait.until(ExpectedConditions.textToBePresentInElement(stringsWebElement("QA the2 Engineer"), "QA the2 Engineer"));
+            if(stringsWebElement("QA the2 Engineer").getText().equals("QA the2 Engineer")){
+            condtion=true;
+        }
+        } catch (Exception e) {
+            System.err.println(e);
+        }
+        
+        Assert.assertTrue(getCurrentPageUrl().contains("/viewJobTitleList")&& condtion,"The Valid type Add Job Title test case is failed.");
     }
 
 @Test
