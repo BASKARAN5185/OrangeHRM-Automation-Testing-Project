@@ -49,8 +49,38 @@ public class JobTitlesPage {
         return Integer.parseInt(recocrdString);
     }
 
+    public boolean verifyParticularJobTitlePresent(String jobString){
+      if (jobString==null) return false;
+      try {
+        return  getJobTitleAllNameStrings().stream()
+                .map(String::trim)
+                .map(String::toLowerCase)
+                .anyMatch(title -> title.contains(jobString));
+      } catch (Exception e) {
+        System.out.println("Finding Job tilte happen to error occur "+e.getMessage());
+        return false;
+      }
+    }
+     
+    public void deleteParticularJobTitle(String jobString){
+      List<String> titlesStrings=getJobTitleAllNameStrings();
+      String target=jobString.trim();
+
+      for(int i=0;i<titlesStrings.size();i++){
+        if (titlesStrings.get(i).contains(target)) {
+          try {
+           deleteIconWebElement().get(i).click();
+            System.out.println("Success Fully Deleted"+target);  
+          } catch (Exception e) {
+            System.out.println("Error occcur the clicking actions"+target);
+          }
+        }
+      }
+      System.out.println("Job Title target : "+target+" not found in the page");
+  }
+
     // helper methods
-    private List<String> getJobTitleAll(){
+    private List<String> getJobTitleAllNameStrings(){
        List<String> allNames = new ArrayList<>();
        List<WebElement> titleElements= driver.findElements(jobTitleNames);
        int sizeOFTitle=titleElements.size();
@@ -59,6 +89,11 @@ public class JobTitlesPage {
            allNames.add(name);
        }
        return allNames;
+    }
+
+    public List<WebElement> deleteIconWebElement(){
+       List<WebElement> iconElement =driver.findElements(deleteIcon);
+        return iconElement;
     }
 
 }
