@@ -26,9 +26,16 @@ public class BaseClass {
     @BeforeClass
     public void setUpBrowser() {
         WebDriverManager.chromedriver().setup();
+
         ChromeOptions options = new ChromeOptions();
-        options.setBinary("C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe");
-       // options.addArguments("--headless=new");    
+
+        String os = System.getProperty("os.name").toLowerCase();
+
+        if (os.contains("win")) {
+            options.setBinary(
+                    "C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe");
+        }
+        // options.addArguments("--headless=new");
         options.addArguments("--incognito");
         options.addArguments("--disable-notifications");
         options.addArguments("window-size=1200x600");
@@ -59,22 +66,21 @@ public class BaseClass {
     }
 
     public String captureScreenshot(String testName) throws IOException {
-    File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
-    String screenshotDirectory =
-        "C:\\Users\\xmedia\\Desktop\\AutomationTestReport\\Screenshots\\";
+        String screenshotDirectory = "C:\\Users\\xmedia\\Desktop\\AutomationTestReport\\Screenshots\\";
 
-    File directory = new File(screenshotDirectory);
-    if (!directory.exists()) {
-        directory.mkdirs();
+        File directory = new File(screenshotDirectory);
+        if (!directory.exists()) {
+            directory.mkdirs();
+        }
+
+        String filePath = screenshotDirectory + testName + "_" + System.currentTimeMillis() + ".png";
+        File destination = new File(filePath);
+        FileUtils.copyFile(screenshot, destination);
+
+        return filePath;
     }
-
-    String filePath = screenshotDirectory + testName + "_" + System.currentTimeMillis() + ".png";
-    File destination = new File(filePath);
-    FileUtils.copyFile(screenshot, destination);
-
-    return filePath;
-}
 
     public String getCurrentPageUrl() {
         return driver.getCurrentUrl();
@@ -92,8 +98,8 @@ public class BaseClass {
         return driver.findElement(locator);
     }
 
-    public WebElement stringsWebElement(String name){
-        return driver.findElement(By.xpath("//*[text()='"+name+"']"));
+    public WebElement stringsWebElement(String name) {
+        return driver.findElement(By.xpath("//*[text()='" + name + "']"));
     }
 
     public void validateBrokenLinks() {
@@ -111,8 +117,7 @@ public class BaseClass {
             }
 
             try {
-                HttpURLConnection connection =
-                    (HttpURLConnection) new URL(url).openConnection();
+                HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
                 connection.setRequestMethod("HEAD");
                 connection.connect();
                 int statusCode = connection.getResponseCode();
