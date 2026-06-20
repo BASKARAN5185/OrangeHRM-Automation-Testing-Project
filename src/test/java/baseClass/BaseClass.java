@@ -7,129 +7,146 @@ import java.net.URL;
 import java.time.Duration;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
-import io.opentelemetry.api.trace.StatusCode;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 
-	public static RemoteWebDriver driver;
+    protected RemoteWebDriver driver;
 
-	@BeforeClass
-	public void openTheBrowser() {
-		System.setProperty("Webdriver.chrome.driver",
-				"C:\\Users\\xmedia\\Downloads\\chromedriver-win64\\chromedriver-win64.exe");
-		ChromeOptions options = new ChromeOptions();
+    @BeforeClass
+    public void setUpBrowser() {
 
-		// Example 1: Run Chrome in Headless mode
-		// options.addArguments("--headless"); // Run Chrome in headless mode (no GUI)
-		// options.addArguments("--disable-gpu"); // Disable GPU acceleration (important
-		// for headless mode)
+        WebDriverManager.chromedriver().setup();
 
-		// Example 3: Open Chrome in Incognito Mode
-		options.addArguments("--incognito");
+        ChromeOptions options = new ChromeOptions();
 
-		// Example 4: Disable Browser Notifications
-		options.addArguments("--disable-notifications");
+        String os = System.getProperty("os.name").toLowerCase();
 
-		// Example 6: Set the Window Size
-		options.addArguments("window-size=1200x600");
+        // Browser options
+        options.addArguments("--headless=new");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--disable-gpu");
 
-		// Example 7: Disable Chrome Extensions
-		options.addArguments("--disable-extensions");
+        // GitHub Actions / Linux settings
+        if (!os.contains("win")) {
+            options.addArguments("--headless=new");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--disable-gpu");
+        }
 
-		driver = new ChromeDriver(options);
-		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        driver = new ChromeDriver(options);
 
-	}
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
-	@AfterClass
-	void teardown() {
-		driver.close();
-	}
+        if (os.contains("win")) {
+            driver.manage().window().maximize();
+        }
 
-	public String captureScreen(String testName) throws IOException {
-		// Take the screenshot
-		File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+    }
 
-		// Define the directory where screenshots will be stored
-		String screenshotDirectory = "C:\\Users\\xmedia\\Desktop\\Automation Test Report\\Screenshots\\" + testName;
+    @AfterClass
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
 
-		// Create a new directory if it does not exist
-		File directory = new File(screenshotDirectory);
-		if (!directory.exists()) {
-			directory.mkdirs();
-		}
+    public String captureScreenshot(String testName) throws IOException {
 
-		// Define the file path for the screenshot
-		String filePath = screenshotDirectory + "\\screenshot.png";
-		File destination = new File(filePath);
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
-		// Copy the screenshot to the destination path
-		FileHandler.copy(screenshot, destination);
+        String screenshotDirectory = "C:\\Users\\xmedia\\Desktop\\AutomationTestReport\\Screenshots\\";
 
-		return destination.getAbsolutePath(); // Return the path to the screenshot
-	}
+        File directory = new File(screenshotDirectory);
 
-	public String getCurrentUrlpage() {
-		String LoginUrl = driver.getCurrentUrl();
-		return LoginUrl;
+        if (!directory.exists()) {
+            directory.mkdirs();
+        }
 
-	}
+        String filePath = screenshotDirectory + testName + "_" + System.currentTimeMillis() + ".png";
 
-	public void NavigateBack() {
+        File destination = new File(filePath);
 
-		driver.navigate().back();
+        FileUtils.copyFile(screenshot, destination);
 
-	}
+        return filePath;
+    }
 
-	public void PageRefresh() {
+    public String getCurrentPageUrl() {
+        return driver.getCurrentUrl();
+    }
 
-		driver.navigate().refresh();
+    public void navigateBack() {
+        driver.navigate().back();
+    }
 
-	}
+    public void refreshPage() {
+        driver.navigate().refresh();
+    }
 
-	public void borkenLinkValidation() {
-		List<WebElement> links = driver.findElements(By.tagName("a"));
-		for (WebElement link : links) {
-			String url = link.getAttribute("href");
-			if (url == null || links.isEmpty()) {
-				System.out.println("Page is null or empty" + link.getText());
-				continue;
-			}
+    public WebElement findElement(By locator) {
+        return driver.findElement(locator);
+    }
 
-			if (url.startsWith("http")) {
-				System.out.println("System skipped with this " + url + "in the page");
-				continue;
-			}
+    public WebElement stringsWebElement(String name) {
+        return driver.findElement(By.xpath("//*[text()='" + name + "']"));
+    }
 
-			try {
-				HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
-				connection.setRequestMethod("HEAD");
-				connection.connect();
-				int statusCode = connection.getResponseCode();
-				if (statusCode >= 400) {
-					System.out.println("the " + url + " is brokekn" + statusCode);
+    public void validateBrokenLinks() {
 
-				} else {
-					System.out.println("The " + url + "is valid" + statusCode);
-				}
-			} catch (Exception e) {
-				System.out.println("❌ Error checking link: " + url + " | Exception: " + e.getMessage());
-			}
+        List<WebElement> links = driver.findElements(By.tagName("a"));
 
-		}
-	}
+        for (WebElement link : links) {
 
+            String url = link.getAttribute("href");
+
+            if (url == null || url.isEmpty()) {
+                System.out.println("Link is null or empty: " + link.getText());
+                continue;
+            }
+
+            if (!url.startsWith("http")) {
+                System.out.println("Skipping non-http link: " + url);
+                continue;
+            }
+
+            try {
+
+                HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
+
+                connection.setRequestMethod("HEAD");
+                connection.connect();
+
+                int statusCode = connection.getResponseCode();
+
+                if (statusCode >= 400) {
+                    System.out.println(
+                            "Broken link: " + url + " | Status code: " + statusCode);
+                } else {
+                    System.out.println(
+                            "Valid link: " + url + " | Status code: " + statusCode);
+                }
+
+            } catch (Exception e) {
+
+                System.out.println(
+                        "Error checking link: " + url + " | Exception: "
+                                + e.getMessage());
+            }
+        }
+    }
 }

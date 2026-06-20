@@ -2,21 +2,17 @@ package pageObjectClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import baseClass.BaseClass;
-
-public class HomeMenuPage extends BaseClass {
-	
+public class HomeMenuPage  {
+	private RemoteWebDriver driver;
 	public HomeMenuPage(RemoteWebDriver driver) {
-		
-		BaseClass.driver=driver;
-		
+		this.driver=driver;		
 	}
 
     // Locators for the demo menu items (You can adjust these based on the actual HTML of the page)
     
      By adminMenu = By.id("menu_admin_viewAdminModule");
      By pimMenu = By.id("menu_pim_viewPimModule");
-     By leaveMenu = By.xpath("(//a[@class='oxd-main-menu-item'])[3]");
+     By leaveMenu = By.xpath("//*[@href='/web/index.php/leave/viewLeaveModule']");
      By timeMenu = By.xpath("//span[text()='Time']");
      By recruitmentMenu = By.xpath("//span[text()='Recruitment']");
      By myInfoMenu = By.id("menu_pim_viewMyDetails");

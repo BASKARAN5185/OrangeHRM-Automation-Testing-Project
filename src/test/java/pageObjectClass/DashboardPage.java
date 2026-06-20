@@ -11,13 +11,12 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import baseClass.BaseClass;
-
-public class DashboardPage extends BaseClass  {
+public class DashboardPage  {
 	
+	private RemoteWebDriver driver;
 	public DashboardPage(RemoteWebDriver driver) {
 		
-		BaseClass.driver=driver;
+		this.driver=driver;
 		
 	}
 	
@@ -66,203 +65,250 @@ public class DashboardPage extends BaseClass  {
     By TimeMenu=By.xpath("//span[text()='Time']");
     By Recurietment=By.xpath("//span[text()='Recruitment']");
     
-    public String Adminmenuverify() {
+    public String adminMenuVerify() {
     	driver.findElement(Adminmenu).click();
     	String Adminpage=driver.getCurrentUrl();
     	return Adminpage;
     }
 	
-    public String NameofthePageGet() {
+    public String nameOfThePageGet() {
     	String pagename=driver.findElement(NameOfThePage).getText();
     	return pagename;
     }
     
-    public String timetowork() {
+    public String timeToWork() {
     	String pagename=driver.findElement(TimeToWork).getText();
     	return pagename;
     	
     }
     
-    public void getemployeeimage() throws IOException {
+    public void getEmployeeImage() throws IOException {
+		String path=System.getProperty("user.dir")+File.separator+"screenshot";
+		//Create folder if missing
+		File directory=new File(path);
+		if(!directory.exists()) {
+			directory.mkdirs();
+		}
     	WebElement employeeimg=driver.findElement(employeeimage);
     	File ScrrenShot=employeeimg.getScreenshotAs(OutputType.FILE);
-    	File Destination=new File("C:\\Users\\xmedia\\eclipse-workspace\\Automation\\screenshots2\\employeeimg.png");
+    	File Destination=new File(path+File.separator+"employeeimg.png");
     	FileUtils.copyFile(ScrrenShot, Destination);
     	
       }
     
-    public void timetoworkboximg() throws IOException {
+    public void timeToWorkBoxImg() throws IOException {
+		String path=System.getProperty("user.dir")+File.separator+"screenshot";
+		//Create folder if missing
+		File directory=new File(path);
+		if(!directory.exists()) {
+			directory.mkdirs();
+		}
     	WebElement employeeimg=driver.findElement(TimetoworkBox);
     	File ScrrenShot=employeeimg.getScreenshotAs(OutputType.FILE);
-    	File Destination=new File("C:\\Users\\xmedia\\eclipse-workspace\\Automation\\screenshots2\\timetoworkbox.png");
+    	File Destination=new File(path+File.separator+"timetoworkbox.png");
     	FileUtils.copyFile(ScrrenShot, Destination);
     	
       }
 
 
-    public String clockiconclicking() {
+    public String clockIconClick() {
     	driver.findElement(Clockimage).click();
     	String pageurl=driver.getCurrentUrl();
     	return pageurl;
     	
     }
 
-    public void MyActionsBoximg() throws IOException {
+    public void myActionsBoximg() throws IOException {
+		String path=System.getProperty("User.dir")+File.separator+"screenshot";
+		//Create folder if missing
+		File directory=new File(path);
+		if(!directory.exists()) {
+			directory.mkdirs();
+		}
     	WebElement employeeimg=driver.findElement(MyActionsBox);
     	File ScrrenShot=employeeimg.getScreenshotAs(OutputType.FILE);
-    	File Destination=new File("C:\\Users\\xmedia\\eclipse-workspace\\Automation\\screenshots2\\myactionboximg.png");
+    	File Destination=new File(path+File.separator+"myactionboximg.png");
     	FileUtils.copyFile(ScrrenShot, Destination);
     	
       }
 
 
-    public String Mynotification() {
+    public String myNotification() {
     	driver.findElement(MyActionNotification).click();
     	String pageurl=driver.getCurrentUrl();
     	return pageurl;
     	
     }
     
-    public String Buzpage1() {
+    public String buzPage() {
     	driver.findElement(Buzpage).click();
     	String pageurl=driver.getCurrentUrl();
     	return pageurl;
     	
     }
     
-    public String helpiconclic() {
+    public String helpIconClick() {
     	driver.findElement(Helpicon).click();
     	String pageurl=driver.getCurrentUrl();
     	return pageurl;
     	
     }
     
-    public void QuicklunchBoximg() throws IOException {
+    public void quickLunchBoxImg() throws IOException {
+		String path=System.getProperty("user.dir")+File.separator+"screenshot";
+		//Create folder if missing
+		File directory=new File(path);
+		if(!directory.exists()) {	
+			directory.mkdirs();
+		}
     	WebElement employeeimg=driver.findElement(QuickLunchBox);
     	File ScrrenShot=employeeimg.getScreenshotAs(OutputType.FILE);
-    	File Destination=new File("C:\\Users\\xmedia\\eclipse-workspace\\Automation\\screenshots2\\Quicklunchboximg.png");
+    	File Destination=new File(path+File.separator+"Quicklunchboximg.png");
     	FileUtils.copyFile(ScrrenShot, Destination);
     	
       }
     
-    public String Assignleaveclick() {
+    public String assignLeaveClick() {
     	driver.findElement(AssignLeave).click();
     	String pageurl=driver.getTitle();
     	return pageurl;
     	
     }
     
-    public void Back() {
+    public void back() {
     	
     	driver.navigate().back();
     }
     
-    public String Leavelistclick() {
+    public String leaveListClick() {
     	driver.findElement(LeaveList).click();
     	String pageurl=driver.getCurrentUrl();
     	return pageurl;
     	
     }
     
-    public String Timesheetclicing() {
+    public String timesheetClicking() {
     	driver.findElement(Timesheets).click();
     	String pageurl=driver.getCurrentUrl();
     	return pageurl;
     	
     }
     
-    public String ApplyLeaveclicking() {
+    public String applyLeaveClicking() {
     	driver.findElement(ApplyLeave).click();
     	String pageurl=driver.getCurrentUrl();
     	return pageurl;
     	
     }
     
-    public String MyLeave() {
+    public String myLeave() {
     	driver.findElement(MyLeave).click();
     	String pageurl=driver.getCurrentUrl();
     	return pageurl;
     	
     }
     
-    public String MyTimeSheet() {
+    public String myTimeSheet() {
     	driver.findElement(MyTimesheet).click();
     	String pageurl=driver.getCurrentUrl();
     	return pageurl;
     	
     }
     
-    public void BUZlatestpostnoximg() throws IOException {
-    	WebElement employeeimg=driver.findElement(BuzzLatestPostsbox);
-    	File ScrrenShot=employeeimg.getScreenshotAs(OutputType.FILE);
-    	File Destination=new File("C:\\Users\\xmedia\\eclipse-workspace\\Automation\\screenshots2\\BUZkbox.png");
-    	FileUtils.copyFile(ScrrenShot, Destination);
-    	
-     }
+    public void buzlaTestPostBoxImg() throws IOException {
+    String path = System.getProperty("user.dir") + File.separator + "screenshot";
+    // Create folder if missing
+    File directory = new File(path);
+    if (!directory.exists()) {
+        directory.mkdirs();
+    }
+    WebElement employeeImg = driver.findElement(BuzzLatestPostsbox);
+    File screenshot = employeeImg.getScreenshotAs(OutputType.FILE);
+    File destination = new File(path + File.separator + "BUZkbox.png");
+    FileUtils.copyFile(screenshot, destination);
+}
+
     
-    public void employeeleavesettingicon() {
+    public void employeeLeaveSettingIcon() {
     	
     	driver.findElement(EployeeLeaveSettingivon).click();
     	
      }
     
-    public void employeeleavecheckbox() {
+    public void employeeLeaveCheckbox() {
     	
     	driver.findElement(Employerleavecheckbox).click();
     	
      }
     
-   public void employeeleavecancel() {
+   public void employeeLeaveCancel() {
     	
     	driver.findElement(Employeeleavecancel).click();
     	
      }
    
-   public void employeeleaveclose() {
+   public void employeeLeaveClose() {
    	
    	driver.findElement(Employeeleavecloseicon).click();
    	
     }
    
-   public void employeeleavesave() {
+   public void employeeLeaveSave() {
 	   	
 	   	driver.findElement(Employeeleavesave).click();
 	   	
 	    }
    
-   public void Humanresoureclicking() {
+   public void humanresoureClicking() {
 	   	
 	   	driver.findElement(HumanResource).click();
 	   	
 	    }
    
-   public void Engineeringclicking() {
+   public void engineeringClicking() {
 	   	
 	   	driver.findElement(Engineering).click();
 	   	
 	    }
    
-   public void unassignedclicking() {
+   public void unassignedClicking() {
 	   	
 	   	driver.findElement(Unassigned).click();
 	   	
 	    }
    
-   public static void pageScreenshot(String imagename) throws IOException {
-	   TakesScreenshot ts = (TakesScreenshot) driver;
-	   File screenshot = ts.getScreenshotAs(OutputType.FILE);
-	   File destination = new File("C:\\Users\\xmedia\\eclipse-workspace\\Automation\\screenshots2\\"+imagename);
-	   FileUtils.copyFile(screenshot, destination);
+   public static void pageScreenshot(RemoteWebDriver driver, String imagename) throws IOException {
 
-   }
+    // Create folder: <project>/screenshot/
+    String folderPath = System.getProperty("user.dir") 
+                        + File.separator + "screenshot";
+
+    File directory = new File(folderPath);
+    if (!directory.exists()) {
+        directory.mkdirs();
+    }
+
+    // Ensure .png extension
+    if (!imagename.endsWith(".png")) {
+        imagename += ".png";
+    }
+
+    // Take screenshot
+    TakesScreenshot ts = (TakesScreenshot) driver;
+    File screenshot = ts.getScreenshotAs(OutputType.FILE);
+
+    // FIXED: Correct destination path
+    File destination = new File(folderPath + File.separator + imagename);
+
+    FileUtils.copyFile(screenshot, destination);
+}
+
    
-   public void Scrollpage() {
+   public void scrollPage() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
        js.executeScript("window.scrollBy(300, 500);");
 
 	}
 
-   
-   
 
 }

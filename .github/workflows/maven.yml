@@ -1,0 +1,69 @@
+name: OrangeHRM Automation Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Cache Maven Dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-m2-
+
+      - name: Debug Repository Structure
+        run: |
+          echo "Current Directory:"
+          pwd
+
+          echo "Repository Contents:"
+          ls -la
+
+          echo "POM Files:"
+          find . -name "pom.xml"
+
+          echo "TestNG Files:"
+          find . -name "testng.xml"
+
+      - name: Verify testng.xml
+        run: |
+          echo "===== testng.xml ====="
+          cat testng.xml
+          echo "======================"
+
+      - name: Maven Version
+        run: mvn -version
+
+      - name: Compile Project
+        run: mvn clean test-compile
+
+      - name: Run Tests
+        run: mvn -e -X test
+
+      - name: Upload Surefire Reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: surefire-reports
+          path: |
+            target/surefire-reports
+            target/*.dump*

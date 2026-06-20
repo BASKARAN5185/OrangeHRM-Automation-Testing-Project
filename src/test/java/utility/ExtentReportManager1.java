@@ -87,7 +87,7 @@ public class ExtentReportManager1 implements ITestListener {
 
         try {
             // Capture screenshot on failure and get the file path
-            String imgPath = new BaseClass().captureScreen(result.getName());
+            String imgPath = new BaseClass().captureScreenshot(result.getName());
             // Attach the screenshot to the report
             test.addScreenCaptureFromPath(imgPath);
         } catch (IOException e1) {
