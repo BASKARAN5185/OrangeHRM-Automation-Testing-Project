@@ -29,6 +29,7 @@ extent-report/
 *.html
 *.xml
 !pom.xml
+!testng.xml
 *.png
 *.jpg
 *.gif
