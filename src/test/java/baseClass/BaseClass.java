@@ -17,6 +17,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
@@ -25,36 +26,49 @@ public class BaseClass {
 
     @BeforeClass
     public void setUpBrowser() {
+
         WebDriverManager.chromedriver().setup();
 
         ChromeOptions options = new ChromeOptions();
 
         String os = System.getProperty("os.name").toLowerCase();
 
-        if (os.contains("win")) {
-            options.setBinary(
-                    "C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe");
-        }
-        // options.addArguments("--headless=new");
+    //     // Use Brave browser only on Windows
+    //     if (os.contains("win")) {
+    //   //      options.setBinary(
+    //                 "C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe");
+    //     }
+
+        // Browser options
         options.addArguments("--incognito");
         options.addArguments("--disable-notifications");
-        options.addArguments("window-size=1200x600");
+        options.addArguments("--window-size=1200,600");
         options.addArguments("--disable-extensions");
         options.addArguments("--disable-popup-blocking");
         options.addArguments("--disable-infobars");
         options.addArguments("--remote-allow-origins=*");
-        options.addArguments("--disable-gpu");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--ignore-certificate-errors");
         options.addArguments("--allow-insecure-localhost");
         options.addArguments("--allow-running-insecure-content");
         options.addArguments("--disable-web-security");
         options.addArguments("--disable-features=IsolateOrigins,site-per-process");
 
+        // GitHub Actions / Linux settings
+        if (!os.contains("win")) {
+            options.addArguments("--headless=new");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--disable-gpu");
+        }
+
         driver = new ChromeDriver(options);
-        driver.manage().window().maximize();
+
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+
+        if (os.contains("win")) {
+            driver.manage().window().maximize();
+        }
+
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
     }
 
@@ -66,17 +80,21 @@ public class BaseClass {
     }
 
     public String captureScreenshot(String testName) throws IOException {
+
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
         String screenshotDirectory = "C:\\Users\\xmedia\\Desktop\\AutomationTestReport\\Screenshots\\";
 
         File directory = new File(screenshotDirectory);
+
         if (!directory.exists()) {
             directory.mkdirs();
         }
 
         String filePath = screenshotDirectory + testName + "_" + System.currentTimeMillis() + ".png";
+
         File destination = new File(filePath);
+
         FileUtils.copyFile(screenshot, destination);
 
         return filePath;
@@ -103,9 +121,13 @@ public class BaseClass {
     }
 
     public void validateBrokenLinks() {
+
         List<WebElement> links = driver.findElements(By.tagName("a"));
+
         for (WebElement link : links) {
+
             String url = link.getAttribute("href");
+
             if (url == null || url.isEmpty()) {
                 System.out.println("Link is null or empty: " + link.getText());
                 continue;
@@ -117,17 +139,27 @@ public class BaseClass {
             }
 
             try {
+
                 HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
+
                 connection.setRequestMethod("HEAD");
                 connection.connect();
+
                 int statusCode = connection.getResponseCode();
+
                 if (statusCode >= 400) {
-                    System.out.println("Broken link: " + url + " | Status code: " + statusCode);
+                    System.out.println(
+                            "Broken link: " + url + " | Status code: " + statusCode);
                 } else {
-                    System.out.println("Valid link: " + url + " | Status code: " + statusCode);
+                    System.out.println(
+                            "Valid link: " + url + " | Status code: " + statusCode);
                 }
+
             } catch (Exception e) {
-                System.out.println("Error checking link: " + url + " | Exception: " + e.getMessage());
+
+                System.out.println(
+                        "Error checking link: " + url + " | Exception: "
+                                + e.getMessage());
             }
         }
     }
