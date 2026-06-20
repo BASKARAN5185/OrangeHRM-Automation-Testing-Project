@@ -27,9 +27,6 @@ test-output/
 surefire-reports/
 extent-report/
 *.html
-*.xml
-!pom.xml
-!testng.xml
 *.png
 *.jpg
 *.gif

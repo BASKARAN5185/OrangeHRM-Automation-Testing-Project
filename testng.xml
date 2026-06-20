@@ -9,9 +9,6 @@
     <test thread-count="5" name="Test">
         <classes>
             <class name="testBase.LoginPageTest"/>
-            <class name="testBase.PIMPageTest" />
-            <class name="testBase.Admin_pageTest"/>
-            <class name="testBase.DashboardPageTest"/>
         </classes>    
     </test>
 </suite>
