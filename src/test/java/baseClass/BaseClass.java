@@ -34,18 +34,10 @@ public class BaseClass {
         String os = System.getProperty("os.name").toLowerCase();
 
         // Browser options
-        options.addArguments("--incognito");
-        options.addArguments("--disable-notifications");
-        options.addArguments("--window-size=1200,600");
-        options.addArguments("--disable-extensions");
-        options.addArguments("--disable-popup-blocking");
-        options.addArguments("--disable-infobars");
-        options.addArguments("--remote-allow-origins=*");
-        options.addArguments("--ignore-certificate-errors");
-        options.addArguments("--allow-insecure-localhost");
-        options.addArguments("--allow-running-insecure-content");
-        options.addArguments("--disable-web-security");
-        options.addArguments("--disable-features=IsolateOrigins,site-per-process");
+        options.addArguments("--headless=new");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--disable-gpu");
 
         // GitHub Actions / Linux settings
         if (!os.contains("win")) {
