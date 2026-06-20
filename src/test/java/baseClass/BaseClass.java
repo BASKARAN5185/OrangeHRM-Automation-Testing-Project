@@ -33,12 +33,6 @@ public class BaseClass {
 
         String os = System.getProperty("os.name").toLowerCase();
 
-    //     // Use Brave browser only on Windows
-    //     if (os.contains("win")) {
-    //   //      options.setBinary(
-    //                 "C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe");
-    //     }
-
         // Browser options
         options.addArguments("--incognito");
         options.addArguments("--disable-notifications");
