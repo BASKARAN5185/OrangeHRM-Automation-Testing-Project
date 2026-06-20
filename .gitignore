@@ -28,6 +28,7 @@ surefire-reports/
 extent-report/
 *.html
 *.xml
+!pom.xml
 *.png
 *.jpg
 *.gif
